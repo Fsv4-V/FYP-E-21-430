@@ -3,147 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Final Year Project portfolio for a smart diabetic wound monitoring patch using PANI pH sensing, TMP117 temperature sensing, and wireless monitoring." />
-  <title>Smart Diabetic Wound Monitoring Patch</title>
+  <meta name="description" content="Final Year Project portfolio for a smart diabetic wound monitoring patch using PANI pH sensing, TMP117 temperature sensing and embedded wireless monitoring." />
+  <title>Smart Diabetic Wound Monitoring Patch | FYP Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page-glow page-glow-one"></div>
+  <div class="page-glow page-glow-two"></div>
+
   <header class="site-header">
-    <nav class="navbar">
-      <a href="#home" class="brand">Smart Wound Patch</a>
-      <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#weeks">Weeks</a>
-        <a href="#system">System</a>
-        <a href="#resources">Resources</a>
-        <a href="#limitations">Limitations</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <a class="brand" href="#home">Smart Wound Patch</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a href="#weeks">Weeks</a>
+      <a href="#resources">Resources</a>
+      <a href="#supervisors">Supervisors</a>
+      <a href="#limitations">Limitations</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero section-pad">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Final Year Project · University of Peradeniya</p>
-          <h1>Smart Diabetic Wound Monitoring Patch</h1>
-          <p class="hero-text">A flexible wound monitoring system using a PANI pH electrode, Ag/AgCl reference electrode, TMP117 temperature sensor, moisture sensing, and wireless data communication for real-time chronic wound assessment.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#weeks">View Weekly Work</a>
-            <a class="btn btn-secondary" href="#resources">Open Resource Links</a>
-          </div>
-        </div>
-        <aside class="hero-panel">
-          <h2>Project Details</h2>
-          <div class="detail-row"><span>Student</span><strong id="student-code"></strong></div>
-          <div class="detail-row"><span>University</span><strong id="university"></strong></div>
-          <div class="detail-row"><span>Email</span><strong><a id="contact-email" href="#"></a></strong></div>
-          <div class="detail-row"><span>Temperature Sensor</span><strong>TMP117</strong></div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="overview" class="section-pad">
-      <div class="container">
-        <p class="eyebrow">Project Overview</p>
-        <h2>Clear, low-cost and wearable wound monitoring concept</h2>
-        <p class="section-intro">The project focuses on a smart diabetic wound patch that can monitor important wound conditions without repeatedly removing the dressing. The main sensing parameter is pH, supported by temperature and moisture information.</p>
-        <div class="feature-grid">
-          <article class="info-card accent-a"><h3>pH Monitoring</h3><p>PANI-based potentiometric pH sensing is used to identify changes between healing and infected wound conditions.</p></article>
-          <article class="info-card accent-b"><h3>Temperature</h3><p>TMP117 is used as the selected temperature sensor for accurate digital temperature monitoring.</p></article>
-          <article class="info-card accent-c"><h3>Wireless System</h3><p>ESP32-S3 and BLE communication are used for compact, low-power wireless monitoring.</p></article>
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Final Year Project Portfolio · University of Peradeniya</p>
+        <h1>Smart Diabetic Wound Monitoring Patch</h1>
+        <p class="hero-text">
+          A flexible wound monitoring system using PANI pH sensing, TMP117 digital temperature sensing,
+          moisture/impedance monitoring and wireless embedded data transfer for diabetic wound care.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#weeks">View weekly work</a>
+          <a class="btn secondary" href="#contact">Contact details</a>
         </div>
       </div>
+
+      <aside class="hero-card" aria-label="Project highlights">
+        <h2>Project at a glance</h2>
+        <ul class="feature-list">
+          <li><span>PANI pH electrode</span><strong>Wound pH biomarker</strong></li>
+          <li><span>TMP117</span><strong>Temperature sensor</strong></li>
+          <li><span>ESP32-S3</span><strong>Wireless MCU</strong></li>
+          <li><span>ADS1115</span><strong>16-bit ADC readout</strong></li>
+        </ul>
+      </aside>
     </section>
 
-    <section id="supervisors" class="section-pad panel-section">
-      <div class="container">
-        <p class="eyebrow">Supervisors</p>
-        <h2>Project supervision</h2>
-        <div class="supervisor-grid">
-          <article class="supervisor-card">
-            <span>Department Supervisor</span>
-            <h3 id="dept-supervisor"></h3>
-            <p>Department of Electrical and Electronic Engineering, University of Peradeniya</p>
-          </article>
-          <article class="supervisor-card">
-            <span>Medical Faculty Supervisor</span>
-            <h3 id="medical-supervisor"></h3>
-            <p id="medical-faculty"></p>
-          </article>
-        </div>
+    <section id="overview" class="section panel-section">
+      <div class="section-heading">
+        <p class="eyebrow">Project overview</p>
+        <h2>What this project is about</h2>
+      </div>
+      <div class="overview-grid">
+        <article class="info-card">
+          <h3>Clinical need</h3>
+          <p>Diabetic wounds require regular monitoring because infection and delayed healing can happen between clinical visits. Wound pH, temperature and moisture give useful early information about healing condition.</p>
+        </article>
+        <article class="info-card">
+          <h3>Technical idea</h3>
+          <p>The patch uses a flexible sensing layer with PANI pH sensing, TMP117 temperature measurement and embedded electronics to convert sensor readings into usable digital data.</p>
+        </article>
+        <article class="info-card">
+          <h3>Main target</h3>
+          <p>The aim is to create a low-cost, compact and practical wound monitoring prototype that can be developed using accessible university laboratory methods and documented weekly progress.</p>
+        </article>
       </div>
     </section>
 
-    <section id="weeks" class="section-pad">
-      <div class="container">
-        <p class="eyebrow">Weekly Progress</p>
-        <h2>Week 01 to Week 14</h2>
-        <p class="section-intro">Week images were removed as requested. Each completed week now uses a Google Drive resource link only. Week 06 to Week 14 are shown as Coming soon.</p>
-        <div id="weeks-grid" class="weeks-grid"></div>
+    <section id="weeks" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Weekly progress</p>
+        <h2>Week 01–05 completed work and Week 06–14 coming soon</h2>
+        <p class="section-note">
+          Week images were removed. Only short weekly descriptions and Google Drive reference folders are used.
+        </p>
+      </div>
+      <div id="weeks-grid" class="weeks-grid"></div>
+    </section>
+
+    <section id="resources" class="section panel-section">
+      <div class="section-heading">
+        <p class="eyebrow">Linked evidence</p>
+        <h2>Resource links used for the project</h2>
+        <p class="section-note">Each completed week has its own Drive folder. The papers and datasheets folder is also linked clearly.</p>
+      </div>
+      <div id="resources-grid" class="resources-grid"></div>
+    </section>
+
+    <section id="supervisors" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Supervision</p>
+        <h2>Project supervisors</h2>
+      </div>
+      <div class="supervisor-grid">
+        <article class="supervisor-card">
+          <p class="role">Department Supervisor</p>
+          <h3>Dr. Ruwan Ranaweera</h3>
+          <p>University of Peradeniya</p>
+        </article>
+        <article class="supervisor-card">
+          <p class="role">Medical Faculty Supervisor</p>
+          <h3>Dr. Manjula Peiris</h3>
+          <p>Faculty of Medicine, University of Peradeniya</p>
+        </article>
       </div>
     </section>
 
-    <section id="system" class="section-pad panel-section">
-      <div class="container">
-        <p class="eyebrow">System Design</p>
-        <h2>Main selected components</h2>
-        <p class="section-intro">The design uses electrochemical pH sensing, digital temperature sensing, high-resolution analog reading, and wireless transmission.</p>
-        <div id="components-grid" class="feature-grid"></div>
+    <section id="architecture" class="section panel-section">
+      <div class="section-heading">
+        <p class="eyebrow">System architecture</p>
+        <h2>Main technical blocks</h2>
+      </div>
+      <div id="architecture-grid" class="architecture-grid"></div>
+    </section>
+
+    <section id="limitations" class="section limitations-section">
+      <div class="section-heading">
+        <p class="eyebrow">Design limitations</p>
+        <h2>Limitations and improvement points</h2>
+        <p class="section-note">This section uses stronger colors for clear visibility.</p>
+      </div>
+      <div class="limitations-grid">
+        <article class="limitation-card amber-card">
+          <h3>Calibration accuracy</h3>
+          <p>The PANI pH sensor must be calibrated using standard buffer solutions before reliable wound testing.</p>
+        </article>
+        <article class="limitation-card red-card">
+          <h3>Clinical validation</h3>
+          <p>The prototype is not a clinical medical device yet. Real wound testing requires ethical approval and medical supervision.</p>
+        </article>
+        <article class="limitation-card blue-card">
+          <h3>Flexible packaging</h3>
+          <p>The final patch needs safe encapsulation so electronics are protected while the sensing region remains exposed to wound fluid.</p>
+        </article>
       </div>
     </section>
 
-    <section id="resources" class="section-pad">
-      <div class="container">
-        <p class="eyebrow">Resource Links</p>
-        <h2>Papers, datasheets and week folders</h2>
-        <div class="resource-grid">
-          <article class="resource-card">
-            <h3>Research Papers</h3>
-            <p>Use this Drive folder for papers and literature references collected for the project.</p>
-            <a id="papers-link" class="btn btn-primary" target="_blank" rel="noopener">Open Papers Folder</a>
-          </article>
-          <article class="resource-card">
-            <h3>Component Datasheets</h3>
-            <p>Use this Drive folder for datasheets and component reference documents.</p>
-            <a id="datasheets-link" class="btn btn-primary" target="_blank" rel="noopener">Open Datasheets Folder</a>
-          </article>
-          <article class="resource-card">
-            <h3>Previous Datasheet Folder</h3>
-            <p>Additional datasheet link provided earlier for component references.</p>
-            <a id="old-datasheets-link" class="btn btn-secondary" target="_blank" rel="noopener">Open Additional Datasheet Folder</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="limitations" class="section-pad limitations-section">
-      <div class="container">
-        <p class="eyebrow">Limitations</p>
-        <h2>Current limitations and improvements</h2>
-        <p class="section-intro">This section uses a separate dark purple and amber color style for better visibility.</p>
-        <ul id="limitations-list" class="limitations-list"></ul>
-      </div>
-    </section>
-
-    <section id="contact" class="section-pad contact-section">
-      <div class="container contact-card">
-        <p class="eyebrow">Contact</p>
-        <h2>Get in touch</h2>
-        <p>For project details, weekly resources, papers or datasheets, contact through the project email below.</p>
-        <a class="email-big" href="mailto:e21430@eng.pdn.ac.lk">e21430@eng.pdn.ac.lk</a>
+    <section id="contact" class="section contact-section">
+      <div class="contact-card">
+        <p class="eyebrow">Contact information</p>
+        <h2>Contact & project folders</h2>
+        <p>For project discussion, weekly resources, papers or datasheets, use the links below.</p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:e21430@eng.pdn.ac.lk">Send Email</a>
-          <a class="btn btn-secondary" href="#resources">View Resources</a>
+          <a class="btn primary" href="mailto:e21430@eng.pdn.ac.lk">e21430@eng.pdn.ac.lk</a>
+          <a id="paper-datasheet-contact" class="btn secondary" target="_blank" rel="noopener">Papers & datasheets</a>
+        </div>
+        <div class="contact-supervisors">
+          <p><strong>Department Supervisor:</strong> Dr. Ruwan Ranaweera, University of Peradeniya</p>
+          <p><strong>Medical Faculty Supervisor:</strong> Dr. Manjula Peiris, Faculty of Medicine, University of Peradeniya</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>Smart Diabetic Wound Monitoring Patch · University of Peradeniya · <span id="year"></span></p>
-    <p>Contact: <a id="footer-email" href="#"></a></p>
+  <footer class="site-footer">
+    <p>Smart Diabetic Wound Monitoring Patch · Final Year Project Portfolio</p>
+    <p>Department of Electrical and Electronic Engineering · University of Peradeniya</p>
   </footer>
 
   <script src="data.js"></script>

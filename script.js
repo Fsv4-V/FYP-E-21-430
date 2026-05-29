@@ -1,72 +1,89 @@
-function $(id) {
-  return document.getElementById(id);
-}
+// Render corrected FYP website content.
+// No image rendering is used.
 
-function makeList(items) {
-  return items.map(item => `<li>${item}</li>`).join("");
+const byId = (id) => document.getElementById(id);
+
+function makeEl(tag, className, html) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (html !== undefined) node.innerHTML = html;
+  return node;
 }
 
 function renderWeeks() {
-  const container = $("weeks-grid");
-  container.innerHTML = WEEKS.map(item => {
-    const isComing = item.status.toLowerCase().includes("coming");
-    const linkButton = item.link
-      ? `<a class="btn btn-primary" href="${item.link}" target="_blank" rel="noopener">Open ${item.week} Drive Resources</a>`
-      : `<span class="btn btn-disabled">Coming soon</span>`;
+  const grid = byId("weeks-grid");
+  grid.innerHTML = "";
 
-    return `
-      <article class="week-card ${isComing ? "coming" : "done"}">
-        <div class="week-top">
-          <span class="week-label">${item.week}</span>
-          <span class="status ${isComing ? "status-soon" : "status-done"}">${item.status}</span>
-        </div>
-        <p class="phase">${item.phase}</p>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <ul class="mini-list">${makeList(item.work)}</ul>
-        <div class="week-actions">${linkButton}</div>
-      </article>`;
-  }).join("");
+  WEEKS.forEach((week) => {
+    const card = makeEl("article", `week-card ${week.status === "Coming soon" ? "coming-soon" : ""}`);
+    const chips = week.usedFor.map(item => `<span class="chip">${item}</span>`).join("");
+    const linkHtml = week.link
+      ? `<a class="week-link" href="${week.link}" target="_blank" rel="noopener">Open ${week.number} Drive resources</a>`
+      : `<span class="week-link disabled">Coming soon</span>`;
+
+    card.innerHTML = `
+      <div class="week-number">
+        <span class="week-label">${week.number}</span>
+        <span class="week-status">${week.status}</span>
+      </div>
+      <div>
+        <h3>${week.title}</h3>
+        <p>${week.description}</p>
+        <div class="chips">${chips}</div>
+        ${linkHtml}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
 }
 
-function renderComponents() {
-  $("components-grid").innerHTML = SYSTEM_COMPONENTS.map(component => `
-    <article class="info-card">
-      <h3>${component.name}</h3>
-      <p>${component.detail}</p>
-    </article>
-  `).join("");
+function renderResources() {
+  const grid = byId("resources-grid");
+  grid.innerHTML = "";
+
+  RESOURCES.forEach((resource) => {
+    const card = makeEl("article", "resource-card");
+    card.innerHTML = `
+      <span class="resource-type">${resource.type}</span>
+      <h3>${resource.title}</h3>
+      <p>${resource.description}</p>
+      <a href="${resource.link}" target="_blank" rel="noopener">Open Drive link →</a>
+    `;
+    grid.appendChild(card);
+  });
+
+  const contactDatasheet = byId("paper-datasheet-contact");
+  if (contactDatasheet) {
+    contactDatasheet.href = PAPER_DATASHEET_LINK;
+  }
 }
 
-function renderLimitations() {
-  $("limitations-list").innerHTML = LIMITATIONS.map((item, index) => `
-    <li><span>0${index + 1}</span>${item}</li>
-  `).join("");
+function renderArchitecture() {
+  const grid = byId("architecture-grid");
+  grid.innerHTML = "";
+
+  ARCHITECTURE.forEach((block) => {
+    const card = makeEl("article", "arch-card");
+    card.innerHTML = `
+      <span class="block-tag">${block.tag}</span>
+      <h3>${block.title}</h3>
+      <p>${block.description}</p>
+    `;
+    grid.appendChild(card);
+  });
 }
 
-function renderProjectInfo() {
-  $("student-code").textContent = PROJECT.student;
-  $("university").textContent = PROJECT.university;
-  $("contact-email").textContent = PROJECT.contactEmail;
-  $("contact-email").href = `mailto:${PROJECT.contactEmail}`;
-  $("footer-email").textContent = PROJECT.contactEmail;
-  $("footer-email").href = `mailto:${PROJECT.contactEmail}`;
-  $("dept-supervisor").textContent = PROJECT.departmentSupervisor;
-  $("medical-supervisor").textContent = PROJECT.medicalSupervisor;
-  $("medical-faculty").textContent = PROJECT.medicalFaculty;
-  $("papers-link").href = PROJECT.datasheetAndPapersLink;
-  $("datasheets-link").href = PROJECT.datasheetAndPapersLink;
-  $("old-datasheets-link").href = PROJECT.previousDatasheetLink;
-}
-
-function setYear() {
-  $("year").textContent = new Date().getFullYear();
+function verifyImportantText() {
+  // Hidden metadata for easy checking after editing.
+  document.body.dataset.email = PROJECT.email;
+  document.body.dataset.temperatureSensor = PROJECT.temperatureSensor;
+  document.body.dataset.departmentSupervisor = PROJECT.departmentSupervisor;
+  document.body.dataset.medicalSupervisor = PROJECT.medicalSupervisor;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderProjectInfo();
   renderWeeks();
-  renderComponents();
-  renderLimitations();
-  setYear();
+  renderResources();
+  renderArchitecture();
+  verifyImportantText();
 });

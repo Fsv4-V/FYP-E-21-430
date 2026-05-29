@@ -110,7 +110,7 @@ function renderObjectives() {
   OBJECTIVES.forEach(o => { const li = el("li"); li.innerHTML = `<span class="ot">${o}</span>`; ul.appendChild(li); });
 }
 
-/* ---------- TIMELINE (with week images + lightbox) ---------- */
+/* ---------- TIMELINE (weekly resources linked through Drive) ---------- */
 function renderTimeline() {
   // phase filters
   const phases = ["All", ...new Set(WEEKS.map(w => w.phase))];
@@ -133,6 +133,7 @@ function renderTimeline() {
     item.dataset.phase = w.phase;
     const findings = w.keyFindings.map(f => `<li>${f}</li>`).join("");
     const folders = w.folders.map(f => `<span class="folder-chip">${f}</span>`).join("");
+    const driveBtn = w.driveLink ? `<a class="tl-resource-link" href="${w.driveLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>` : "";
     item.innerHTML = `
       <div class="tl-dot"></div>
       <div class="tl-card">
@@ -142,18 +143,17 @@ function renderTimeline() {
           <span class="tl-date">${w.dates}</span>
         </div>
         <div class="tl-body">
-          <div class="tl-grid">
-            <figure class="tl-figure">
-              <img src="${w.image}" alt="${w.label} working folder" loading="lazy" data-lb="${w.image}" />
-              <figcaption class="tl-figcap">${w.label} working folder (click to enlarge)</figcaption>
-            </figure>
+          <h3 class="tl-title">${w.title}</h3>
+          <p class="tl-summary">${w.summary}</p>
+          <div class="tl-folders">${folders}</div>
+          <div class="tl-resource-box">
             <div>
-              <h3 class="tl-title">${w.title}</h3>
-              <p class="tl-summary">${w.summary}</p>
-              <div class="tl-folders">${folders}</div>
-              <button class="tl-expand" style="margin-top:1rem">+ Read full week breakdown</button>
+              <div class="detail-label">🔗 Resource Folder</div>
+              <p class="resource-note">Images are not embedded in this website. The collected files for this week are available through the linked Google Drive folder.</p>
             </div>
+            ${driveBtn}
           </div>
+          <button class="tl-expand" style="margin-top:1rem">+ Read full week breakdown</button>
           <div class="tl-details">
             <div class="detail-grid">
               <div class="detail-block"><div class="detail-label">🎯 Goals</div><div class="detail-text">${w.goals}</div></div>
@@ -164,7 +164,7 @@ function renderTimeline() {
               <div class="detail-block"><div class="detail-label">⛔ Rejected / Set Aside</div><div class="detail-text warn">${w.rejected}</div></div>
               <div class="detail-block"><div class="detail-label">➡️ Led Into Next Week</div><div class="detail-text next">${w.nextWeek}</div></div>
             </div>
-            <div class="detail-block" style="margin-top:1rem"><div class="detail-label">📎 Evidence (Folders &amp; Files)</div><div class="detail-text" style="font-family:var(--font-mono);font-size:.8rem">${w.evidence}</div></div>
+            <div class="detail-block" style="margin-top:1rem"><div class="detail-label">📎 Evidence (Folders &amp; Files)</div><div class="detail-text" style="font-family:var(--font-mono);font-size:.8rem">${w.evidence}</div>${driveBtn}</div>
           </div>
         </div>
       </div>`;
@@ -239,7 +239,7 @@ function renderResources() {
       <div class="res-sub">${sub}${r.week ? " · Week 0"+r.week : ""}</div>
       <p class="res-desc">${body}</p>
       <div class="res-tags">${tags}</div>
-      ${r.link && r.link !== "#" ? `<a class="res-link" href="${r.link}">Open file →</a>` : ""}`;
+      ${r.link && r.link !== "#" ? `<a class="res-link" href="${r.link}" target="_blank" rel="noopener">Open Week 0${r.week || ""} resources →</a>` : ""}`;
     grid.appendChild(c);
   });
 }

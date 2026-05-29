@@ -11,7 +11,7 @@ Built as a static site for **GitHub Pages** (no build tools, no frameworks).
 - **Refined Academic** theme — light, professional palette (deep navy-blue + refined teal),
   Fraunces / IBM Plex Sans / IBM Plex Mono typography.
 - **Interactive features:** scroll progress bar, animated hero counters, reveal-on-scroll
-  animations, filterable timeline & resources, image lightbox, sticky active-nav, back-to-top.
+  animations, filterable timeline & resources, Drive-linked weekly resource folders, sticky active-nav, back-to-top.
 - **Weekly Progress = 5 weeks only** (Weeks 01–05). Each week shows the **screenshot of that
   week's working folder** plus a full breakdown (goals, findings, decisions, rejected options,
   evidence) reconstructed from the actual folder contents.
@@ -29,12 +29,7 @@ fyp-portfolio/
 ├── data.js         ← ◀ EDIT THIS to change any text/content
 ├── README.md
 └── assets/
-    └── images/
-        ├── week1.png   ← Week 01 folder screenshot
-        ├── week2.png   ← Week 02 folder screenshot
-        ├── week3.png   ← Week 03 folder screenshot
-        ├── week4.png   ← Week 04 folder screenshot
-        └── week5.png   ← Week 05 folder screenshot
+    └── No week images are embedded. Weekly evidence is linked through Google Drive folders.
 ```
 
 > Optional folders you can add for live file links:
@@ -53,10 +48,9 @@ fyp-portfolio/
 2. **Weekly content** — edit the `WEEKS` array. Each week has:
    `label, dates, phase, title, image, folders[], summary, goals, keyFindings[],
    decisions, rejected, nextWeek, evidence`.
-3. **Replace a week image** — drop a new PNG into `assets/images/` using the same name
-   (`week1.png` … `week5.png`), or change the `image:` path in that week's object.
+3. **Update weekly evidence links** — edit the `driveLink:` field in each `WEEKS` object inside `data.js`.
 
-> ⚠️ The weekly write-ups were reconstructed from your folder screenshots. **Verify dates
+> ⚠️ The weekly write-ups were reconstructed from your Drive resource folders. **Verify dates
 > and details before submission** and adjust wording in `data.js` as needed.
 
 ---
@@ -67,7 +61,7 @@ fyp-portfolio/
 1. Download these files.
 2. Go to your repo → **Add file ▸ Upload files**.
 3. Drag the changed files in — keep the **same names** so they overwrite:
-   `index.html`, `style.css`, `script.js`, `data.js`, and the `assets/images/week*.png`.
+   `index.html`, `style.css`, `script.js`, and `data.js`. Weekly resources are accessed through the Google Drive buttons.
 4. ⚠️ If you previously edited your name/email in `data.js`, **merge** those edits instead of
    blindly overwriting.
 5. Commit. Pages redeploys in ~1 minute.
@@ -95,3 +89,12 @@ Open `style.css` → the `:root { ... }` block at the top holds every colour and
 ---
 
 *Built with plain HTML/CSS/JS · No dependencies · Works offline once fonts are cached.*
+
+
+## Weekly Google Drive Resource Links
+
+- Week 01: https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link
+- Week 02: https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link
+- Week 03: https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link
+- Week 04: https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link
+- Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link

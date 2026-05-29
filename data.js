@@ -2,7 +2,7 @@
 //  data.js  –  FYP Portfolio: Smart Diabetic Wound pH Sensor
 //  Edit this file to update all website content easily.
 //  Weekly content below is reconstructed from the actual
-//  Week 01–05 working folders (see assets/images/weekN.png).
+//  Week 01–05 working folders are linked through Google Drive resource folders.
 // ============================================================
 
 // ── PROJECT IDENTITY ────────────────────────────────────────
@@ -80,8 +80,8 @@ const OBJECTIVES = [
 ];
 
 // ── WEEKLY PROGRESS (5 WEEKS — from actual working folders) ──
-// Each `image` is the screenshot of that week's resource folder.
-// `folders` lists the actual sub-folders you created that week.
+// `folders` lists the actual sub-folders created that week.
+// `driveLink` stores the accessible resource folder for that week.
 const WEEKS = [
   {
     id: 1,
@@ -89,7 +89,7 @@ const WEEKS = [
     dates: "5 May",
     phase: "Problem Definition",
     title: "Defining the Problem: pH Variation, Sensor Landscape & the Smart Dressing Concept",
-    image: "assets/images/week1.png",
+    driveLink: "https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link",
     folders: ["PH VARIATIONS", "SENSOR COMPARISON", "SMART WOUND DRESSING"],
     summary: "Week 01 established the project's foundation. Three research folders were created: PH VARIATIONS (to understand how wound pH changes during healing and infection), SENSOR COMPARISON (to survey available pH sensing technologies), and SMART WOUND DRESSING (to study the overall product concept). Together these defined the core problem and confirmed wound pH as the central sensing parameter.",
     goals: "Identify the core biomedical problem, understand how wound pH varies across healing states, survey candidate sensing technologies, and study the smart wound dressing concept as a product.",
@@ -109,7 +109,7 @@ const WEEKS = [
     dates: "May",
     phase: "Clinical & Concept Research",
     title: "Clinical Pathology, Flexible Printing & Similar-Product Benchmarking",
-    image: "assets/images/week2.png",
+    driveLink: "https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link",
     folders: ["Flexible Circuit Print", "Robbins Basic Pathology – Textbook Extractions", "Similar Product Details", "Wearable Sensor"],
     summary: "Week 02 deepened the foundation in two directions at once — clinical and engineering. Extractions from Robbins Basic Pathology grounded the project in the actual biology of wound healing and inflammation, while the Flexible Circuit Print and Wearable Sensor folders explored how such a sensor could physically be made. A Similar Product Details folder benchmarked existing solutions (notably SmartHEAL, the 2022 James Dyson Award winner).",
     goals: "Build the clinical justification using pathology literature, understand flexible/printed circuit fabrication, and benchmark against existing similar products and wearable sensors.",
@@ -130,7 +130,7 @@ const WEEKS = [
     dates: "May",
     phase: "Resource & Component Gathering",
     title: "Datasheets, Reference Links, Fabrication Companies & the pH Sensor Matrix",
-    image: "assets/images/week3.png",
+    driveLink: "https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link",
     folders: ["Datasheets", "Links", "Medical Graded Fabrication Company", "pH Sensor Matrix", "Similar Device Papers"],
     summary: "Week 03 shifted from concept to concrete engineering resources. Five folders were created: Datasheets (component electrical references), Links (curated online resources), Medical Graded Fabrication Company (potential suppliers/manufacturers), pH Sensor Matrix (a structured comparison of candidate pH sensors), and Similar Device Papers (the key academic comparisons). This week assembled the evidence base used for every later technical decision.",
     goals: "Collect component datasheets, identify medical-grade fabrication companies, build a structured pH sensor comparison matrix, and consolidate the most relevant academic papers.",
@@ -151,7 +151,7 @@ const WEEKS = [
     dates: "May",
     phase: "Fabrication & Electronics Core",
     title: "Fabrication Facility Decision & the Coin-Size 'FYP Brain'",
-    image: "assets/images/week4.png",
+    driveLink: "https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link",
     folders: ["Fabrication Facility", "FYP Brain (Coin Size)"],
     summary: "Week 04 narrowed to two decisive folders: Fabrication Facility (how and where the sensor will be built) and FYP Brain (Coin Size) — the design of the compact electronics core. This week produced the system architecture and the complete bill of materials for the coin-size module that reads, processes and transmits the sensor signals.",
     goals: "Decide the fabrication facility/route and design the coin-size electronics 'brain' — selecting MCU, ADC, instrumentation amplifier, power supply and communications.",
@@ -173,7 +173,7 @@ const WEEKS = [
     dates: "May",
     phase: "FPCB Comparison & Costing",
     title: "Flexible PCB Comparison, Hand-Made FPCB Costing & Methodology Consolidation",
-    image: "assets/images/week5.png",
+    driveLink: "https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link",
     folders: ["Comparison of FPCs", "Hand-make FPCB Cost Estimate", "Medical Fabrication Circuits Research Papers", "Second Option FPCB", "PANI_pH_Sensor_Literature_Review.pdf", "pH Sensing Methodology Document.pdf"],
     summary: "Week 05 brought the design toward execution. Flexible PCB options were compared (Comparison of FPCs, Second Option FPCB), the cost of hand-making an FPCB was estimated, medical fabrication-circuit research papers were collected, and two consolidated documents were produced: a PANI pH-sensor literature review and a pH sensing methodology document. This week effectively defined how the sensor would be built, what it would cost, and the exact measurement methodology.",
     goals: "Compare flexible PCB material/process options, estimate hand-made FPCB cost, gather medical fabrication-circuit research, and consolidate the PANI literature review and pH sensing methodology.",
@@ -204,18 +204,18 @@ const ARCHITECTURE = {
 
 // ── RESOURCES LIBRARY ────────────────────────────────────────
 const RESOURCES = [
-  { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"#" },
-  { id:"r2", type:"paper", title:"Tang et al. (2021)", journal:"Micromachines", year:2021, relevance:"Accessible screen-printed PANI route; pH > 6.5 confirms biofilm infection.", tags:["screen printing","low-cost"], week:3, link:"#" },
-  { id:"r3", type:"paper", title:"Iversen et al. (2022)", journal:"Biosensors", year:2022, relevance:"Fully printed SWCNT pH + hydration patch; confirms ESP32 readout feasibility.", tags:["printed","ESP32","PDMS"], week:3, link:"#" },
-  { id:"e1", type:"excel", title:"pH Sensor Comparison Matrix", description:"5-technology comparison: optical, ISFET, antimony, microelectrodes, lab-grade.", week:1, tags:["pH sensor","comparison"], link:"documents/PH_Sensor_Matrix.xlsx" },
-  { id:"e2", type:"excel", title:"Comparative Analysis: Shirzaei Sani vs Tang", description:"7-parameter paper comparison: sensor design, circuit, fabrication, cost, results.", week:3, tags:["literature","PANI"], link:"documents/Comparative_Analysis_Matrix.xlsx" },
-  { id:"e3", type:"excel", title:"Shirzaei Sani vs Iversen Matrix", description:"10-feature electronics architecture comparison with FYP feasibility ratings.", week:3, tags:["electronics","MCU"], link:"documents/pH_Sensor_Analysis_Matrix_v2.xlsx" },
-  { id:"e4", type:"excel", title:"Filtered Commercial pH Sensor Matrix", description:"14-parameter comparison: Microsens, Zimmer & Peacock, Sentron, PreSens.", week:3, tags:["commercial","ISFET"], link:"documents/Filterd_Best_PH_matrix_As_final.xlsx" },
-  { id:"e5", type:"excel", title:"Flexible Medical PCB Materials Comparison", description:"6-sheet workbook: substrates, conductors, conductive polymers, PANI deep-dive.", week:5, tags:["PANI","materials","FPCB"], link:"documents/Flexible_Medical_PCB_Materials_Comparison.xlsx" },
-  { id:"e6", type:"excel", title:"Coin Module Architecture Comparison", description:"10-sheet architecture workbook + complete BOM with LKR pricing.", week:4, tags:["ESP32","BOM","architecture"], link:"documents/Coin_Module_Architecture_Comparison.xlsx" },
-  { id:"e7", type:"excel", title:"Hand FPCB Fabrication Guide (Sri Lanka)", description:"10-sheet protocol: PANI synthesis, screen printing, QC, safety, budget.", week:5, tags:["fabrication","synthesis"], link:"documents/Hand_FPCB_Fabrication_Guide_SriLanka_FYP.xlsx" },
-  { id:"e8", type:"excel", title:"Project Budget Estimation (FX-linked)", description:"SL vs international price comparison; 20% contingency; ~LKR 20,000 target.", week:5, tags:["budget","procurement"], link:"documents/Budget_Estimation_FPCB_Wound_Sensor_FYP.xlsx" },
-  { id:"e9", type:"excel", title:"Medical Fabrication Facility Comparison", description:"4 medical fabrication companies: Zimmer & Peacock, Microsens, Sentron, ADI.", week:3, tags:["fabrication","suppliers"], link:"documents/Facbrication_Facility.xlsx" }
+  { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"r2", type:"paper", title:"Tang et al. (2021)", journal:"Micromachines", year:2021, relevance:"Accessible screen-printed PANI route; pH > 6.5 confirms biofilm infection.", tags:["screen printing","low-cost"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"r3", type:"paper", title:"Iversen et al. (2022)", journal:"Biosensors", year:2022, relevance:"Fully printed SWCNT pH + hydration patch; confirms ESP32 readout feasibility.", tags:["printed","ESP32","PDMS"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"e1", type:"excel", title:"pH Sensor Comparison Matrix", description:"5-technology comparison: optical, ISFET, antimony, microelectrodes, lab-grade.", week:1, tags:["pH sensor","comparison"], link:"https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link" },
+  { id:"e2", type:"excel", title:"Comparative Analysis: Shirzaei Sani vs Tang", description:"7-parameter paper comparison: sensor design, circuit, fabrication, cost, results.", week:3, tags:["literature","PANI"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"e3", type:"excel", title:"Shirzaei Sani vs Iversen Matrix", description:"10-feature electronics architecture comparison with FYP feasibility ratings.", week:3, tags:["electronics","MCU"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"e4", type:"excel", title:"Filtered Commercial pH Sensor Matrix", description:"14-parameter comparison: Microsens, Zimmer & Peacock, Sentron, PreSens.", week:3, tags:["commercial","ISFET"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"e5", type:"excel", title:"Flexible Medical PCB Materials Comparison", description:"6-sheet workbook: substrates, conductors, conductive polymers, PANI deep-dive.", week:5, tags:["PANI","materials","FPCB"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
+  { id:"e6", type:"excel", title:"Coin Module Architecture Comparison", description:"10-sheet architecture workbook + complete BOM with LKR pricing.", week:4, tags:["ESP32","BOM","architecture"], link:"https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link" },
+  { id:"e7", type:"excel", title:"Hand FPCB Fabrication Guide (Sri Lanka)", description:"10-sheet protocol: PANI synthesis, screen printing, QC, safety, budget.", week:5, tags:["fabrication","synthesis"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
+  { id:"e8", type:"excel", title:"Project Budget Estimation (FX-linked)", description:"SL vs international price comparison; 20% contingency; ~LKR 20,000 target.", week:5, tags:["budget","procurement"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
+  { id:"e9", type:"excel", title:"Medical Fabrication Facility Comparison", description:"4 medical fabrication companies: Zimmer & Peacock, Microsens, Sentron, ADI.", week:3, tags:["fabrication","suppliers"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" }
 ];
 
 // ── FILE ANALYSIS TABLE ──────────────────────────────────────
@@ -345,5 +345,5 @@ const FILE_CATEGORIES = [
   { category:"Component Datasheets", icon:"🔧", count:"8 components", support:"Verify each IC meets requirements from the sensor specs.", files:"Datasheets folder (W03)" },
   { category:"Video / Product References", icon:"▶", count:"4 links", support:"Benchmark against SmartHEAL and validate market need.", files:"Similar Product Details (W02), Links (W03)" },
   { category:"Methodology / Lit Review", icon:"📚", count:"2 documents", support:"Consolidate sensing theory and measurement methodology.", files:"PANI Lit Review, pH Sensing Methodology (W05)" },
-  { category:"Images & Evidence", icon:"🖼️", count:"5 week folders + 1 photo", support:"Visual proof of weekly work and lab progress.", files:"Week 01–05 folder screenshots" }
+  { category:"Weekly Drive Evidence", icon:"🔗", count:"5 Drive folders", support:"Accessible resource folders linked to each weekly progress card.", files:"Week 01–05 Google Drive resource folders" }
 ];

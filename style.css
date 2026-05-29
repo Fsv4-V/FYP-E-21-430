@@ -505,3 +505,16 @@ footer { background: var(--primary-deep); color: rgba(255,255,255,0.7); padding:
 #contact p { color:#E8F9FF; }
 #contact .section-title { color:#FFFFFF; }
 #contact .hl { color:#FACC15; }
+
+/* Targeted fix: make the main hero heading clearly visible on dark background */
+#hero .hero-title,
+#hero .hero-title * {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75), 0 0 2px rgba(255, 255, 255, 0.35) !important;
+}
+
+#hero .hero-title .accent {
+  color: #FACC15 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75), 0 0 8px rgba(250, 204, 21, 0.35) !important;
+}

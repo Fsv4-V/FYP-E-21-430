@@ -37,7 +37,7 @@ function renderHero() {
         <div class="tech-stack-label">Core Technology Stack</div>
         <div class="tech-chips">
           <span class="tech-chip">PANI</span><span class="tech-chip">Ag/AgCl</span><span class="tech-chip">ESP32-S3</span>
-          <span class="tech-chip">ADS1115</span><span class="tech-chip">INA333</span><span class="tech-chip">BLE 5.0</span>
+          <span class="tech-chip">ADS1115</span><span class="tech-chip">INA333</span><span class="tech-chip">TMP117</span><span class="tech-chip">BLE 5.0</span>
         </div>
       </div>
     </div>`;
@@ -381,12 +381,12 @@ function renderContact() {
   $("#contact-inner").innerHTML = `
     <span class="section-label" style="justify-content:center">Get in Touch</span>
     <h2 class="section-title" style="margin-bottom:1rem">Contact &amp; <span class="hl">Project Links</span></h2>
-    <p style="max-width:520px;margin:0 auto 1rem">Questions about the design, fabrication, or data? Reach out or explore the repository.</p>
+    <p style="max-width:520px;margin:0 auto 1rem">Questions about the design, fabrication, weekly resources, papers, or datasheets? Reach out using the university email or open the shared Drive folder.</p>
     <div class="contact-links">
       <a href="mailto:${PROJECT.contactEmail}" class="btn btn-accent">✉ ${PROJECT.contactEmail}</a>
-      <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">⌥ GitHub Repository</a>
+      <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">📄 Papers & Datasheets Drive</a>
     </div>
-    <p style="margin-top:1.6rem;font-family:var(--font-mono);font-size:.76rem;color:rgba(255,255,255,0.6)">${PROJECT.supervisor}</p>`;
+    <p style="margin-top:1.6rem;font-family:var(--font-mono);font-size:.76rem;color:rgba(232,249,255,0.86)">${PROJECT.supervisor}</p>`;
 }
 
 /* ---------- LIGHTBOX ---------- */

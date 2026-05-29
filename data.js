@@ -13,10 +13,10 @@ const PROJECT = {
   degree: "Department of Electrical and Electronic Engineering",
   university: "University of Peradeniya, Sri Lanka",
   year: "2025 – 2026",
-  supervisor: "Department Supervisor: Dr. Ruwan Ranaweera · Medical Faculty Supervisor: Dr. Manjula Peiris · University of Peradeniya",
+  supervisor: "Supervisors: Dr. Ruwan Ranaweera, Department Supervisor, University of Peradeniya · Dr. Manjula Peiris, Faculty of Medicine, University of Peradeniya",
   tagline: "Bridging biomedical sensing, flexible electronics, and low-cost embedded monitoring for diabetic wound care.",
-  githubRepo: "#",
-  contactEmail: "kkgtharushigimhani@gmail.com",
+  githubRepo: "https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link",
+  contactEmail: "e21430@eng.pdn.ac.lk",
 };
 
 // ── ABSTRACT ─────────────────────────────────────────────────
@@ -416,7 +416,8 @@ const RESOURCES = [
   { id:"w3drive", type:"document", title:"Week 03 Google Drive Resources", description:"Datasheets, links, fabrication companies, pH sensor matrix and similar device papers.", week:3, tags:["drive","week 03"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
   { id:"w4drive", type:"document", title:"Week 04 Google Drive Resources", description:"Fabrication facility resources and coin-size electronics brain design files.", week:4, tags:["drive","week 04"], link:"https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link" },
   { id:"w5drive", type:"document", title:"Week 05 Google Drive Resources", description:"Flexible PCB comparison, PANI literature, pH methodology and cost estimation resources.", week:5, tags:["drive","week 05"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
-  { id:"datasheetdrive", type:"datasheet", title:"Project Datasheet Drive Folder", description:"Shared Google Drive folder containing datasheets used for the electronics and sensor components.", week:"", tags:["datasheets","drive"], link:"https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link" },
+  { id:"datasheetdrive", type:"datasheet", title:"Papers and Datasheets Drive Folder", description:"Shared Google Drive folder containing project papers and component datasheets.", week:"", tags:["datasheets","papers","drive"], link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
+  { id:"papersdatasheetsdrive", type:"paper", title:"Project Papers Drive Folder", journal:"Google Drive", year:2026, relevance:"Drive folder containing the papers used for literature review and project justification.", tags:["papers","drive","references"], week:"", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"#" },
   { id:"r2", type:"paper", title:"Tang et al. (2021)", journal:"Micromachines", year:2021, relevance:"Accessible screen-printed PANI route; pH > 6.5 confirms biofilm infection.", tags:["screen printing","low-cost"], week:3, link:"#" },
   { id:"r3", type:"paper", title:"Iversen et al. (2022)", journal:"Biosensors", year:2022, relevance:"Fully printed SWCNT pH + hydration patch; confirms ESP32 readout feasibility.", tags:["printed","ESP32","PDMS"], week:3, link:"#" },
@@ -455,9 +456,7 @@ const FILE_ANALYSIS = [
   { name:"PH_SEnsor_Matrix.pdf", type:"PDF — Matrix Export", week:"Week 01/03", content:"PDF export of pH sensor comparison matrix", importance:"Supervisor-friendly matrix view", section:"Documents" },
   { name:"Wound_Monitoring_System_Requirements_md.pdf", type:"PDF — Requirements", week:"Cross-week", content:"System requirements specification", importance:"Formal requirement definition", section:"Documents" },
   { name:"Engineering_Analysis_of_Wound_Healing_Dynamics_1.pdf", type:"PDF — Analysis", week:"Cross-week", content:"Engineering analysis of wound healing dynamics", importance:"Links pH to healing stages quantitatively", section:"Documents" },
-  { name:"FYP_Fabrication__Authority_Guide.pdf", type:"PDF — Guide", week:"Week 05", content:"Fabrication routes and authority/regulatory guidance", importance:"Fabrication & compliance guidance", section:"Documents" },
-  { name:"WhatsApp_Image_20260509...jpeg", type:"Image — Photo", week:"Week 05", content:"Project work photograph", importance:"Visual evidence of progress", section:"Resources" }
-];
+  { name:"FYP_Fabrication__Authority_Guide.pdf", type:"PDF — Guide", week:"Week 05", content:"Fabrication routes and authority/regulatory guidance", importance:"Fabrication & compliance guidance", section:"Documents" },];
 
 // ── TESTING PLAN ──────────────────────────────────────────────
 const TESTING = [
@@ -510,18 +509,20 @@ const VIDEOS = [
 ];
 
 const KEY_PUBLICATIONS = [
+  { title:"Project Papers and Datasheets Drive Folder", repo:"Google Drive", note:"Shared folder containing the papers used for literature review and the datasheets used for component selection.", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { title:"Wearable Sensors and Systems for Wound Healing-Related pH Detection", repo:"PMC8070747", note:"Foundational review: why wound pH matters, infected-wound pH ranges, electrochemical sensing, flexible wearable wound sensors.", link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC8070747/" },
   { title:"Flexible Wearable Fully-Printed Smart Patch for pH and Hydration Sensing", repo:"PMC8852199", note:"Printed electronics, flexible fabrication, low-cost printable sensors, wearable patch integration (corresponds to Iversen analysis).", link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC8852199/" }
 ];
 
 const DATASHEETS = [
+  { component:"Papers and Datasheets Drive Folder", role:"Google Drive folder for all selected component datasheets and papers used in the project.", category:"Drive Folder", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { component:"ESP32-S3-WROOM-1", role:"MCU / Brain — BLE 5.0 + Wi-Fi, 240 MHz dual-core, deep-sleep 10 µA", category:"Microcontroller", link:"documents/datasheets/ESP32-S3_datasheet.pdf" },
   { component:"ADS1115", role:"16-bit I²C ADC — 7.8 µV resolution at ±256 mV PGA, 4 channels", category:"Data Converter", link:"documents/datasheets/ADS1115_datasheet.pdf" },
   { component:"INA333", role:"Instrumentation Amplifier — 100 dB CMRR, 25 µV offset, 0.1 µV/°C drift", category:"Analog Front-End", link:"documents/datasheets/INA333_datasheet.pdf" },
-  { component:"TL071", role:"Unity-gain buffer for NTC thermistor divider output", category:"Op-Amp", link:"documents/datasheets/TL071_datasheet.pdf" },
+  { component:"TL071", role:"Optional buffer stage for analog test signals; temperature sensing is handled by TMP117", category:"Op-Amp", link:"documents/datasheets/TL071_datasheet.pdf" },
   { component:"XC6206P332", role:"LDO — 1 µA quiescent, 3.3 V fixed, CR2032-compatible", category:"Power", link:"documents/datasheets/XC6206_datasheet.pdf" },
   { component:"MCP4725", role:"12-bit I²C DAC — AC excitation for impedance moisture sensing", category:"Data Converter", link:"documents/datasheets/MCP4725_datasheet.pdf" },
-  { component:"TMP117", role:"High-accuracy digital temperature sensor — I²C temperature measurement for wound surface monitoring and pH temperature compensation", category:"Sensor", link:"https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link" },
+  { component:"TMP117", role:"High-accuracy digital temperature sensor — I²C temperature measurement for wound surface monitoring and pH temperature compensation", category:"Sensor", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { component:"pH-303 Ceramic Sensor", role:"Reference ceramic pH electrode — calibration cross-check", category:"Reference Sensor", link:"documents/datasheets/TDS_Sensor_pH_303_ceramic.pdf" }
 ];
 

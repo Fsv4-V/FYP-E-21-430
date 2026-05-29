@@ -98,3 +98,12 @@ Open `style.css` → the `:root { ... }` block at the top holds every colour and
 - Week 03: https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link
 - Week 04: https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link
 - Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link
+
+
+## Latest Update
+- Reworked color theme for clearer visibility with a dark blue/teal/yellow palette.
+- Added short descriptions for Week 01–05.
+- Added Week 06–14 as Coming Soon placeholders.
+- Added supervisors: Dr. Ruwan Ranaweera and Dr. Manjula Peiris, University of Peradeniya.
+- Updated temperature sensor from NTC thermistor to TMP117.
+- Added datasheet Drive folder link in the datasheet section.

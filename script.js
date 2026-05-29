@@ -133,7 +133,8 @@ function renderTimeline() {
     item.dataset.phase = w.phase;
     const findings = w.keyFindings.map(f => `<li>${f}</li>`).join("");
     const folders = w.folders.map(f => `<span class="folder-chip">${f}</span>`).join("");
-    const driveBtn = w.driveLink ? `<a class="tl-resource-link" href="${w.driveLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>` : "";
+    const isComingSoon = !w.driveLink;
+    const driveBtn = w.driveLink ? `<a class="tl-resource-link" href="${w.driveLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>` : `<span class="tl-coming-soon">Coming soon</span>`;
     item.innerHTML = `
       <div class="tl-dot"></div>
       <div class="tl-card">
@@ -149,7 +150,7 @@ function renderTimeline() {
           <div class="tl-resource-box">
             <div>
               <div class="detail-label">🔗 Resource Folder</div>
-              <p class="resource-note">Images are not embedded in this website. The collected files for this week are available through the linked Google Drive folder.</p>
+              <p class="resource-note">${isComingSoon ? "This week is planned and will be updated after the work is completed." : "Images are not embedded in this website. The collected files for this week are available through the linked Google Drive folder."}</p>
             </div>
             ${driveBtn}
           </div>
@@ -199,7 +200,7 @@ function renderSensorTech() {
   const data = [
     { icon:"🧪", name:"PANI pH Electrode", spec:"54–69 mV/pH", desc:"Polyaniline (Emeraldine Salt) working electrode. Reversible acid-base doping gives a near-Nernstian potentiometric response to wound pH." },
     { icon:"⚡", name:"Ag/AgCl Reference", spec:"Stable RE", desc:"Screen-printed solid-state reference electrode providing a stable potential against which the PANI electrode is measured." },
-    { icon:"🌡️", name:"NTC Thermistor", spec:"10 kΩ B3950", desc:"Flexible bead thermistor for wound surface temperature, enabling Nernst temperature compensation of the pH reading." },
+    { icon:"🌡️", name:"TMP117 Temperature Sensor", spec:"High accuracy digital", desc:"Digital temperature sensor for wound surface monitoring and pH temperature compensation. It replaces the earlier thermistor option." },
     { icon:"💧", name:"Impedance Moisture", spec:"AC excitation", desc:"Exudate moisture level inferred from AC impedance across the shared electrode pair, driven by the MCP4725 DAC." }
   ];
   const wrap = $("#sensor-grid");
@@ -390,7 +391,10 @@ function renderContact() {
       <a href="mailto:${PROJECT.contactEmail}" class="btn btn-accent">✉ ${PROJECT.contactEmail}</a>
       <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">⌥ GitHub Repository</a>
     </div>
-    <p style="margin-top:1.6rem;font-family:var(--font-mono);font-size:.76rem;color:rgba(255,255,255,0.6)">${PROJECT.supervisor}</p>`;
+    <div class="supervisor-box">
+      <div><strong>Department Supervisor</strong><span>${PROJECT.departmentSupervisor}</span></div>
+      <div><strong>Medical Faculty Supervisor</strong><span>${PROJECT.medicalSupervisor}</span></div>
+    </div>`;
 }
 
 /* ---------- LIGHTBOX ---------- */

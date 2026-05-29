@@ -2,200 +2,140 @@
 <html lang="en">
 <head>
   <!-- ============================================================
-       index.html — Smart Diabetic Wound pH Sensor FYP Portfolio
-       EEE Final Year Project | GitHub Pages Ready
+       index.html — Smart Wound pH Sensor FYP Portfolio
+       Theme: Refined Academic (professional & interactive)
        ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FYP Portfolio: Smart Diabetic Wound Monitoring Patch — Hand-fabricated PANI pH sensor on flexible PCB. EEE Final Year Project." />
-  <meta name="keywords"    content="PANI, pH sensor, wound monitoring, flexible PCB, FPCB, ESP32, ADS1115, diabetic wound, biomedical sensor, FYP" />
-  <meta name="author"      content="EEE Undergraduate FYP Student" />
+  <meta name="description" content="FYP Portfolio: Smart Diabetic Wound Monitoring Patch — hand-fabricated flexible PANI pH sensor. EEE Final Year Project, Sri Lanka." />
+  <meta name="author" content="EEE Undergraduate FYP" />
+  <title>Smart Wound pH Sensor · FYP Portfolio</title>
 
-  <!-- Open Graph (for social sharing) -->
-  <meta property="og:title"       content="Smart Diabetic Wound pH Sensor — FYP Portfolio" />
-  <meta property="og:description" content="A hand-fabricated PANI-based flexible wound pH monitoring patch — complete FYP documentation portfolio." />
-  <meta property="og:type"        content="website" />
-
-  <title>Smart Wound Sensor | FYP Portfolio</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NAVIGATION
-     ═══════════════════════════════════════════════════════════ -->
+<!-- Scroll progress bar -->
+<div id="progress-bar"></div>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-brand">
-      <span class="brand-dot"></span>
-      Wound pH Sensor · FYP
-    </a>
+    <a href="#hero" class="nav-brand"><span class="brand-dot"></span>Wound pH Sensor · FYP</a>
     <ul class="nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#problem">Problem</a></li>
-      <li><a href="#progress">Progress</a></li>
+      <li><a href="#progress">Weekly Progress</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#sensor-tech">Sensor</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#datasheets">Datasheets</a></li>
-      <li><a href="#videos">References</a></li>
-      <li><a href="#testing">Testing</a></li>
-      <li><a href="#review">Review Guide</a></li>
-      <li class="nav-cta"><a href="#contact" class="btn btn-outline" style="padding:0.35rem 1rem;font-size:0.8rem">Contact</a></li>
+      <li><a href="#references">References</a></li>
+      <li class="nav-cta"><a href="#contact" class="btn btn-outline" style="padding:.4rem 1rem;font-size:.8rem">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-grid-overlay"></div>
+  <div class="hero-grid"></div>
   <div class="hero-content">
-    <div id="hero-content">
-      <!-- Rendered by script.js → renderHero() -->
-    </div>
-    <div class="hero-panel" id="hero-panel">
-      <!-- Rendered by script.js → renderHero() -->
-    </div>
+    <div id="hero-text"><!-- renderHero() --></div>
+    <div class="hero-panel" id="hero-panel"><!-- renderHero() --></div>
   </div>
-  <div class="scroll-indicator">
-    <span class="scroll-text">SCROLL</span>
-    <div class="scroll-arrow"></div>
-  </div>
+  <div class="scroll-indicator"><span class="t">SCROLL</span><div class="scroll-arrow"></div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PROJECT OVERVIEW / ABSTRACT
-     ═══════════════════════════════════════════════════════════ -->
-<section id="overview" class="section-even">
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<section id="overview">
   <div class="container">
     <span class="section-label">Project Abstract</span>
-    <h2 class="section-title">Project <span>Overview</span></h2>
-    <div class="section-divider"></div>
-    <div class="abstract-box" id="abstract-content">
-      <!-- Rendered by script.js → renderOverview() -->
-    </div>
-
-    <div class="grid-3" style="margin-top:3rem">
-      <div class="card card-teal reveal reveal-delay-1">
-        <div class="section-label">Sensing Principle</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">Potentiometric pH</h4>
-        <p style="font-size:0.9rem">PANI WE + Ag/AgCl RE cell voltage measured as V<sub>cell</sub> = K − 59 mV·pH. Direct Nernstian response, no enzyme needed.</p>
+    <h2 class="section-title">Project <span class="hl">Overview</span></h2>
+    <div class="divider"></div>
+    <div class="abstract-box" id="abstract-content"></div>
+    <div class="grid-3 overview-cards">
+      <div class="ov-card reveal">
+        <span class="section-label">Sensing Principle</span>
+        <h4>Potentiometric pH</h4>
+        <p>PANI working electrode + Ag/AgCl reference measured as V<sub>cell</sub> = K − 59 mV·pH. Direct Nernstian response, no enzyme required.</p>
       </div>
-      <div class="card card-amber reveal reveal-delay-2">
-        <div class="section-label">Fabrication Method</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">Hand-Fabricated FPCB</h4>
-        <p style="font-size:0.9rem">Screen-printing on PET transparency film. PANI synthesised via oxidative chemical polymerisation. Full protocol in fabrication guide.</p>
+      <div class="ov-card b reveal reveal-d1">
+        <span class="section-label">Fabrication</span>
+        <h4>Hand-Fabricated FPCB</h4>
+        <p>Screen-printing on PET film. PANI synthesised via oxidative chemical polymerisation in a university lab.</p>
       </div>
-      <div class="card card-purple reveal reveal-delay-3">
-        <div class="section-label">Target Application</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">Diabetic Wound Monitoring</h4>
-        <p style="font-size:0.9rem">Continuous pH, temperature, and moisture monitoring. BLE 5.0 wireless data to smartphone. Battery life target ≥6 months (CR2032).</p>
+      <div class="ov-card c reveal reveal-d2">
+        <span class="section-label">Application</span>
+        <h4>Diabetic Wound Monitoring</h4>
+        <p>Continuous pH, temperature & moisture monitoring with BLE wireless data and target ≥ 6-month battery life.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PROBLEM STATEMENT
-     ═══════════════════════════════════════════════════════════ -->
-<section id="problem" class="section-odd">
+<!-- ═══════════════ PROBLEM ═══════════════ -->
+<section id="problem" class="section-alt">
   <div class="container">
     <span class="section-label">Clinical Motivation</span>
-    <h2 class="section-title">The <span>Problem</span> We Are Solving</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Diabetic chronic wounds represent a global healthcare crisis that disproportionately affects patients in low-to-middle income countries where affordable continuous monitoring technology is unavailable.</p>
-    <div class="problem-grid" id="problem-cards">
-      <!-- Rendered by script.js → renderProblem() -->
-    </div>
-
-    <!-- Clinical Wound pH Reference Table -->
+    <h2 class="section-title">The <span class="hl">Problem</span> We Are Solving</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Chronic diabetic wounds are a global healthcare burden that disproportionately affects patients where affordable continuous monitoring is unavailable.</p>
+    <div class="problem-grid" id="problem-cards"></div>
     <div style="margin-top:3rem">
-      <h3 style="color:var(--white);margin-bottom:1rem">Clinical Wound pH Reference</h3>
-      <p style="color:var(--gray-mid);font-size:0.9rem;margin-bottom:1.5rem">The sensor must reliably distinguish pH 5.5 (healthy) from pH 8.5 (infected) — a 3-unit range. With PANI's 54–69 mV/pH response, this corresponds to a 162–207 mV signal swing.</p>
+      <h3 style="margin-bottom:.8rem">Clinical Wound pH Reference</h3>
+      <p style="color:var(--ink-soft);font-size:.93rem;margin-bottom:1.5rem;max-width:760px">The sensor must reliably distinguish pH 5.5 (healthy) from pH 8.5 (infected) — a 3-unit range. With PANI's 54–69 mV/pH response, this is a 162–207 mV signal swing, easily resolved by the ADS1115.</p>
       <div class="table-wrapper">
         <table>
-          <thead>
-            <tr><th>Wound State</th><th>pH Range</th><th>Clinical Interpretation</th></tr>
-          </thead>
-          <tbody id="wound-ph-table-body">
-            <!-- Rendered by script.js → renderWoundPhTable() -->
-          </tbody>
+          <thead><tr><th>Wound State</th><th>pH Range</th><th>Clinical Interpretation</th></tr></thead>
+          <tbody id="ph-table-body"></tbody>
         </table>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     RESEARCH GAP
-     ═══════════════════════════════════════════════════════════ -->
-<section id="research" class="section-even">
+<!-- ═══════════════ RESEARCH GAP ═══════════════ -->
+<section id="research">
   <div class="container">
     <span class="section-label">Literature Review</span>
-    <h2 class="section-title">Research <span>Gap</span> Identification</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Three key papers were systematically compared to identify the state-of-the-art limitations and establish where this FYP makes its contribution.</p>
-    <div class="paper-cards" id="paper-cards">
-      <!-- Rendered by script.js → renderResearchGap() -->
-    </div>
-    <div class="gap-box" id="research-gap-text">
-      <!-- Rendered by script.js → renderResearchGap() -->
-    </div>
+    <h2 class="section-title">Research <span class="hl">Gap</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Three key papers (gathered in Week 03) were compared to identify state-of-the-art limitations and locate this project's contribution.</p>
+    <div class="paper-cards" id="paper-cards"></div>
+    <div class="gap-box" id="gap-box"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PROPOSED SOLUTION
-     ═══════════════════════════════════════════════════════════ -->
-<section id="solution" class="section-odd">
+<!-- ═══════════════ SOLUTION ═══════════════ -->
+<section id="solution" class="section-alt">
   <div class="container">
     <span class="section-label">Proposed Solution</span>
-    <h2 class="section-title">The <span>Proposed System</span></h2>
-    <div class="section-divider"></div>
-    <div class="grid-2" style="align-items:start;gap:3rem">
+    <h2 class="section-title">The <span class="hl">Proposed System</span></h2>
+    <div class="divider"></div>
+    <div class="grid-2" style="gap:3rem;align-items:start">
       <div>
-        <p class="section-desc" style="margin-bottom:1.5rem">A coin-sized, hand-fabricated FPCB wound sensor patch combined with a 20 mm diameter electronics module — fully wireless, battery-powered, and reproducible in a Sri Lankan university laboratory.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem">
-          <!-- Features rendered from SOLUTION.features via a loop -->
-          <li class="reveal" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🧪</span><span style="color:var(--gray-light);font-size:0.92rem">PANI potentiometric pH electrode synthesised in-house (~54–60 mV/pH sensitivity target)</span></li>
-          <li class="reveal reveal-delay-1" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">⚡</span><span style="color:var(--gray-light);font-size:0.92rem">Ag/AgCl solid-state reference electrode screen-printed on PET/PI substrate</span></li>
-          <li class="reveal reveal-delay-2" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🌡️</span><span style="color:var(--gray-light);font-size:0.92rem">NTC 10kΩ bead thermistor for wound surface temperature (±0.5°C, range 20–45°C)</span></li>
-          <li class="reveal reveal-delay-3" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">💧</span><span style="color:var(--gray-light);font-size:0.92rem">Capacitive/impedance-based exudate moisture sensing (100 Hz – 100 kHz AC excitation)</span></li>
-          <li class="reveal reveal-delay-4" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🔌</span><span style="color:var(--gray-light);font-size:0.92rem">INA333 instrumentation amplifier — 100 dB CMRR, 25 µV offset, 3.3V single supply</span></li>
-          <li class="reveal" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">📊</span><span style="color:var(--gray-light);font-size:0.92rem">ADS1115 16-bit I²C ADC — 7.8 µV resolution at ±256 mV PGA range</span></li>
-          <li class="reveal reveal-delay-1" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">📡</span><span style="color:var(--gray-light);font-size:0.92rem">ESP32-S3 with BLE 5.0 + Wi-Fi — deep sleep 10 µA, 240 MHz dual-core</span></li>
-          <li class="reveal reveal-delay-2" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🔋</span><span style="color:var(--gray-light);font-size:0.92rem">CR2032 coin cell + XC6206 LDO (1 µA quiescent) — target ≥6 months battery life</span></li>
-        </ul>
+        <p class="section-desc" style="margin-bottom:1.5rem">A coin-sized, hand-fabricated FPCB wound patch with a 20 mm electronics module — fully wireless, battery-powered, and reproducible in a Sri Lankan university lab.</p>
+        <ul class="sol-list" id="sol-list"></ul>
       </div>
-      <div class="reveal" style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:2rem;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--amber))"></div>
-        <div class="section-label" style="margin-bottom:1rem">System Specification</div>
-        <table style="width:100%;font-size:0.85rem">
+      <div class="spec-card reveal">
+        <span class="section-label">System Specification</span>
+        <table>
           <tbody>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Range</td><td style="color:var(--white);text-align:right">pH 4.0 – 9.0</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Sensitivity</td><td style="color:var(--teal);text-align:right">≥ 50 mV/pH</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Resolution</td><td style="color:var(--teal);text-align:right">≤ 0.02 pH</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">ADC Resolution</td><td style="color:var(--white);text-align:right">16-bit (ADS1115)</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">CMRR</td><td style="color:var(--white);text-align:right">100 dB (INA333)</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Wireless</td><td style="color:var(--white);text-align:right">BLE 5.0 + Wi-Fi</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Sleep Current</td><td style="color:var(--white);text-align:right">&lt; 10 µA</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Battery Life</td><td style="color:var(--teal);text-align:right">≥ 6 months</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">PCB Diameter</td><td style="color:var(--white);text-align:right">20 mm (coin-size)</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Sensor Size</td><td style="color:var(--white);text-align:right">30 × 50 mm FPCB</td></tr>
-            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Budget</td><td style="color:var(--amber);text-align:right">≤ LKR 20,000</td></tr>
+            <tr><td class="k">pH Range</td><td class="v">pH 4.0 – 9.0</td></tr>
+            <tr><td class="k">pH Sensitivity</td><td class="v hi">≥ 50 mV/pH</td></tr>
+            <tr><td class="k">pH Resolution</td><td class="v hi">≤ 0.02 pH</td></tr>
+            <tr><td class="k">ADC</td><td class="v">16-bit (ADS1115)</td></tr>
+            <tr><td class="k">CMRR</td><td class="v">100 dB (INA333)</td></tr>
+            <tr><td class="k">Wireless</td><td class="v">BLE 5.0 + Wi-Fi</td></tr>
+            <tr><td class="k">Sleep Current</td><td class="v">&lt; 10 µA</td></tr>
+            <tr><td class="k">Battery Life</td><td class="v hi">≥ 6 months</td></tr>
+            <tr><td class="k">Module Size</td><td class="v">20 mm coin PCB</td></tr>
+            <tr><td class="k">Sensor Size</td><td class="v">30 × 50 mm FPCB</td></tr>
+            <tr><td class="k">Budget</td><td class="v hi">≤ LKR 20,000</td></tr>
           </tbody>
         </table>
       </div>
@@ -203,375 +143,215 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PROJECT OBJECTIVES
-     ═══════════════════════════════════════════════════════════ -->
-<section id="objectives" class="section-even">
+<!-- ═══════════════ OBJECTIVES ═══════════════ -->
+<section id="objectives">
   <div class="container">
     <span class="section-label">Project Objectives</span>
-    <h2 class="section-title">What This Project <span>Aims to Achieve</span></h2>
-    <div class="section-divider"></div>
-    <ul class="objectives-list" id="objectives-list">
-      <!-- Rendered by script.js → renderObjectives() -->
-    </ul>
+    <h2 class="section-title">What This Project <span class="hl">Aims to Achieve</span></h2>
+    <div class="divider"></div>
+    <ul class="objectives-list" id="objectives-list"></ul>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     WEEKLY PROGRESS TIMELINE
-     ═══════════════════════════════════════════════════════════ -->
-<section id="progress" class="section-odd">
+<!-- ═══════════════ WEEKLY PROGRESS ═══════════════ -->
+<section id="progress" class="section-alt">
   <div class="container">
-    <span class="section-label">Documentation Journey</span>
-    <h2 class="section-title">Weekly <span>Progress</span> Timeline</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Every week of the project is documented with goals, key findings, design decisions, rejected approaches, and evidence. Click "Read More" on each card to expand the full details.</p>
-    <div class="phase-filter" id="phase-filters">
-      <!-- Rendered by script.js → renderWeeklyProgress() -->
-    </div>
-    <div class="timeline" id="timeline">
-      <!-- Rendered by script.js → renderWeeklyProgress() -->
-    </div>
+    <span class="section-label">Documentation Journey · Weeks 01–05</span>
+    <h2 class="section-title">Weekly <span class="hl">Progress</span> Timeline</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Each week is documented from the actual working folders created that week (shown as the screenshot in each card). Click "Read More" to expand goals, findings, decisions and evidence. Weeks 06+ are not yet completed.</p>
+    <div class="phase-filter" id="phase-filters"></div>
+    <div class="timeline" id="timeline"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SYSTEM ARCHITECTURE
-     ═══════════════════════════════════════════════════════════ -->
-<section id="architecture" class="section-even">
+<!-- ═══════════════ ARCHITECTURE ═══════════════ -->
+<section id="architecture">
   <div class="container">
     <span class="section-label">Technical Design</span>
-    <h2 class="section-title">System <span>Architecture</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">The complete six-layer signal chain from wound contact to wireless data output. Each layer was selected through systematic comparison documented in the architecture workbook.</p>
-    <div class="arch-diagram" id="arch-diagram">
-      <!-- Rendered by script.js → renderArchitecture() -->
-    </div>
+    <h2 class="section-title">System <span class="hl">Architecture</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">The six-layer signal chain from wound contact to wireless output — selected via the Week 04 coin-module comparison.</p>
+    <div class="arch-diagram" id="arch-diagram"></div>
     <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card reveal">
-        <div class="section-label">Signal Chain</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">Analog Front-End</h4>
-        <p style="font-size:0.88rem">INA333 (CMRR 100 dB) → Low-pass filter (100 Hz cutoff) → ADS1115 16-bit ADC (7.8 µV/LSB at ±256 mV range)</p>
-      </div>
-      <div class="card reveal reveal-delay-1">
-        <div class="section-label">Firmware Logic</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">ESP32-S3 Processing</h4>
-        <p style="font-size:0.88rem">Read ADS1115 via I²C → Apply 3-point pH calibration → Nernst temperature correction → Pack BLE GATT notification → Deep sleep</p>
-      </div>
-      <div class="card reveal reveal-delay-2">
-        <div class="section-label">Power Strategy</div>
-        <h4 style="color:var(--white);margin-bottom:0.5rem">Ultra-Low Power</h4>
-        <p style="font-size:0.88rem">CR2032 + XC6206 (1 µA Iq). ESP32-S3 deep sleep 10 µA between readings. BLE advertisement only at measurement interval (default: 1 min)</p>
-      </div>
+      <div class="card reveal"><span class="section-label">Signal Chain</span><h4>Analog Front-End</h4><p style="font-size:.88rem">INA333 (100 dB CMRR) → 100 Hz low-pass filter → ADS1115 16-bit ADC (7.8 µV/LSB).</p></div>
+      <div class="card reveal reveal-d1"><span class="section-label">Firmware</span><h4>ESP32-S3 Logic</h4><p style="font-size:.88rem">Read ADS1115 (I²C) → 3-point pH calibration → Nernst temperature correction → BLE notify → deep sleep.</p></div>
+      <div class="card reveal reveal-d2"><span class="section-label">Power</span><h4>Ultra-Low Power</h4><p style="font-size:.88rem">CR2032 + XC6206 (1 µA Iq). Deep sleep 10 µA; BLE advertises only at the measurement interval.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SENSOR TECHNOLOGY
-     ═══════════════════════════════════════════════════════════ -->
-<section id="sensor-tech" class="section-odd">
+<!-- ═══════════════ SENSOR TECH ═══════════════ -->
+<section id="sensor-tech" class="section-alt">
   <div class="container">
     <span class="section-label">Transducer Design</span>
-    <h2 class="section-title">Sensor <span>Technology</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">The FPCB wound patch integrates four sensing modalities on a single 30×50 mm PET substrate, sharing the same electrode pair for pH and impedance moisture sensing.</p>
-    <div class="sensor-grid" id="sensor-grid">
-      <!-- Rendered by script.js → renderSensorTech() -->
-    </div>
-    <div style="margin-top:2.5rem;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--card-radius);padding:2rem;border-left:3px solid var(--amber)">
-      <div class="section-label">PANI Chemistry</div>
-      <h4 style="color:var(--white);margin-bottom:0.75rem">Why Polyaniline (PANI)?</h4>
-      <p style="font-size:0.92rem;color:var(--gray-light);line-height:1.8">
-        PANI is the <strong style="color:var(--white)">only intrinsically pH-responsive conductive polymer</strong>. Its Emeraldine Salt form undergoes reversible acid-base doping: <code>PANI-ES + H⁺ ⇌ PANI-ES·H⁺</code>, producing a Nernstian potential change of ~59 mV per pH unit. Unlike PEDOT:PSS or PPy, PANI requires no additional functionalisation for pH sensing. Aniline monomer costs only LKR 250–400 locally (Glorchem LK, Colombo), making it uniquely suited for this low-cost FYP context.
-      </p>
+    <h2 class="section-title">Sensor <span class="hl">Technology</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Four sensing modalities on one 30 × 50 mm PET patch, sharing the same electrode pair for pH and impedance moisture sensing.</p>
+    <div class="sensor-grid" id="sensor-grid"></div>
+    <div class="pani-box reveal">
+      <span class="section-label">PANI Chemistry</span>
+      <h4 style="margin-bottom:.7rem">Why Polyaniline (PANI)?</h4>
+      <p style="font-size:.93rem;color:var(--ink-soft);line-height:1.8">PANI is the <strong>only intrinsically pH-responsive conductive polymer</strong>. Its Emeraldine Salt form undergoes reversible acid-base doping (<code>PANI-ES + H⁺ ⇌ PANI-ES·H⁺</code>), producing a Nernstian potential of ~59 mV per pH unit — no extra functionalisation needed. Aniline monomer costs only LKR 250–400 locally (Glorchem LK, Colombo), making it ideal for this low-cost FYP.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     RESOURCE LIBRARY
-     ═══════════════════════════════════════════════════════════ -->
-<section id="resources" class="section-even">
+<!-- ═══════════════ RESOURCES ═══════════════ -->
+<section id="resources">
   <div class="container-wide">
     <span class="section-label">Evidence Library</span>
-    <h2 class="section-title">Resource <span>Library</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">All project files, research papers, and reference documents catalogued and filterable. Every file is linked to its contributing week and project section.</p>
-    <div class="resource-filters" id="resource-filters">
-      <!-- Rendered by script.js → renderResources() -->
-    </div>
-    <div class="resource-grid" id="resource-grid">
-      <!-- Rendered by script.js → renderResources() -->
-    </div>
+    <h2 class="section-title">Resource <span class="hl">Library</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">All project files catalogued and filterable. Each is linked to its contributing week.</p>
+    <div class="res-filters" id="res-filters"></div>
+    <div class="res-grid" id="res-grid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FILE ANALYSIS TABLE
-     ═══════════════════════════════════════════════════════════ -->
-<section id="file-analysis" class="section-odd">
+<!-- ═══════════════ FILE CATEGORIES ═══════════════ -->
+<section id="file-categories-sec" class="section-alt">
+  <div class="container">
+    <span class="section-label">Resource Classification</span>
+    <h2 class="section-title">File <span class="hl">Categories</span> &amp; Their Role</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Every uploaded resource, classified into eight categories with its role in the project.</p>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ FILE ANALYSIS TABLE ═══════════════ -->
+<section id="file-analysis">
   <div class="container-wide">
     <span class="section-label">Complete File Index</span>
-    <h2 class="section-title">File <span>Analysis</span> Table</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Every uploaded project file is classified below with its type, contributing week, content summary, importance to the project, and the website section where it is used.</p>
+    <h2 class="section-title">File <span class="hl">Analysis</span> Table</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Every uploaded file with its type, week, content, importance, and the section where it is used.</p>
     <div class="table-wrapper">
       <table>
-        <thead>
-          <tr>
-            <th>File Name</th>
-            <th>Week</th>
-            <th>File Type</th>
-            <th>Main Content</th>
-            <th>Importance to Project</th>
-            <th>Website Section</th>
-          </tr>
-        </thead>
-        <tbody id="file-table-body">
-          <!-- Rendered by script.js → renderFileAnalysis() -->
-        </tbody>
+        <thead><tr><th>File Name</th><th>Week</th><th>Type</th><th>Main Content</th><th>Importance</th><th>Section</th></tr></thead>
+        <tbody id="file-table-body"></tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FILE CATEGORY CLASSIFICATION
-     ═══════════════════════════════════════════════════════════ -->
-<section id="file-categories-sec" class="section-even">
-  <div class="container">
-    <span class="section-label">Resource Classification</span>
-    <h2 class="section-title">File <span>Categories</span> &amp; Their Role</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Every uploaded resource is classified into one of eight categories. Each category explains how that class of file supports the project's technical and academic objectives.</p>
-    <div class="grid-4" id="file-categories" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
-      <!-- Rendered by script.js → renderFileCategories() -->
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     DATASHEETS
-     ═══════════════════════════════════════════════════════════ -->
-<section id="datasheets" class="section-odd">
+<!-- ═══════════════ DATASHEETS ═══════════════ -->
+<section id="datasheets" class="section-alt">
   <div class="container-wide">
     <span class="section-label">Component References</span>
-    <h2 class="section-title">Component <span>Datasheets</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Datasheets for every component selected through the architecture comparison. Each links to the manufacturer datasheet — place the PDFs in <code>documents/datasheets/</code> to enable direct viewing.</p>
-    <div class="resource-grid" id="datasheets-grid">
-      <!-- Rendered by script.js → renderDatasheets() -->
-    </div>
+    <h2 class="section-title">Component <span class="hl">Datasheets</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Datasheets for every selected component. Place the PDFs in <code>documents/datasheets/</code> to enable direct viewing.</p>
+    <div class="res-grid" id="datasheets-grid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     DOCUMENT LIBRARY (PDFs / Word)
-     ═══════════════════════════════════════════════════════════ -->
-<section id="documents" class="section-even">
+<!-- ═══════════════ DOCUMENTS ═══════════════ -->
+<section id="documents">
   <div class="container-wide">
     <span class="section-label">Word / PDF Documents</span>
-    <h2 class="section-title">Document <span>Library</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Full technical reference documents, literature reviews, methodology documents, and requirement specifications produced during the project.</p>
-    <div class="resource-grid" id="documents-grid">
-      <!-- Rendered by script.js → renderDocuments() -->
-    </div>
+    <h2 class="section-title">Document <span class="hl">Library</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Technical references, literature reviews, methodology and requirement documents produced during the project.</p>
+    <div class="res-grid" id="documents-grid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     VIDEO & PUBLICATION REFERENCES
-     ═══════════════════════════════════════════════════════════ -->
-<section id="videos" class="section-odd">
+<!-- ═══════════════ VIDEO & REFERENCES ═══════════════ -->
+<section id="references" class="section-alt">
   <div class="container-wide">
-    <span class="section-label">Reference Videos &amp; Publications</span>
-    <h2 class="section-title">Video &amp; <span>External References</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Key videos, award pages, and publications that informed the project — including SmartHEAL, the closest real-world product concept (2022 James Dyson Award winner).</p>
-    <div class="resource-grid" id="videos-grid">
-      <!-- Rendered by script.js → renderVideos() -->
-    </div>
-    <h3 style="color:var(--white);margin:2.5rem 0 1.5rem">Foundational Publications</h3>
-    <div class="resource-grid" id="publications-grid">
-      <!-- Rendered by script.js → renderVideos() -->
-    </div>
+    <span class="section-label">Video &amp; External References</span>
+    <h2 class="section-title">Reference <span class="hl">Videos</span> &amp; Publications</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Key references gathered in Weeks 02–03 — including SmartHEAL, the closest real-world product (2022 James Dyson Award winner).</p>
+    <div class="res-grid" id="videos-grid"></div>
+    <h3 style="margin:2.5rem 0 1.5rem">Foundational Publications</h3>
+    <div class="res-grid" id="publications-grid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     COMPETITIVE / SIMILAR PRODUCT ANALYSIS
-     ═══════════════════════════════════════════════════════════ -->
-<section id="competitive" class="section-even">
+<!-- ═══════════════ COMPETITIVE ═══════════════ -->
+<section id="competitive">
   <div class="container">
     <span class="section-label">Market Positioning</span>
-    <h2 class="section-title">Similar <span>Products</span> &amp; Differentiation</h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">How this FYP positions itself against existing research prototypes and commercial products — establishing both the precedent for the concept and this project's unique contribution.</p>
-    <div class="grid-3" id="similar-products">
-      <!-- Rendered by script.js → renderSimilarProducts() -->
-    </div>
+    <h2 class="section-title">Similar <span class="hl">Products</span> &amp; Differentiation</h2>
+    <div class="divider"></div>
+    <p class="section-desc">How this FYP positions against existing prototypes and commercial products.</p>
+    <div class="grid-3" id="similar-products"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SUPERVISOR MEETING NOTES
-     ═══════════════════════════════════════════════════════════ -->
-<section id="supervisor" class="section-odd">
-  <div class="container">
-    <span class="section-label">Supervision Record</span>
-    <h2 class="section-title">Supervisor <span>Meeting Notes</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">A record of supervisor feedback and how it shaped the project. <em style="color:var(--amber)">Edit the SUPERVISOR_NOTES array in data.js to add real meeting dates and notes.</em></p>
-    <div class="grid-3" id="supervisor-notes" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))">
-      <!-- Rendered by script.js → renderSupervisorNotes() -->
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     TESTING & VALIDATION PLAN
-     ═══════════════════════════════════════════════════════════ -->
-<section id="testing" class="section-even">
+<!-- ═══════════════ TESTING ═══════════════ -->
+<section id="testing" class="section-alt">
   <div class="container">
     <span class="section-label">Validation Strategy</span>
-    <h2 class="section-title">Testing &amp; Validation <span>Plan</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Six validation phases are defined, progressing from material-level synthesis quality control through to full system simulated wound environment testing.</p>
-    <div class="testing-grid" id="testing-grid">
-      <!-- Rendered by script.js → renderTesting() -->
-    </div>
+    <h2 class="section-title">Testing &amp; Validation <span class="hl">Plan</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Six validation phases, from PANI synthesis QC to full simulated wound-environment testing.</p>
+    <div class="test-grid" id="testing-grid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     BUDGET OVERVIEW
-     ═══════════════════════════════════════════════════════════ -->
-<section id="budget" class="section-odd">
+<!-- ═══════════════ BUDGET ═══════════════ -->
+<section id="budget">
   <div class="container">
     <span class="section-label">Economic Feasibility</span>
-    <h2 class="section-title">Project <span>Budget</span></h2>
-    <div class="section-divider"></div>
-    <div class="budget-header" id="budget-header">
-      <!-- Rendered by script.js → renderBudget() -->
-    </div>
-    <div class="budget-rows" id="budget-rows">
-      <!-- Rendered by script.js → renderBudget() -->
-    </div>
-    <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--teal-glow);border:1px solid rgba(0,212,200,0.25);border-radius:8px">
-      <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal)">
-        💡 Key insight: Sri Lanka local sourcing for synthesis chemicals is 5–12× cheaper than international suppliers (Sigma-Aldrich). 
-        Electronics components (LCSC/AliExpress) are 2–3× cheaper than local electronics shops for imported ICs. 
-        Full budget comparison documented in Budget_Estimation_FPCB_Wound_Sensor_FYP.xlsx.
-      </p>
-    </div>
+    <h2 class="section-title">Project <span class="hl">Budget</span></h2>
+    <div class="divider"></div>
+    <div class="budget-header" id="budget-header"></div>
+    <div class="budget-rows" id="budget-rows"></div>
+    <div class="budget-note-box">💡 Sri Lanka local sourcing for synthesis chemicals is 5–12× cheaper than international suppliers. Full comparison in the Week 05 budget workbook.</div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FUTURE WORK
-     ═══════════════════════════════════════════════════════════ -->
-<section id="future" class="section-even">
+<!-- ═══════════════ FUTURE ═══════════════ -->
+<section id="future" class="section-alt">
   <div class="container">
     <span class="section-label">Research Directions</span>
-    <h2 class="section-title">Future <span>Work</span></h2>
-    <div class="section-divider"></div>
-    <p class="section-desc">Eight directions for post-FYP development, demonstrating the depth of research understanding and readiness for graduate-level study.</p>
-    <div class="future-list" id="future-list">
-      <!-- Rendered by script.js → renderFutureWork() -->
-    </div>
+    <h2 class="section-title">Future <span class="hl">Work</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Directions for the remaining weeks and beyond, demonstrating readiness for graduate-level study.</p>
+    <div class="future-list" id="future-list"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SUPERVISOR REVIEW GUIDE
-     ═══════════════════════════════════════════════════════════ -->
-<section id="review" class="section-odd" style="background:var(--navy-deepest)">
-  <div class="container">
-    <span class="section-label" style="color:var(--amber)">For Supervisors &amp; Examiners</span>
-    <h2 class="section-title">How to <span>Review</span> This Portfolio</h2>
-    <div class="section-divider" style="background:linear-gradient(90deg,var(--amber),transparent)"></div>
-    <p class="section-desc">This guide is written specifically for project supervisors, examiners, and higher-studies reviewers to navigate the portfolio efficiently and locate evidence of project quality.</p>
-    <div class="review-steps" id="review-steps">
-      <!-- Rendered by script.js → renderReviewGuide() -->
-    </div>
-    <div style="margin-top:2.5rem;background:var(--navy-card);border:2px solid var(--amber);border-radius:var(--card-radius);padding:2rem">
-      <div class="section-label" style="color:var(--amber)">Evaluation Criteria Evidence</div>
-      <div class="grid-2" style="gap:1.5rem;margin-top:0">
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.5rem">Technical Quality</h4>
-          <p style="font-size:0.88rem;color:var(--gray-light)">Every component selection is backed by a multi-parameter comparison matrix. Architecture decisions cite specific data (e.g., ADS1115 resolution = 7.8 µV vs ESP32 internal = 1.2 mV — 150× better).</p>
-        </div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.5rem">Research Foundation</h4>
-          <p style="font-size:0.88rem;color:var(--gray-light)">Three papers compared systematically. Research gap clearly identified with academic language. Performance benchmarks set against published results (Shirzaei Sani: 59.7 mV/pH).</p>
-        </div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.5rem">Documentation Depth</h4>
-          <p style="font-size:0.88rem;color:var(--gray-light)">12 Excel workbooks, 7 documented weeks, complete fabrication protocol, QC checklists, safety guide, and FX-linked budget — all fully traceable.</p>
-        </div>
-        <div>
-          <h4 style="color:var(--white);margin-bottom:0.5rem">Economic Feasibility</h4>
-          <p style="font-size:0.88rem;color:var(--gray-light)">SL vs international market analysis confirms entire project is executable for &lt; LKR 20,000. Local synthesis chemicals 5–12× cheaper. Electronics BOM ~USD 12.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     RESEARCHER PROFILE
-     ═══════════════════════════════════════════════════════════ -->
-<section id="profile" class="section-even">
+<!-- ═══════════════ PROFILE ═══════════════ -->
+<section id="profile">
   <div class="container">
     <span class="section-label">About the Researcher</span>
-    <h2 class="section-title">Research <span>Profile</span></h2>
-    <div class="section-divider"></div>
+    <h2 class="section-title">Research <span class="hl">Profile</span></h2>
+    <div class="divider"></div>
     <div class="profile-grid">
       <div>
-        <p class="section-desc" style="margin-bottom:1.5rem">This Final Year Project positions the researcher at the intersection of three engineering fields that are increasingly critical to global healthcare technology development.</p>
-        <div class="profile-qualities" id="profile-qualities">
-          <!-- Rendered by script.js → renderProfile() -->
-        </div>
+        <p class="section-desc" style="margin-bottom:1.5rem">This FYP sits at the intersection of electrochemical sensing, analog instrumentation, and embedded wireless systems — a multi-disciplinary profile valued in biomedical engineering research.</p>
+        <div class="profile-qualities" id="profile-qualities"></div>
       </div>
-      <div class="profile-summary" id="profile-summary">
-        <!-- Rendered by script.js → renderProfile() -->
-      </div>
+      <div class="profile-summary" id="profile-summary"></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     CONTACT
-     ═══════════════════════════════════════════════════════════ -->
-<section id="contact" class="section-odd" style="background:var(--navy-deepest);padding:5rem 2rem">
-  <div class="container" id="contact-inner">
-    <!-- Rendered by script.js → renderContact() -->
-  </div>
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" class="section-deep">
+  <div class="container contact-inner" id="contact-inner"></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="footer-text">
     <p>Smart Diabetic Wound pH Sensor · Final Year Project Portfolio</p>
     <p>EEE Undergraduate · Sri Lanka · 2025–2026</p>
-    <p style="margin-top:0.5rem">
-      Built with HTML / CSS / JS · 
-      <a href="https://pages.github.com" target="_blank">Hosted on GitHub Pages</a> · 
-      Designed for supervisor, examiner &amp; higher-studies review
-    </p>
+    <p style="margin-top:.5rem">Built with HTML / CSS / JS · <a href="https://pages.github.com" target="_blank">Hosted on GitHub Pages</a></p>
   </div>
 </footer>
 
-<!-- ── BACK TO TOP ── -->
+<!-- Lightbox for week images -->
+<div id="lightbox"><span class="lb-close">✕</span><img id="lightbox-img" src="" alt="" /></div>
+
 <button id="back-to-top" aria-label="Back to top">↑</button>
 
-<!-- ── SCRIPTS — load data.js first, then script.js ── -->
 <script src="data.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>

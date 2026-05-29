@@ -1,22 +1,16 @@
 # Smart Diabetic Wound Monitoring Patch Website
 
-This ZIP is the corrected full website package. Open `index.html` in a browser. Keep `index.html`, `style.css`, `script.js`, and `data.js` together in the same folder.
+Final updated version based on the requested changes.
 
-## Corrected requirements included
-- Contact email corrected to: e21430@eng.pdn.ac.lk
+## Included updates
+- Week images removed from the website and from the ZIP package.
+- Week 01–05 include short descriptions and clickable Google Drive resource links.
+- Week 06–14 are added as Coming soon.
+- High-contrast dark biomedical color theme for clear visibility.
 - Department Supervisor: Dr. Ruwan Ranaweera, University of Peradeniya.
-- Medical Faculty Supervisor: Dr. Manjula Peiris, Faculty of Medicine, University of Peradeniya.
-- Temperature sensor changed to TMP117 throughout the website.
-- Week images are removed; weekly evidence is linked through Google Drive resource folders only.
-- Week 01–05 include short descriptions and clickable Drive links.
-- Week 06–14 are included as Coming soon placeholders.
-- Papers and datasheets Drive link added: https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link
-- High-contrast dark blue/teal/yellow theme added for clear visibility.
-- Limitation cards and final contact page colors improved for readability.
+- Medical Faculty Supervisor: Dr. Manjula Peiris, University of Peradeniya.
+- Temperature sensor changed from NTC thermistor to TMP117.
+- Datasheet Drive folder link added: https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link
 
-## Weekly Drive resource links
-- Week 01: https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link
-- Week 02: https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link
-- Week 03: https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link
-- Week 04: https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link
-- Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link
+## Files to open
+Open `index.html` in a browser. Keep `index.html`, `style.css`, `script.js`, and `data.js` in the same folder.

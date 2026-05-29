@@ -275,7 +275,7 @@ tbody tr:hover td { background: var(--surface-2); }
 .paper-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .paper-citation { font-family: var(--font-mono); font-size:.74rem; color: var(--amber); border-bottom:1px solid var(--border); padding-bottom:.55rem; margin-bottom:.85rem; }
 .paper-finding { font-size:.9rem; color: var(--ink-soft); margin-bottom:.7rem; }
-.paper-limit { font-size:.85rem; color: #FFE4E9; background: linear-gradient(135deg, rgba(251,113,133,0.22), rgba(124,45,18,0.28)); border:1px solid rgba(251,113,133,0.48); padding:.65rem .8rem; border-radius:10px; line-height:1.55; }
+.paper-limit { font-size:.85rem; color:#FFF7ED; background:linear-gradient(135deg, rgba(127,29,29,.82), rgba(154,52,18,.78)); border:1px solid rgba(253,186,116,.72); padding:.7rem .85rem; border-radius:10px; line-height:1.6; box-shadow:0 8px 24px rgba(0,0,0,.22); }
 .paper-relevance { font-size:.83rem; color: #B6FFE9; margin-top:.7rem; }
 .gap-box { background: linear-gradient(135deg, var(--accent-tint), var(--primary-tint)); border:1px solid #CFE6E4; border-radius: var(--radius); padding: 2rem; }
 .gap-label { font-family: var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color: var(--accent-deep); margin-bottom:.7rem; display:block; }
@@ -499,3 +499,9 @@ footer { background: var(--primary-deep); color: rgba(255,255,255,0.7); padding:
 
 /* Added for final update: hide all former week image containers if any remain */
 .tl-figure, .tl-figcap, .tl-figure img { display:none !important; }
+
+.paper-limit strong { color:#FFFFFF; }
+
+#contact p { color:#E8F9FF; }
+#contact .section-title { color:#FFFFFF; }
+#contact .hl { color:#FACC15; }

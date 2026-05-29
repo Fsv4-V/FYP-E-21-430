@@ -381,10 +381,10 @@ function renderContact() {
   $("#contact-inner").innerHTML = `
     <span class="section-label" style="justify-content:center">Get in Touch</span>
     <h2 class="section-title" style="margin-bottom:1rem">Contact &amp; <span class="hl">Project Links</span></h2>
-    <p style="max-width:520px;margin:0 auto 1rem">Questions about the design, fabrication, papers, or datasheets? Reach out using the university email or open the shared Drive folder.</p>
+    <p style="max-width:520px;margin:0 auto 1rem">Questions about the design, fabrication, weekly resources, papers, or datasheets? Reach out using the university email or open the shared Drive folder.</p>
     <div class="contact-links">
       <a href="mailto:${PROJECT.contactEmail}" class="btn btn-accent">✉ ${PROJECT.contactEmail}</a>
-      <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">📄 Papers & Datasheets</a>
+      <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">📄 Papers & Datasheets Drive</a>
     </div>
     <p style="margin-top:1.6rem;font-family:var(--font-mono);font-size:.76rem;color:rgba(232,249,255,0.86)">${PROJECT.supervisor}</p>`;
 }

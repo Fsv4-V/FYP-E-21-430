@@ -110,9 +110,8 @@ function renderObjectives() {
   OBJECTIVES.forEach(o => { const li = el("li"); li.innerHTML = `<span class="ot">${o}</span>`; ul.appendChild(li); });
 }
 
-/* ---------- TIMELINE (weekly resources linked through Drive) ---------- */
+/* ---------- TIMELINE (no week images, Drive resources only) ---------- */
 function renderTimeline() {
-  // phase filters
   const phases = ["All", ...new Set(WEEKS.map(w => w.phase))];
   const pf = $("#phase-filters");
   phases.forEach((ph,i) => {
@@ -129,32 +128,28 @@ function renderTimeline() {
 
   const tl = $("#timeline");
   WEEKS.forEach(w => {
-    const item = el("div", "tl-item");
+    const item = el("div", "tl-item" + (w.status === "Coming soon" ? " coming-soon" : ""));
     item.dataset.phase = w.phase;
     const findings = w.keyFindings.map(f => `<li>${f}</li>`).join("");
     const folders = w.folders.map(f => `<span class="folder-chip">${f}</span>`).join("");
-    const isComingSoon = !w.driveLink;
-    const driveBtn = w.driveLink ? `<a class="tl-resource-link" href="${w.driveLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>` : `<span class="tl-coming-soon">Coming soon</span>`;
+    const driveButton = w.resourceLink && w.resourceLink !== "#"
+      ? `<a class="week-drive-btn" href="${w.resourceLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>`
+      : `<span class="week-drive-btn disabled">Resources coming soon</span>`;
     item.innerHTML = `
       <div class="tl-dot"></div>
       <div class="tl-card">
         <div class="tl-head">
           <span class="tl-badge">${w.label}</span>
           <span class="tl-phase">${w.phase}</span>
-          <span class="tl-date">${w.dates}</span>
+          <span class="tl-date">${w.status}</span>
         </div>
         <div class="tl-body">
-          <h3 class="tl-title">${w.title}</h3>
-          <p class="tl-summary">${w.summary}</p>
-          <div class="tl-folders">${folders}</div>
-          <div class="tl-resource-box">
-            <div>
-              <div class="detail-label">🔗 Resource Folder</div>
-              <p class="resource-note">${isComingSoon ? "This week is planned and will be updated after the work is completed." : "Images are not embedded in this website. The collected files for this week are available through the linked Google Drive folder."}</p>
-            </div>
-            ${driveBtn}
+          <div class="tl-text-only">
+            <h3 class="tl-title">${w.title}</h3>
+            <p class="tl-summary">${w.summary}</p>
+            <div class="tl-folders">${folders}</div>
+            <div class="week-actions">${driveButton}<button class="tl-expand">+ Read full week breakdown</button></div>
           </div>
-          <button class="tl-expand" style="margin-top:1rem">+ Read full week breakdown</button>
           <div class="tl-details">
             <div class="detail-grid">
               <div class="detail-block"><div class="detail-label">🎯 Goals</div><div class="detail-text">${w.goals}</div></div>
@@ -165,7 +160,7 @@ function renderTimeline() {
               <div class="detail-block"><div class="detail-label">⛔ Rejected / Set Aside</div><div class="detail-text warn">${w.rejected}</div></div>
               <div class="detail-block"><div class="detail-label">➡️ Led Into Next Week</div><div class="detail-text next">${w.nextWeek}</div></div>
             </div>
-            <div class="detail-block" style="margin-top:1rem"><div class="detail-label">📎 Evidence (Folders &amp; Files)</div><div class="detail-text" style="font-family:var(--font-mono);font-size:.8rem">${w.evidence}</div>${driveBtn}</div>
+            <div class="detail-block" style="margin-top:1rem"><div class="detail-label">📎 Evidence / Resource Link</div><div class="detail-text" style="font-family:var(--font-mono);font-size:.8rem">${w.evidence}</div></div>
           </div>
         </div>
       </div>`;
@@ -200,7 +195,7 @@ function renderSensorTech() {
   const data = [
     { icon:"🧪", name:"PANI pH Electrode", spec:"54–69 mV/pH", desc:"Polyaniline (Emeraldine Salt) working electrode. Reversible acid-base doping gives a near-Nernstian potentiometric response to wound pH." },
     { icon:"⚡", name:"Ag/AgCl Reference", spec:"Stable RE", desc:"Screen-printed solid-state reference electrode providing a stable potential against which the PANI electrode is measured." },
-    { icon:"🌡️", name:"TMP117 Temperature Sensor", spec:"High accuracy digital", desc:"Digital temperature sensor for wound surface monitoring and pH temperature compensation. It replaces the earlier thermistor option." },
+    { icon:"🌡️", name:"TMP117", spec:"Digital I²C temperature sensor", desc:"High-accuracy digital temperature sensor for wound surface temperature monitoring and pH temperature compensation." },
     { icon:"💧", name:"Impedance Moisture", spec:"AC excitation", desc:"Exudate moisture level inferred from AC impedance across the shared electrode pair, driven by the MCP4725 DAC." }
   ];
   const wrap = $("#sensor-grid");
@@ -240,7 +235,7 @@ function renderResources() {
       <div class="res-sub">${sub}${r.week ? " · Week 0"+r.week : ""}</div>
       <p class="res-desc">${body}</p>
       <div class="res-tags">${tags}</div>
-      ${r.link && r.link !== "#" ? `<a class="res-link" href="${r.link}" target="_blank" rel="noopener">Open Week 0${r.week || ""} resources →</a>` : ""}`;
+      ${r.link && r.link !== "#" ? `<a class="res-link" href="${r.link}">Open file →</a>` : ""}`;
     grid.appendChild(c);
   });
 }
@@ -391,10 +386,7 @@ function renderContact() {
       <a href="mailto:${PROJECT.contactEmail}" class="btn btn-accent">✉ ${PROJECT.contactEmail}</a>
       <a href="${PROJECT.githubRepo}" target="_blank" rel="noopener" class="btn btn-outline">⌥ GitHub Repository</a>
     </div>
-    <div class="supervisor-box">
-      <div><strong>Department Supervisor</strong><span>${PROJECT.departmentSupervisor}</span></div>
-      <div><strong>Medical Faculty Supervisor</strong><span>${PROJECT.medicalSupervisor}</span></div>
-    </div>`;
+    <p style="margin-top:1.6rem;font-family:var(--font-mono);font-size:.76rem;color:rgba(255,255,255,0.6)">${PROJECT.supervisor}</p>`;
 }
 
 /* ---------- LIGHTBOX ---------- */

@@ -2,24 +2,21 @@
 //  data.js  –  FYP Portfolio: Smart Diabetic Wound pH Sensor
 //  Edit this file to update all website content easily.
 //  Weekly content below is reconstructed from the actual
-//  Week 01–05 working folders are linked through Google Drive resource folders.
+//  Week 01–05 working folders are linked through Google Drive resources.
 // ============================================================
 
 // ── PROJECT IDENTITY ────────────────────────────────────────
 const PROJECT = {
   title: "Smart Diabetic Wound Monitoring Patch",
-  subtitle: "A Flexible PANI pH, Moisture and TMP117 Temperature Monitoring Patch for Chronic Wound Assessment",
+  subtitle: "A Hand-Fabricated Flexible PANI pH Sensor for Real-Time Chronic Wound Assessment",
   student: "Final Year Project Portfolio",
-  degree: "B.Sc. in Electrical & Electronic Engineering",
+  degree: "Department of Electrical and Electronic Engineering",
   university: "University of Peradeniya, Sri Lanka",
   year: "2025 – 2026",
-  departmentSupervisor: "Dr. Ruwan Ranaweera — Department Supervisor, University of Peradeniya",
-  medicalSupervisor: "Dr. Manjula Peiris — Medical Faculty Supervisor, University of Peradeniya",
   supervisor: "Department Supervisor: Dr. Ruwan Ranaweera · Medical Faculty Supervisor: Dr. Manjula Peiris · University of Peradeniya",
-  tagline: "Bridging biomedical sensing, flexible electronics and low-cost fabrication for diabetic wound care.",
+  tagline: "Bridging biomedical sensing, flexible electronics, and low-cost embedded monitoring for diabetic wound care.",
   githubRepo: "#",
   contactEmail: "kkgtharushigimhani@gmail.com",
-  datasheetDrive: "https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link"
 };
 
 // ── ABSTRACT ─────────────────────────────────────────────────
@@ -82,253 +79,321 @@ const OBJECTIVES = [
   "Demonstrate the complete prototype within a budget of roughly LKR 15,000–20,000 using locally-sourced materials where possible."
 ];
 
-// ── WEEKLY PROGRESS (5 WEEKS — from actual working folders) ──
-// `folders` lists the actual sub-folders created that week.
-// `driveLink` stores the accessible resource folder for that week.
+// ── WEEKLY PROGRESS: WEEKS 01–05 + WEEKS 06–14 COMING SOON ──
 const WEEKS = [
   {
-    id: 1,
-    label: "Week 01",
-    dates: "5 May",
-    phase: "Problem Definition",
-    title: "Problem Study, Wound pH Variation and Sensor Direction",
-    driveLink: "https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link",
-    folders: ["PH VARIATIONS", "SENSOR COMPARISON", "SMART WOUND DRESSING"],
-    summary: "The first week was used to understand the real clinical problem and decide which wound parameter should be monitored. The work focused on pH variation in wounds, comparison of different pH sensor types, and early study of smart wound dressing systems.",
-    goals: "Identify the main biomedical problem, understand the importance of wound pH, compare possible sensing approaches, and define the initial smart dressing concept.",
-    keyFindings: [
-      "Healthy wounds usually remain closer to acidic conditions, while infected or delayed-healing wounds tend to shift toward alkaline pH.",
-      "pH was selected as a strong early indication parameter because it can change before visible wound deterioration is obvious.",
-      "The smart wound dressing concept was selected instead of a separate handheld measurement method."
+    "id": 1,
+    "label": "Week 01",
+    "dates": "May 2026",
+    "phase": "Problem Definition",
+    "title": "Problem Definition and pH Background",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link",
+    "folders": [
+      "PH VARIATIONS",
+      "SENSOR COMPARISON",
+      "SMART WOUND DRESSING"
     ],
-    decisions: "Selected wound pH as the main sensing parameter and selected a wearable dressing-based monitoring direction.",
-    rejected: "A normal external pH probe or benchtop-only method was not selected because it does not support continuous monitoring.",
-    nextWeek: "Continue with clinical background, flexible circuit printing and existing smart dressing product studies.",
-    evidence: "Resource folders include PH VARIATIONS, SENSOR COMPARISON and SMART WOUND DRESSING."
-  },
-  {
-    id: 2,
-    label: "Week 02",
-    dates: "May",
-    phase: "Clinical & Concept Research",
-    title: "Clinical Background, Flexible Circuits and Similar Product Review",
-    driveLink: "https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link",
-    folders: ["Flexible Circuit Print", "Pathology References", "Similar Product Details", "Wearable Sensor"],
-    summary: "The second week connected the medical background with the engineering design. Clinical references were studied to understand wound healing, while flexible circuit printing and wearable sensor examples were reviewed to decide how the sensor could be made as a patch.",
-    goals: "Study wound pathology, learn the basics of flexible printed circuits, and compare similar smart wound dressing products.",
-    keyFindings: [
-      "A wound patch must be flexible, thin and safe for skin-contact use.",
-      "Existing smart dressing examples show that pH sensing can be combined with wireless monitoring.",
-      "Flexible printed electronics are more suitable than rigid PCB-only designs for wound contact areas."
+    "summary": "Focused on the clinical need for diabetic wound monitoring, wound pH variation, sensor comparison, and the smart wound dressing concept. This week defined pH as the main biomarker and set the project direction.",
+    "goals": "Study clinical background, compare pH sensing options, and understand the smart dressing concept.",
+    "keyFindings": [
+      "Focused on the clinical need for diabetic wound monitoring, wound pH variation, sensor comparison, and the smart wound dressing concept. This week defined pH as the main biomarker and set the project direction.",
+      "Defined wound pH as the main sensing parameter and selected a dressing-integrated monitoring approach."
     ],
-    decisions: "Kept the project as a flexible wound patch with a small separate electronics module.",
-    rejected: "A fully rigid board on the wound area was avoided because it is uncomfortable and unsuitable for dressing integration.",
-    nextWeek: "Move into detailed research paper comparison, datasheet collection and component-level selection.",
-    evidence: "Resource folders include Flexible Circuit Print, clinical/pathology references, Similar Product Details and Wearable Sensor."
+    "decisions": "Defined wound pH as the main sensing parameter and selected a dressing-integrated monitoring approach.",
+    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
+    "nextWeek": "Move into pathology, flexible electronics, and similar-product research.",
+    "evidence": "Google Drive resources for Week 01: https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link"
   },
   {
-    id: 3,
-    label: "Week 03",
-    dates: "May",
-    phase: "Literature & Component Selection",
-    title: "Research Paper Comparison, Datasheet Collection and Sensor Shortlisting",
-    driveLink: "https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link",
-    folders: ["Research Papers", "Datasheets", "Sensor Matrices", "Commercial Sensor Comparison"],
-    summary: "The third week focused on evidence-based selection. Research papers and commercial sensor information were compared, and datasheets were collected to check whether the selected components could meet the required measurement accuracy and practical constraints.",
-    goals: "Compare PANI-based wound pH papers, review commercial pH sensor options, collect datasheets and shortlist components for the prototype.",
-    keyFindings: [
-      "PANI with Ag/AgCl reference electrode is suitable for potentiometric pH sensing in wound monitoring.",
-      "A 16-bit ADC is useful because the pH signal is in the millivolt range.",
-      "Commercial wound sensors are useful as references but are not suitable for a low-cost university-built prototype."
+    "id": 2,
+    "label": "Week 02",
+    "dates": "May 2026",
+    "phase": "Clinical & Concept Research",
+    "title": "Clinical Pathology and Wearable Sensor Research",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link",
+    "folders": [
+      "Flexible Circuit Print",
+      "Robbins Basic Pathology",
+      "Similar Product Details",
+      "Wearable Sensor"
     ],
-    decisions: "Selected a PANI potentiometric pH sensor direction with ADS1115 ADC and instrumentation-amplifier based readout.",
-    rejected: "Expensive commercial complete wound monitoring systems were used only as benchmarks, not as the selected implementation.",
-    nextWeek: "Design the electronics architecture and compare the coin-sized module options.",
-    evidence: "Resource folders include paper comparisons, component datasheets and sensor selection matrices."
-  },
-  {
-    id: 4,
-    label: "Week 04",
-    dates: "May",
-    phase: "Electronics Architecture",
-    title: "Coin-Size Electronics Module and System Architecture Design",
-    driveLink: "https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link",
-    folders: ["Coin Module Architecture", "BOM", "Wireless and Power Study"],
-    summary: "The fourth week converted the sensing idea into an electronics system. The main signal chain, microcontroller, wireless method, ADC, power source and module size were compared to create a practical coin-sized electronics architecture.",
-    goals: "Define the analog front-end, ADC, microcontroller, wireless communication, power supply and physical electronics module concept.",
-    keyFindings: [
-      "ESP32-S3 is suitable because it provides BLE communication and enough processing capability.",
-      "ADS1115 is a practical ADC choice for low-level pH voltage measurement.",
-      "A separate small electronics module is more realistic than placing all parts directly on the wound-contact flexible patch."
+    "summary": "Reviewed wound healing biology using pathology references, explored flexible circuit printing, and studied wearable sensor designs. SmartHEAL and similar products were used as practical benchmarks.",
+    "goals": "Connect the biomedical problem with a realistic wearable sensor design.",
+    "keyFindings": [
+      "Reviewed wound healing biology using pathology references, explored flexible circuit printing, and studied wearable sensor designs. SmartHEAL and similar products were used as practical benchmarks.",
+      "Confirmed that flexible printed electronics are more suitable than rigid sensor assemblies for wound dressing integration."
     ],
-    decisions: "Selected ESP32-S3, ADS1115, INA333, TMP117 temperature sensing, BLE communication and coin-cell-based low-power operation as the main architecture.",
-    rejected: "Large development boards were not selected for the final wearable module because of size and power limitations.",
-    nextWeek: "Finalize flexible PCB material choices, fabrication approach and budget estimation.",
-    evidence: "Resource folder includes the coin module architecture comparison and related BOM/electronics design files."
+    "decisions": "Confirmed that flexible printed electronics are more suitable than rigid sensor assemblies for wound dressing integration.",
+    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
+    "nextWeek": "Collect datasheets, fabrication company details, and similar device papers.",
+    "evidence": "Google Drive resources for Week 02: https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link"
   },
   {
-    id: 5,
-    label: "Week 05",
-    dates: "May",
-    phase: "Fabrication & Budget",
-    title: "Flexible PCB Materials, Hand Fabrication Method and Cost Planning",
-    driveLink: "https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link",
-    folders: ["Flexible Medical PCB Materials", "Hand FPCB Fabrication", "Budget Estimate", "PANI Methodology"],
-    summary: "The fifth week focused on how the prototype can actually be built. Flexible substrate materials, conductive layers, PANI preparation, screen-printing steps, quality checking and budget estimation were organized into a practical fabrication plan.",
-    goals: "Select suitable flexible materials, prepare a low-cost fabrication method, estimate the budget and prepare the next steps for prototype development.",
-    keyFindings: [
-      "PET film is a practical low-cost flexible substrate for the first prototype.",
-      "PANI can be prepared and used as the pH-sensitive layer with a controlled fabrication method.",
-      "The prototype cost can be kept realistic by using locally available materials where possible."
+    "id": 3,
+    "label": "Week 03",
+    "dates": "May 2026",
+    "phase": "Resources & Components",
+    "title": "Datasheets, pH Sensor Matrix and Similar Device Papers",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link",
+    "folders": [
+      "Datasheets",
+      "Links",
+      "Medical Grade Fabrication Companies",
+      "pH Sensor Matrix",
+      "Similar Device Papers"
     ],
-    decisions: "Selected PET substrate, screen-printing/hand fabrication, PANI pH layer and budget-controlled prototyping as the working path.",
-    rejected: "Cleanroom-only and high-cost fabrication routes were avoided for the first university prototype.",
-    nextWeek: "Start prototype planning, prepare detailed circuit implementation and begin initial fabrication preparation.",
-    evidence: "Resource folder includes flexible medical PCB material comparison, hand fabrication guide, budget estimate and PANI pH methodology documents."
+    "summary": "Collected component datasheets, technical links, medical fabrication company details, commercial pH sensor comparisons, and academic papers. This week created the evidence base for component selection.",
+    "goals": "Gather engineering resources and compare suitable pH sensing technologies.",
+    "keyFindings": [
+      "Collected component datasheets, technical links, medical fabrication company details, commercial pH sensor comparisons, and academic papers. This week created the evidence base for component selection.",
+      "Shortlisted a potentiometric PANI pH sensor approach and rejected costly/complex alternatives such as bare-die ISFET and optical readers."
+    ],
+    "decisions": "Shortlisted a potentiometric PANI pH sensor approach and rejected costly/complex alternatives such as bare-die ISFET and optical readers.",
+    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
+    "nextWeek": "Design the compact electronics module and select the fabrication route.",
+    "evidence": "Google Drive resources for Week 03: https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link"
   },
   {
-    id: 6,
-    label: "Week 06",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Circuit Implementation and Prototype Preparation",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — this week will document the practical circuit implementation plan and first prototype preparation steps.",
-    goals: "Prepare schematic-level implementation, component layout and testing plan.",
-    keyFindings: ["This section will be updated after Week 06 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Continue toward sensor fabrication and calibration setup.",
-    evidence: "Coming soon."
+    "id": 4,
+    "label": "Week 04",
+    "dates": "May 2026",
+    "phase": "Electronics Architecture",
+    "title": "Fabrication Route and Coin-Size Electronics Brain",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link",
+    "folders": [
+      "Fabrication Facility",
+      "FYP Brain (Coin Size)"
+    ],
+    "summary": "Worked on the fabrication facility decision and the compact electronics module. The main system architecture was formed using ESP32-S3, ADS1115, INA333, TMP117, CR2032 and a low-power regulator.",
+    "goals": "Decide the fabrication path and design the electronics brain for the wound patch.",
+    "keyFindings": [
+      "Worked on the fabrication facility decision and the compact electronics module. The main system architecture was formed using ESP32-S3, ADS1115, INA333, TMP117, CR2032 and a low-power regulator.",
+      "Defined the coin-size electronics architecture and selected the main readout, processing, power and wireless blocks."
+    ],
+    "decisions": "Defined the coin-size electronics architecture and selected the main readout, processing, power and wireless blocks.",
+    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
+    "nextWeek": "Compare flexible PCB materials and prepare the fabrication/cost plan.",
+    "evidence": "Google Drive resources for Week 04: https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link"
   },
   {
-    id: 7,
-    label: "Week 07",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Sensor Fabrication Trial",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for initial sensor layer preparation and fabrication trial documentation.",
-    goals: "Start first fabrication trial and record materials, tools and observations.",
-    keyFindings: ["This section will be updated after Week 07 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Move toward calibration and early testing.",
-    evidence: "Coming soon."
+    "id": 5,
+    "label": "Week 05",
+    "dates": "May 2026",
+    "phase": "Materials & Fabrication",
+    "title": "Flexible PCB Materials, PANI Methodology and Budget",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link",
+    "folders": [
+      "Comparison of FPCs",
+      "Second Option FPCB",
+      "Hand FPCB Cost",
+      "Medical Fabrication Circuit Papers",
+      "PANI Literature Review",
+      "pH Methodology"
+    ],
+    "summary": "Compared flexible PCB material options, estimated fabrication cost, collected medical fabrication circuit papers, and prepared PANI pH sensor literature and methodology documents.",
+    "goals": "Prepare the practical fabrication plan, budget and pH sensing methodology.",
+    "keyFindings": [
+      "Compared flexible PCB material options, estimated fabrication cost, collected medical fabrication circuit papers, and prepared PANI pH sensor literature and methodology documents.",
+      "Finalised the PET/silver/PANI material direction and documented the low-cost hand fabrication methodology."
+    ],
+    "decisions": "Finalised the PET/silver/PANI material direction and documented the low-cost hand fabrication methodology.",
+    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
+    "nextWeek": "Begin prototype fabrication, testing and calibration work.",
+    "evidence": "Google Drive resources for Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link"
   },
   {
-    id: 8,
-    label: "Week 08",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Calibration Setup and Buffer Testing",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for pH buffer preparation, calibration setup and first sensor response checking.",
-    goals: "Prepare pH calibration method and test sensor voltage response.",
-    keyFindings: ["This section will be updated after Week 08 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Improve measurement stability and repeatability.",
-    evidence: "Coming soon."
+    "id": 6,
+    "label": "Week 06",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 06 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 06 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 9,
-    label: "Week 09",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Electronics Testing and Data Acquisition",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for ADC, temperature sensor and microcontroller data acquisition testing.",
-    goals: "Verify ADS1115 readings, TMP117 temperature readings and ESP32-S3 communication.",
-    keyFindings: ["This section will be updated after Week 09 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Integrate sensing and wireless transmission.",
-    evidence: "Coming soon."
+    "id": 7,
+    "label": "Week 07",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 07 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 07 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 10,
-    label: "Week 10",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Wireless Communication and Display Integration",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for BLE data transfer and user-side reading/display method.",
-    goals: "Send measured pH, temperature and moisture values wirelessly and display them clearly.",
-    keyFindings: ["This section will be updated after Week 10 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Test the full prototype as one system.",
-    evidence: "Coming soon."
+    "id": 8,
+    "label": "Week 08",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 08 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 08 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 11,
-    label: "Week 11",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Full System Integration",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for combining the sensor patch, electronics, firmware and wireless output.",
-    goals: "Integrate all modules and identify practical problems in the full prototype.",
-    keyFindings: ["This section will be updated after Week 11 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Carry out repeated testing and improvements.",
-    evidence: "Coming soon."
+    "id": 9,
+    "label": "Week 09",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 09 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 09 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 12,
-    label: "Week 12",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Repeatability, Stability and Error Analysis",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for repeated measurements, stability observation and error analysis.",
-    goals: "Check repeatability, drift, temperature effect and measurement error.",
-    keyFindings: ["This section will be updated after Week 12 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Improve prototype and prepare final demonstration results.",
-    evidence: "Coming soon."
+    "id": 10,
+    "label": "Week 10",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 10 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 10 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 13,
-    label: "Week 13",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Final Improvements and Demonstration Preparation",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — planned for final design improvements, result organization and presentation preparation.",
-    goals: "Finalize the prototype demonstration and prepare final figures, tables and explanations.",
-    keyFindings: ["This section will be updated after Week 13 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Complete final report and portfolio update.",
-    evidence: "Coming soon."
+    "id": 11,
+    "label": "Week 11",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 11 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 11 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   },
   {
-    id: 14,
-    label: "Week 14",
-    dates: "Coming soon",
-    phase: "Coming Soon",
-    title: "Final Portfolio, Report and Submission Preparation",
-    driveLink: "",
-    folders: ["COMING SOON"],
-    summary: "Coming soon — final week placeholder for completed report, portfolio update and final submission evidence.",
-    goals: "Prepare the final documented portfolio, report content and submission-ready material.",
-    keyFindings: ["This section will be updated after Week 14 work is completed."],
-    decisions: "Coming soon.",
-    rejected: "Coming soon.",
-    nextWeek: "Project completion and final presentation.",
-    evidence: "Coming soon."
+    "id": 12,
+    "label": "Week 12",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 12 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 12 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
+  },
+  {
+    "id": 13,
+    "label": "Week 13",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 13 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 13 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
+  },
+  {
+    "id": 14,
+    "label": "Week 14",
+    "dates": "Coming soon",
+    "phase": "Coming Soon",
+    "title": "Week 14 — Coming Soon",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "folders": [
+      "Coming soon"
+    ],
+    "summary": "Week 14 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
+    "goals": "Upcoming work will be updated after completion.",
+    "keyFindings": [
+      "Coming soon."
+    ],
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "Coming soon.",
+    "evidence": "Coming soon."
   }
 ];
 
@@ -336,7 +401,7 @@ const WEEKS = [
 const ARCHITECTURE = {
   layers: [
     { id: "sensor", label: "Sensor Layer (FPCB Patch)", color: "#0E8B8B", components: ["PANI Working Electrode (pH)", "Ag/AgCl Reference Electrode", "TMP117 Digital Temperature Sensor", "Impedance Layer (Moisture)"], output: "mV-level potentiometric signals" },
-    { id: "signal", label: "Signal Conditioning", color: "#2563C9", components: ["INA333 Instrumentation Amp (100 dB CMRR)", "TMP117 I²C Digital Temperature Readout", "Anti-Aliasing Filter (100 Hz)"], output: "0–3.3 V clean analog" },
+    { id: "signal", label: "Signal Conditioning", color: "#2563C9", components: ["INA333 Instrumentation Amp (100 dB CMRR)", "TMP117 I²C Temperature Readout", "Anti-Aliasing Filter (100 Hz)"], output: "0–3.3 V clean analog" },
     { id: "adc", label: "ADC", color: "#7C3AED", components: ["ADS1115 16-bit I²C", "PGA ±256 mV", "4 channels"], output: "Digital stream @ up to 860 SPS" },
     { id: "mcu", label: "Brain / MCU", color: "#B45309", components: ["ESP32-S3 (240 MHz dual-core)", "Deep-sleep < 10 µA", "BLE 5.0 + Wi-Fi", "MCP4725 DAC (AC excitation)"], output: "Processed data packet" },
     { id: "comms", label: "Wireless Comms", color: "#C2410C", components: ["BLE 5.0 GATT", "Wi-Fi (OTA updates)"], output: "BLE advertisement → phone" },
@@ -346,18 +411,24 @@ const ARCHITECTURE = {
 
 // ── RESOURCES LIBRARY ────────────────────────────────────────
 const RESOURCES = [
-  { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"r2", type:"paper", title:"Tang et al. (2021)", journal:"Micromachines", year:2021, relevance:"Accessible screen-printed PANI route; pH > 6.5 confirms biofilm infection.", tags:["screen printing","low-cost"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"r3", type:"paper", title:"Iversen et al. (2022)", journal:"Biosensors", year:2022, relevance:"Fully printed SWCNT pH + hydration patch; confirms ESP32 readout feasibility.", tags:["printed","ESP32","PDMS"], week:3, link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"e1", type:"excel", title:"pH Sensor Comparison Matrix", description:"5-technology comparison: optical, ISFET, antimony, microelectrodes, lab-grade.", week:1, tags:["pH sensor","comparison"], link:"https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link" },
-  { id:"e2", type:"excel", title:"Comparative Analysis: Shirzaei Sani vs Tang", description:"7-parameter paper comparison: sensor design, circuit, fabrication, cost, results.", week:3, tags:["literature","PANI"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"e3", type:"excel", title:"Shirzaei Sani vs Iversen Matrix", description:"10-feature electronics architecture comparison with FYP feasibility ratings.", week:3, tags:["electronics","MCU"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"e4", type:"excel", title:"Filtered Commercial pH Sensor Matrix", description:"14-parameter comparison: Microsens, Zimmer & Peacock, Sentron, PreSens.", week:3, tags:["commercial","ISFET"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
-  { id:"e5", type:"excel", title:"Flexible Medical PCB Materials Comparison", description:"6-sheet workbook: substrates, conductors, conductive polymers, PANI deep-dive.", week:5, tags:["PANI","materials","FPCB"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
-  { id:"e6", type:"excel", title:"Coin Module Architecture Comparison", description:"10-sheet architecture workbook + complete BOM with LKR pricing.", week:4, tags:["ESP32","BOM","architecture"], link:"https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link" },
-  { id:"e7", type:"excel", title:"Hand FPCB Fabrication Guide (Sri Lanka)", description:"10-sheet protocol: PANI synthesis, screen printing, QC, safety, budget.", week:5, tags:["fabrication","synthesis"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
-  { id:"e8", type:"excel", title:"Project Budget Estimation (FX-linked)", description:"SL vs international price comparison; 20% contingency; ~LKR 20,000 target.", week:5, tags:["budget","procurement"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
-  { id:"e9", type:"excel", title:"Medical Fabrication Facility Comparison", description:"4 medical fabrication companies: Zimmer & Peacock, Microsens, Sentron, ADI.", week:3, tags:["fabrication","suppliers"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" }
+  { id:"w1drive", type:"document", title:"Week 01 Google Drive Resources", description:"Problem definition, pH variation, sensor comparison and smart wound dressing references.", week:1, tags:["drive","week 01"], link:"https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link" },
+  { id:"w2drive", type:"document", title:"Week 02 Google Drive Resources", description:"Clinical pathology, flexible circuit printing, wearable sensor and similar-product resources.", week:2, tags:["drive","week 02"], link:"https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link" },
+  { id:"w3drive", type:"document", title:"Week 03 Google Drive Resources", description:"Datasheets, links, fabrication companies, pH sensor matrix and similar device papers.", week:3, tags:["drive","week 03"], link:"https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link" },
+  { id:"w4drive", type:"document", title:"Week 04 Google Drive Resources", description:"Fabrication facility resources and coin-size electronics brain design files.", week:4, tags:["drive","week 04"], link:"https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link" },
+  { id:"w5drive", type:"document", title:"Week 05 Google Drive Resources", description:"Flexible PCB comparison, PANI literature, pH methodology and cost estimation resources.", week:5, tags:["drive","week 05"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
+  { id:"datasheetdrive", type:"datasheet", title:"Project Datasheet Drive Folder", description:"Shared Google Drive folder containing datasheets used for the electronics and sensor components.", week:"", tags:["datasheets","drive"], link:"https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link" },
+  { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"#" },
+  { id:"r2", type:"paper", title:"Tang et al. (2021)", journal:"Micromachines", year:2021, relevance:"Accessible screen-printed PANI route; pH > 6.5 confirms biofilm infection.", tags:["screen printing","low-cost"], week:3, link:"#" },
+  { id:"r3", type:"paper", title:"Iversen et al. (2022)", journal:"Biosensors", year:2022, relevance:"Fully printed SWCNT pH + hydration patch; confirms ESP32 readout feasibility.", tags:["printed","ESP32","PDMS"], week:3, link:"#" },
+  { id:"e1", type:"excel", title:"pH Sensor Comparison Matrix", description:"5-technology comparison: optical, ISFET, antimony, microelectrodes, lab-grade.", week:1, tags:["pH sensor","comparison"], link:"documents/PH_Sensor_Matrix.xlsx" },
+  { id:"e2", type:"excel", title:"Comparative Analysis: Shirzaei Sani vs Tang", description:"7-parameter paper comparison: sensor design, circuit, fabrication, cost, results.", week:3, tags:["literature","PANI"], link:"documents/Comparative_Analysis_Matrix.xlsx" },
+  { id:"e3", type:"excel", title:"Shirzaei Sani vs Iversen Matrix", description:"10-feature electronics architecture comparison with FYP feasibility ratings.", week:3, tags:["electronics","MCU"], link:"documents/pH_Sensor_Analysis_Matrix_v2.xlsx" },
+  { id:"e4", type:"excel", title:"Filtered Commercial pH Sensor Matrix", description:"14-parameter comparison: Microsens, Zimmer & Peacock, Sentron, PreSens.", week:3, tags:["commercial","ISFET"], link:"documents/Filterd_Best_PH_matrix_As_final.xlsx" },
+  { id:"e5", type:"excel", title:"Flexible Medical PCB Materials Comparison", description:"6-sheet workbook: substrates, conductors, conductive polymers, PANI deep-dive.", week:5, tags:["PANI","materials","FPCB"], link:"documents/Flexible_Medical_PCB_Materials_Comparison.xlsx" },
+  { id:"e6", type:"excel", title:"Coin Module Architecture Comparison", description:"10-sheet architecture workbook + complete BOM with LKR pricing.", week:4, tags:["ESP32","BOM","architecture"], link:"documents/Coin_Module_Architecture_Comparison.xlsx" },
+  { id:"e7", type:"excel", title:"Hand FPCB Fabrication Guide (Sri Lanka)", description:"10-sheet protocol: PANI synthesis, screen printing, QC, safety, budget.", week:5, tags:["fabrication","synthesis"], link:"documents/Hand_FPCB_Fabrication_Guide_SriLanka_FYP.xlsx" },
+  { id:"e8", type:"excel", title:"Project Budget Estimation (FX-linked)", description:"SL vs international price comparison; 20% contingency; ~LKR 20,000 target.", week:5, tags:["budget","procurement"], link:"documents/Budget_Estimation_FPCB_Wound_Sensor_FYP.xlsx" },
+  { id:"e9", type:"excel", title:"Medical Fabrication Facility Comparison", description:"4 medical fabrication companies: Zimmer & Peacock, Microsens, Sentron, ADI.", week:3, tags:["fabrication","suppliers"], link:"documents/Facbrication_Facility.xlsx" }
 ];
 
 // ── FILE ANALYSIS TABLE ──────────────────────────────────────
@@ -444,13 +515,14 @@ const KEY_PUBLICATIONS = [
 ];
 
 const DATASHEETS = [
-  { component:"ESP32-S3-WROOM-1", role:"Main MCU — BLE 5.0, Wi‑Fi and deep-sleep control", category:"Microcontroller", link:PROJECT.datasheetDrive },
-  { component:"ADS1115", role:"16-bit I²C ADC for low-level pH voltage measurement", category:"ADC", link:PROJECT.datasheetDrive },
-  { component:"INA333", role:"Instrumentation amplifier for high-impedance pH signal conditioning", category:"Analog Front-End", link:PROJECT.datasheetDrive },
-  { component:"TMP117", role:"High-accuracy digital temperature sensor for wound surface temperature and pH compensation", category:"Temperature Sensor", link:PROJECT.datasheetDrive },
-  { component:"XC6206P332", role:"3.3 V low-quiescent-current LDO for coin-cell operation", category:"Power", link:PROJECT.datasheetDrive },
-  { component:"MCP4725", role:"12-bit I²C DAC for optional AC excitation in moisture/impedance sensing", category:"Data Converter", link:PROJECT.datasheetDrive },
-  { component:"pH-303 Ceramic Sensor", role:"Reference pH electrode for calibration cross-checking", category:"Reference Sensor", link:PROJECT.datasheetDrive }
+  { component:"ESP32-S3-WROOM-1", role:"MCU / Brain — BLE 5.0 + Wi-Fi, 240 MHz dual-core, deep-sleep 10 µA", category:"Microcontroller", link:"documents/datasheets/ESP32-S3_datasheet.pdf" },
+  { component:"ADS1115", role:"16-bit I²C ADC — 7.8 µV resolution at ±256 mV PGA, 4 channels", category:"Data Converter", link:"documents/datasheets/ADS1115_datasheet.pdf" },
+  { component:"INA333", role:"Instrumentation Amplifier — 100 dB CMRR, 25 µV offset, 0.1 µV/°C drift", category:"Analog Front-End", link:"documents/datasheets/INA333_datasheet.pdf" },
+  { component:"TL071", role:"Unity-gain buffer for NTC thermistor divider output", category:"Op-Amp", link:"documents/datasheets/TL071_datasheet.pdf" },
+  { component:"XC6206P332", role:"LDO — 1 µA quiescent, 3.3 V fixed, CR2032-compatible", category:"Power", link:"documents/datasheets/XC6206_datasheet.pdf" },
+  { component:"MCP4725", role:"12-bit I²C DAC — AC excitation for impedance moisture sensing", category:"Data Converter", link:"documents/datasheets/MCP4725_datasheet.pdf" },
+  { component:"TMP117", role:"High-accuracy digital temperature sensor — I²C temperature measurement for wound surface monitoring and pH temperature compensation", category:"Sensor", link:"https://drive.google.com/drive/folders/1x7yPC0FFnY04jbxwv78BcZvNjyxhlzZH?usp=drive_link" },
+  { component:"pH-303 Ceramic Sensor", role:"Reference ceramic pH electrode — calibration cross-check", category:"Reference Sensor", link:"documents/datasheets/TDS_Sensor_pH_303_ceramic.pdf" }
 ];
 
 const DOCUMENTS_LIB = [
@@ -486,5 +558,5 @@ const FILE_CATEGORIES = [
   { category:"Component Datasheets", icon:"🔧", count:"8 components", support:"Verify each IC meets requirements from the sensor specs.", files:"Datasheets folder (W03)" },
   { category:"Video / Product References", icon:"▶", count:"4 links", support:"Benchmark against SmartHEAL and validate market need.", files:"Similar Product Details (W02), Links (W03)" },
   { category:"Methodology / Lit Review", icon:"📚", count:"2 documents", support:"Consolidate sensing theory and measurement methodology.", files:"PANI Lit Review, pH Sensing Methodology (W05)" },
-  { category:"Weekly Drive Evidence", icon:"🔗", count:"5 Drive folders", support:"Accessible resource folders linked to each weekly progress card.", files:"Week 01–05 Google Drive resource folders" }
+  { category:"Images & Evidence", icon:"🖼️", count:"5 week folders + 1 photo", support:"Visual proof of weekly work and lab progress.", files:"Week 01–05 folder screenshots" }
 ];

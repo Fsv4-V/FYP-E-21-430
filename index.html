@@ -1,687 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Diabetic Wound Monitoring Patch — FYP Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<style>
-  /* Extra styles specific to content */
-  .sensor-row {
-    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;
-  }
-  .sensor-chip {
-    font-size: 0.72rem; font-family: var(--mono);
-    padding: 0.3rem 0.65rem;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text-dim);
-  }
-  .sensor-chip.priority {
-    background: rgba(0,212,170,0.08);
-    border-color: rgba(0,212,170,0.3);
-    color: var(--teal);
-  }
-  .highlight-box {
-    background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(59,130,246,0.05));
-    border: 1px solid rgba(0,212,170,0.2);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  .highlight-box h4 {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--teal);
-    margin-bottom: 0.5rem;
-  }
-  .arch-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: var(--teal);
-    background: var(--card);
-  }
-</style>
+  <!-- ============================================================
+       index.html — Smart Diabetic Wound pH Sensor FYP Portfolio
+       EEE Final Year Project | GitHub Pages Ready
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FYP Portfolio: Smart Diabetic Wound Monitoring Patch — Hand-fabricated PANI pH sensor on flexible PCB. EEE Final Year Project." />
+  <meta name="keywords"    content="PANI, pH sensor, wound monitoring, flexible PCB, FPCB, ESP32, ADS1115, diabetic wound, biomedical sensor, FYP" />
+  <meta name="author"      content="EEE Undergraduate FYP Student" />
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title"       content="Smart Diabetic Wound pH Sensor — FYP Portfolio" />
+  <meta property="og:description" content="A hand-fabricated PANI-based flexible wound pH monitoring patch — complete FYP documentation portfolio." />
+  <meta property="og:type"        content="website" />
+
+  <title>Smart Wound Sensor | FYP Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ══════════ NAV ══════════ -->
-<nav>
-  <a class="nav-brand" href="#" onclick="showPage('home')">
-    <div class="nav-logo">FYP</div>
-    <div>
-      <span class="nav-title">Smart Wound Patch</span>
-      <span class="nav-subtitle">FSV4 · 2025/26</span>
-    </div>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#" data-page="home" onclick="showPage('home')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Overview
-    </a></li>
-    <li><a href="#" data-page="weeks" onclick="showPage('weeks')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Weekly Progress
-    </a></li>
-    <li><a href="#" data-page="team" onclick="showPage('team')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-      Team
-    </a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </button>
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <span class="brand-dot"></span>
+      Wound pH Sensor · FYP
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#progress">Progress</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#sensor-tech">Sensor</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#datasheets">Datasheets</a></li>
+      <li><a href="#videos">References</a></li>
+      <li><a href="#testing">Testing</a></li>
+      <li><a href="#review">Review Guide</a></li>
+      <li class="nav-cta"><a href="#contact" class="btn btn-outline" style="padding:0.35rem 1rem;font-size:0.8rem">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<!-- ══════════ HOME PAGE ══════════ -->
-<div class="page active" id="home">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <div class="hero-badge">Final Year Project · 2025/26</div>
-      <h1>
-        <span class="dim">Smart</span> Diabetic<br>
-        Wound <span class="accent">Monitoring</span><br>
-        Sensor Patch
-      </h1>
-      <p class="hero-desc">
-        A wearable, flexible, multi-parameter sensor patch that enables continuous, non-invasive monitoring of chronic diabetic foot ulcers — transitioning wound care from passive dressings to active data-driven therapy.
-      </p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="val">4+</div><div class="lbl">Sensors</div></div>
-        <div class="hero-stat"><div class="val">BLE</div><div class="lbl">Wireless</div></div>
-        <div class="hero-stat"><div class="val">5mW</div><div class="lbl">Max Power</div></div>
-      </div>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('weeks')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          View Progress
-        </button>
-        <button class="btn-secondary" onclick="showPage('team')">
-          Meet the Team
-        </button>
-      </div>
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div id="hero-content">
+      <!-- Rendered by script.js → renderHero() -->
     </div>
-    <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <img data-fyp-img="sciadv_wound" alt="Smart wound monitoring sensor patch" 
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%230d1526' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300d4aa' font-size='16' font-family='monospace'%3ELoading image...%3C/text%3E%3C/svg%3E">
-        <div class="hero-img-caption">
-          <div class="hero-img-tag">REFERENCE</div>
-          <div>Wearable multi-sensor wound monitoring system — Science Advances</div>
-        </div>
-      </div>
+    <div class="hero-panel" id="hero-panel">
+      <!-- Rendered by script.js → renderHero() -->
     </div>
-  </section>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">SCROLL</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
 
-  <!-- PROJECT OVERVIEW -->
-  <section class="section container">
-    <div class="section-header">
-      <div class="section-tag">Project Brief</div>
-      <h2>What Are We Building?</h2>
-      <p>An intelligent wearable patch for diabetic patients with chronic foot ulcers that continuously tracks key wound biomarkers without removing the dressing.</p>
+<!-- ═══════════════════════════════════════════════════════════
+     PROJECT OVERVIEW / ABSTRACT
+     ═══════════════════════════════════════════════════════════ -->
+<section id="overview" class="section-even">
+  <div class="container">
+    <span class="section-label">Project Abstract</span>
+    <h2 class="section-title">Project <span>Overview</span></h2>
+    <div class="section-divider"></div>
+    <div class="abstract-box" id="abstract-content">
+      <!-- Rendered by script.js → renderOverview() -->
     </div>
 
-    <div class="info-row" style="margin-bottom: 3rem">
-      <div class="info-img">
-        <img data-fyp-img="smart_dressing" alt="Smart wound dressing architecture"
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280'%3E%3Crect fill='%230d1526' width='400' height='280'/%3E%3C/svg%3E">
+    <div class="grid-3" style="margin-top:3rem">
+      <div class="card card-teal reveal reveal-delay-1">
+        <div class="section-label">Sensing Principle</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">Potentiometric pH</h4>
+        <p style="font-size:0.9rem">PANI WE + Ag/AgCl RE cell voltage measured as V<sub>cell</sub> = K − 59 mV·pH. Direct Nernstian response, no enzyme needed.</p>
       </div>
-      <div class="info-text">
-        <h3>The Clinical Problem</h3>
-        <p>Chronic wounds including diabetic foot ulcers (DFUs) cost global healthcare systems over <strong style="color:var(--text)">$30 billion annually</strong>. Current standard of care requires physical dressing removal for assessment — introducing infection risk, disrupting tissue, and causing patient pain.</p>
-        <p>Persistent alkaline wound pH (7.2–9.0), elevated temperature (&gt;1.1°C differential), and biofilm impedance are key early indicators of infection that currently go undetected between clinic visits.</p>
-        <div class="highlight-box">
-          <h4>Our Solution</h4>
-          A hybrid-architecture smart patch: a low-cost disposable flexible PCB (FPCB) wound-contact layer paired with a reusable BLE microcontroller module — enabling 24/7 wound monitoring via smartphone.
-        </div>
+      <div class="card card-amber reveal reveal-delay-2">
+        <div class="section-label">Fabrication Method</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">Hand-Fabricated FPCB</h4>
+        <p style="font-size:0.9rem">Screen-printing on PET transparency film. PANI synthesised via oxidative chemical polymerisation. Full protocol in fabrication guide.</p>
+      </div>
+      <div class="card card-purple reveal reveal-delay-3">
+        <div class="section-label">Target Application</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">Diabetic Wound Monitoring</h4>
+        <p style="font-size:0.9rem">Continuous pH, temperature, and moisture monitoring. BLE 5.0 wireless data to smartphone. Battery life target ≥6 months (CR2032).</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="info-row reverse">
-      <div class="info-img">
-        <img data-fyp-img="micromachines" alt="Wearable sensor system"
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280'%3E%3Crect fill='%230d1526' width='400' height='280'/%3E%3C/svg%3E">
-      </div>
-      <div class="info-text">
-        <h3>Target Specifications</h3>
-        <p>The patch must operate continuously within strict biocompatibility and safety constraints while remaining comfortable for diabetic patients during daily activities.</p>
-        <table class="specs-table">
-          <tr><th>Parameter</th><th>Target</th></tr>
-          <tr><td>Power budget</td><td style="color:var(--teal)">&lt; 5 mW average</td></tr>
-          <tr><td>Wireless</td><td style="color:var(--teal)">BLE 5.0 / NFC passive</td></tr>
-          <tr><td>Form factor</td><td style="color:var(--teal)">Bend radius &lt; 10mm</td></tr>
-          <tr><td>Patient safety</td><td style="color:var(--teal)">Leakage &lt; 10µA</td></tr>
-          <tr><td>Disposable cost</td><td style="color:var(--teal)">&lt; $2.00 USD per unit</td></tr>
-          <tr><td>Calibration life</td><td style="color:var(--teal)">7 days in exudate</td></tr>
+<!-- ═══════════════════════════════════════════════════════════
+     PROBLEM STATEMENT
+     ═══════════════════════════════════════════════════════════ -->
+<section id="problem" class="section-odd">
+  <div class="container">
+    <span class="section-label">Clinical Motivation</span>
+    <h2 class="section-title">The <span>Problem</span> We Are Solving</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Diabetic chronic wounds represent a global healthcare crisis that disproportionately affects patients in low-to-middle income countries where affordable continuous monitoring technology is unavailable.</p>
+    <div class="problem-grid" id="problem-cards">
+      <!-- Rendered by script.js → renderProblem() -->
+    </div>
+
+    <!-- Clinical Wound pH Reference Table -->
+    <div style="margin-top:3rem">
+      <h3 style="color:var(--white);margin-bottom:1rem">Clinical Wound pH Reference</h3>
+      <p style="color:var(--gray-mid);font-size:0.9rem;margin-bottom:1.5rem">The sensor must reliably distinguish pH 5.5 (healthy) from pH 8.5 (infected) — a 3-unit range. With PANI's 54–69 mV/pH response, this corresponds to a 162–207 mV signal swing.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Wound State</th><th>pH Range</th><th>Clinical Interpretation</th></tr>
+          </thead>
+          <tbody id="wound-ph-table-body">
+            <!-- Rendered by script.js → renderWoundPhTable() -->
+          </tbody>
         </table>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SYSTEM ARCHITECTURE -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">System Design</div>
-        <h2>Architecture Overview</h2>
-        <p>Four integrated sub-systems working together for real-time wound assessment.</p>
-      </div>
-      <div class="arch-grid">
-        <div class="arch-block">
-          <div class="icon">🩹</div>
-          <h4>Disposable FPCB Layer</h4>
-          <p>Flexible PCB with printed electrodes, biocompatible substrate, direct wound contact</p>
-        </div>
-        <div class="arch-block arch-arrow">→</div>
-        <div class="arch-block">
-          <div class="icon">⚡</div>
-          <h4>Analog Front-End</h4>
-          <p>AD5940 / AD8603 — medical-grade signal conditioning, 16-bit ADC, EIS excitation</p>
-        </div>
-        <div class="arch-block arch-arrow">→</div>
-        <div class="arch-block">
-          <div class="icon">📡</div>
-          <h4>BLE MCU Module</h4>
-          <p>Reusable, sterilizable Bluetooth module — pogo-pin/snap-fit to FPCB, duty-cycled sleep</p>
-        </div>
-        <div class="arch-block arch-arrow">→</div>
-        <div class="arch-block">
-          <div class="icon">📱</div>
-          <h4>Patient App</h4>
-          <p>Smartphone dashboard for pH, temperature, moisture and impedance trends over time</p>
-        </div>
-      </div>
+<!-- ═══════════════════════════════════════════════════════════
+     RESEARCH GAP
+     ═══════════════════════════════════════════════════════════ -->
+<section id="research" class="section-even">
+  <div class="container">
+    <span class="section-label">Literature Review</span>
+    <h2 class="section-title">Research <span>Gap</span> Identification</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Three key papers were systematically compared to identify the state-of-the-art limitations and establish where this FYP makes its contribution.</p>
+    <div class="paper-cards" id="paper-cards">
+      <!-- Rendered by script.js → renderResearchGap() -->
     </div>
-  </section>
-
-  <!-- SENSOR PARAMETERS -->
-  <section class="section container">
-    <div class="section-header">
-      <div class="section-tag">Parameters</div>
-      <h2>Monitored Biomarkers</h2>
-      <p>Four primary sensors selected after systematic comparison of 15 wound biomarkers across clinical importance and engineering feasibility.</p>
+    <div class="gap-box" id="research-gap-text">
+      <!-- Rendered by script.js → renderResearchGap() -->
     </div>
-    <div class="param-grid">
-      <div class="param-card">
-        <span class="score">10/10</span>
-        <h4>🧪 Wound pH</h4>
-        <div class="range">Normal: 4.0–6.0 | Danger: 7.2–9.0</div>
-        <div class="sensor-row">
-          <span class="sensor-chip priority">Metal-Oxide (IrOx/ZnO)</span>
-          <span class="sensor-chip">Potentiometric</span>
-        </div>
-      </div>
-      <div class="param-card">
-        <span class="score">9/10</span>
-        <h4>🌡️ Temperature</h4>
-        <div class="range">Normal: 30–34°C | Danger: &gt;35.5°C</div>
-        <div class="sensor-row">
-          <span class="sensor-chip priority">TMP117 / NTC</span>
-          <span class="sensor-chip">Digital I²C</span>
-        </div>
-      </div>
-      <div class="param-card">
-        <span class="score">8/10</span>
-        <h4>💧 Moisture/Hydration</h4>
-        <div class="range">Optimal moist | Danger: dry or saturated</div>
-        <div class="sensor-row">
-          <span class="sensor-chip priority">Capacitive Film</span>
-          <span class="sensor-chip">SHT40 / HDC2080</span>
-        </div>
-      </div>
-      <div class="param-card">
-        <span class="score">9/10</span>
-        <h4>⚡ Impedance (EIS)</h4>
-        <div class="range">Normal: low | Danger: biofilm formation</div>
-        <div class="sensor-row">
-          <span class="sensor-chip priority">AD5940 AFE</span>
-          <span class="sensor-chip">Printed Ag/AgCl</span>
-        </div>
-      </div>
-      <div class="param-card">
-        <span class="score">7/10</span>
-        <h4>🌬️ VOC / Odor</h4>
-        <div class="range">Pathogen metabolites (H₂S, amines)</div>
-        <div class="sensor-row">
-          <span class="sensor-chip">BME688</span>
-          <span class="sensor-chip">MOS sensor</span>
-        </div>
-      </div>
-      <div class="param-card">
-        <span class="score">8/10</span>
-        <h4>💉 Blood Perfusion</h4>
-        <div class="range">Microvascular health via PPG</div>
-        <div class="sensor-row">
-          <span class="sensor-chip">ADPD4100</span>
-          <span class="sensor-chip">Optical AFE</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SIMILAR PRODUCTS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Competitive Landscape</div>
-        <h2>Similar Products Identified</h2>
-        <p>Existing solutions that validate our approach and inform our differentiation strategy.</p>
-      </div>
-      <div class="cards-grid cards-3">
-        <div class="card">
-          <div class="card-icon">🏆</div>
-          <h3>SmartHEAL</h3>
-          <p>James Dyson Award 2022 winner by Warsaw University of Technology. pH sensor integrated into wound dressing using RFID — battery-free, screen-printed on fabric. Communicates with smartphones. Validates our core pH-monitoring approach.</p>
-          <div class="tags">
-            <span class="tag teal">pH Sensor</span>
-            <span class="tag">RFID</span>
-            <span class="tag">Screen-Printed</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔬</div>
-          <h3>Iversen et al. 2022</h3>
-          <p>Flexible, fully-printed smart patch for pH and hydration sensing. Key reference for our FPCB electrode design — establishes printed carbon paste electrodes with Ag/AgCl reference, sensitivity of −50 mV/pH unit.</p>
-          <div class="tags">
-            <span class="tag teal">pH + Hydration</span>
-            <span class="tag">FPCB</span>
-            <span class="tag amber">Core Reference</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">📡</div>
-          <h3>Tang et al. 2021</h3>
-          <p>Wearable sensors for wound healing pH and temperature detection. Defines engineering thresholds: healing pH 4.0–6.5, infection pH 7.0+. High-impedance Op-Amp buffer requirement for mV-level signals from electrochemical sensors.</p>
-          <div class="tags">
-            <span class="tag teal">pH + Temp</span>
-            <span class="tag">Wearable</span>
-            <span class="tag amber">Circuit Design</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OVERALL PROGRESS -->
-  <section class="section container">
-    <div class="section-header">
-      <div class="section-tag">Project Timeline</div>
-      <h2>14-Week FYP Roadmap</h2>
-      <p>From literature review to working prototype — tracked weekly with deliverables.</p>
-    </div>
-    <div class="card" style="margin-bottom: 2rem;">
-      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-        <span style="font-family: var(--mono); font-size: 0.8rem; color: var(--teal)">OVERALL PROGRESS</span>
-        <span style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim)">Week 3 of 14</span>
-      </div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar" data-w="21" style="width: 0%"></div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem;">
-        <div style="text-align: center; padding: 0.75rem; background: rgba(0,212,170,0.05); border-radius: 8px; border: 1px solid rgba(0,212,170,0.2)">
-          <div style="font-family: var(--display); font-size: 1.4rem; font-weight: 800; color: var(--teal)">3</div>
-          <div style="font-size: 0.7rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem">Weeks Done</div>
-        </div>
-        <div style="text-align: center; padding: 0.75rem; background: rgba(59,130,246,0.05); border-radius: 8px; border: 1px solid rgba(59,130,246,0.2)">
-          <div style="font-family: var(--display); font-size: 1.4rem; font-weight: 800; color: var(--blue)">1</div>
-          <div style="font-size: 0.7rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem">In Progress</div>
-        </div>
-        <div style="text-align: center; padding: 0.75rem; background: rgba(100,116,139,0.05); border-radius: 8px; border: 1px solid rgba(100,116,139,0.2)">
-          <div style="font-family: var(--display); font-size: 1.4rem; font-weight: 800; color: var(--text-muted)">10</div>
-          <div style="font-size: 0.7rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem">Upcoming</div>
-        </div>
-        <div style="text-align: center; padding: 0.75rem; background: rgba(245,158,11,0.05); border-radius: 8px; border: 1px solid rgba(245,158,11,0.2)">
-          <div style="font-family: var(--display); font-size: 1.4rem; font-weight: 800; color: var(--amber)">14</div>
-          <div style="font-size: 0.7rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem">Total Weeks</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align: center">
-      <button class="btn-primary" onclick="showPage('weeks')">View Full Weekly Timeline →</button>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>Smart Diabetic Wound Monitoring Sensor Patch (FSV4) · Final Year Project 2025/26</p>
-      <p style="margin-top: 0.5rem">Faculty of Engineering · University of Sri Jayewardenepura</p>
-    </div>
-  </footer>
-</div>
-
-<!-- ══════════ WEEKS PAGE ══════════ -->
-<div class="page" id="weeks">
-  <section class="section container">
-    <div class="section-header">
-      <div class="section-tag">Weekly Progress</div>
-      <h2>Project Timeline</h2>
-      <p>14-week FYP journey — click each week to expand details, tasks, and reference materials.</p>
-    </div>
-
-    <div class="timeline">
-
-      <!-- WEEK 1 -->
-      <div class="week-item">
-        <div class="week-dot">
-          <div class="week-circle done">W1</div>
-        </div>
-        <div class="week-content" onclick="toggleWeek(this)">
-          <div class="week-header">
-            <div class="week-title">Literature Review: pH Variations & Wound Healing Biology</div>
-            <span class="week-status status-done">✓ Complete</span>
-            <svg class="week-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="week-body">
-            <p>The first week focused on establishing a solid foundation of the clinical and biochemical basis for the project. Extensive research was conducted on wound healing stages and how pH changes at each phase indicate healing status or infection.</p>
-            <ul class="week-tasks">
-              <li>Studied the four wound healing stages: Hemostasis, Inflammation (pH ~7.0), Proliferation (pH drops 4–6), and Maturation/Remodelling</li>
-              <li>Reviewed published literature on pH variations in chronic vs acute diabetic wounds — handwritten pH variation analysis notes compiled</li>
-              <li>Conducted comprehensive sensor comparison across 15 wound biomarkers: pH, temperature, moisture, impedance, VOC, blood perfusion, glucose, lactate, and more</li>
-              <li>Reviewed the clinical paper: <em>pH variations in chronic diabetic wounds</em> (s13047_023_00653) — a key foundational reference on infection biomarker thresholds</li>
-              <li>Reviewed: <em>Advanced Transducer Architectures for Smart Wound Dressings</em> — systematic review of ISFET, metal-oxide, and printed electrode technologies</li>
-              <li>Created <strong>Smart_Diabetic_Wound_Monitoring.xlsx</strong> — full project overview, parameter matrix (15 parameters), technology comparison, and commercial sensor shortlist</li>
-            </ul>
-            <div class="tags">
-              <span class="tag teal">pH Biology</span>
-              <span class="tag teal">Sensor Comparison Matrix</span>
-              <span class="tag">Literature Review</span>
-              <span class="tag amber">Deliverable: Parameter Matrix</span>
-            </div>
-            <img data-fyp-img="dressing_p1" class="week-img" alt="Smart wound dressing transducer research"
-                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%230d1526' width='400' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300d4aa' font-size='14' font-family='monospace'%3EWeek 1 reference image%3C/text%3E%3C/svg%3E">
-          </div>
-        </div>
-      </div>
-
-      <!-- WEEK 2 -->
-      <div class="week-item">
-        <div class="week-dot">
-          <div class="week-circle done">W2</div>
-        </div>
-        <div class="week-content" onclick="toggleWeek(this)">
-          <div class="week-header">
-            <div class="week-title">Similar Products Analysis, Flexible PCB Research & Wearable Sensor Requirements</div>
-            <span class="week-status status-done">✓ Complete</span>
-            <svg class="week-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="week-body">
-            <p>Week two shifted to competitive analysis and engineering feasibility. Identified existing commercial and academic solutions, studied inkjet-printed flexible circuits, and extracted detailed circuit requirements from published wearable sensor reviews.</p>
-            <ul class="week-tasks">
-              <li>Identified SmartHEAL (James Dyson Award 2022, Warsaw University of Technology) as the closest comparable product — pH RFID sensor in wound dressing, battery-free, mass-producible at 0.5 PLN/sensor</li>
-              <li>Catalogued YouTube documentation and news references (Reuters, Euronews) on similar wound monitoring patches for competitive gap analysis</li>
-              <li>Studied: <em>Flexible, Wearable and Fully-Printed Smart Patch for pH and Hydration Sensing in Wounds</em> (Iversen et al., 2022) — extracted key design constraints: carbon paste electrodes, Ag/AgCl reference, −50 mV/pH sensitivity</li>
-              <li>Deep-dived into inkjet bioprinting paper (IJB-8-1-447): studied roll-to-roll FPCB manufacturing, conductive ink properties and layer thicknesses for printed sensors</li>
-              <li>Extracted circuit requirements from <em>Wearable Sensors for Wound Healing-Related pH and Temperature Detection</em> (Tang et al., 2021): high-Z op-amp buffers, ADC resolution, thresholds for healing vs infection</li>
-              <li>Reviewed wound healing pathology from Robins Basic Pathology — engineering analysis of wound healing dynamics</li>
-            </ul>
-            <div class="tags">
-              <span class="tag teal">SmartHEAL Analysis</span>
-              <span class="tag teal">Flexible PCB</span>
-              <span class="tag">Inkjet Printing</span>
-              <span class="tag amber">Deliverable: Circuit Requirements</span>
-            </div>
-            <img data-fyp-img="flexible_circuit" class="week-img" alt="Flexible circuit printing for wound monitoring"
-                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%230d1526' width='400' height='200'/%3E%3C/svg%3E">
-          </div>
-        </div>
-      </div>
-
-      <!-- WEEK 3 -->
-      <div class="week-item">
-        <div class="week-dot">
-          <div class="week-circle done">W3</div>
-        </div>
-        <div class="week-content" onclick="toggleWeek(this)">
-          <div class="week-header">
-            <div class="week-title">pH Sensor Selection Matrix, Datasheet Analysis & Fabrication Research</div>
-            <span class="week-status status-done">✓ Complete</span>
-            <svg class="week-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="week-body">
-            <p>Week three was the most detailed engineering analysis week — systematic pH sensor comparison matrices, component datasheet deep-dives, and investigation of medical-grade fabrication partners.</p>
-            <ul class="week-tasks">
-              <li>Built iterative pH sensor selection matrix — compared Integrated ISFET (Clinical), Micro-Flex PCB (EEE Prototype), Printed Bio-Patch (Research), Optical+IR (Non-Invasive), and Academic SoC across 14 technical parameters</li>
-              <li>Final ranking: <strong>Micro-Flex PCB (JLCPCB) scored 9.5/10</strong> for FYP feasibility — best balance of accuracy (±0.15 pH), cost ($40–80 parts), and buildability</li>
-              <li>Analysed: Shirzaei Sani et al. vs Iversen et al. — technical comparison of two state-of-the-art wearable wound patches to determine best design approaches to adopt</li>
-              <li>Analysed: Comparative matrix — Shirzaei Sani vs Tang et al. — electrode materials, sensing mechanisms, and clinical validation data</li>
-              <li>Deep-dived datasheets: <strong>AD5940/AD5941</strong> (Analog Devices) potentiostat/EIS AFE — extracted key specs for pH and impedance measurement circuit design</li>
-              <li>Deep-dived: <strong>AD8603/AD8607/AD8609</strong> (Analog Devices) — medical-grade precision op-amp for high-impedance pH buffer circuit</li>
-              <li>Researched TDS_Sensor_pH_303 ceramic reference electrode — evaluated for clinical-grade reference implementation</li>
-              <li>Identified medical-grade fabrication partners: Zimmer &amp; Peacock (UK, printed electrodes), Microsens SA (Switzerland, ISFET chips), Sentron/Millar (Netherlands, bare die ISFET), Analog Devices Healthcare (USA, AD8603 + AD5940)</li>
-            </ul>
-            <div class="tags">
-              <span class="tag teal">pH Matrix</span>
-              <span class="tag teal">AD5940 Datasheet</span>
-              <span class="tag teal">AD8603 Op-Amp</span>
-              <span class="tag">Fabrication Partners</span>
-              <span class="tag amber">Deliverable: Final pH Sensor Selection</span>
-            </div>
-            <img data-fyp-img="sciadv2" class="week-img" alt="pH sensor analysis and comparison"
-                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%230d1526' width='400' height='200'/%3E%3C/svg%3E">
-          </div>
-        </div>
-      </div>
-
-      <!-- WEEK 4 -->
-      <div class="week-item">
-        <div class="week-dot"><div class="week-circle current">W4</div></div>
-        <div class="week-content" onclick="toggleWeek(this)">
-          <div class="week-header">
-            <div class="week-title">Circuit Design: pH Sensor Signal Conditioning & AFE Architecture</div>
-            <span class="week-status status-current">⟳ In Progress</span>
-            <svg class="week-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="week-body">
-            <p>Design the analog front-end circuit for the pH sensor using the selected AD8603 op-amp buffer and AD5940 AFE. Simulate signal conditioning and verify against clinical pH thresholds.</p>
-            <ul class="week-tasks">
-              <li>Design high-impedance pH buffer circuit using AD8603 (input impedance &gt; 100 GΩ requirement)</li>
-              <li>Configure AD5940 EIS measurement parameters for impedance spectroscopy (100 Hz – 100 kHz sweep)</li>
-              <li>Schematic capture in KiCad — full AFE sub-circuit with anti-biofouling electrode interface</li>
-              <li>LTSpice simulation of op-amp buffer noise performance at mV-level pH signals</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Circuit Design</span><span class="tag">KiCad</span><span class="tag">LTSpice</span><span class="tag amber">Target: Schematic v1</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- WEEKS 5-14 -->
-      <div id="upcoming-weeks"></div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>Smart Diabetic Wound Monitoring Sensor Patch (FSV4) · Final Year Project 2025/26</p>
-    </div>
-  </footer>
-</div>
-
-<!-- ══════════ TEAM PAGE ══════════ -->
-<div class="page" id="team">
-  <section class="section container">
-    <div class="section-header">
-      <div class="section-tag">Project Group</div>
-      <h2>Our Team</h2>
-      <p>A multidisciplinary engineering team from the Department of Electronic & Electrical Engineering.</p>
-    </div>
-
-    <div class="team-grid" style="margin-bottom: 4rem">
-
-      <div class="member-card" style="--c: var(--teal)">
-        <div class="member-avatar" style="background: rgba(0,212,170,0.12); color: var(--teal)">V</div>
-        <h3>Vikum Vichakshana</h3>
-        <div class="role">Project Lead</div>
-        <div class="id">E/21/430</div>
-        <div class="desc">Responsible for pH sensor selection, analog front-end circuit design, pH sensor matrix analysis, and component procurement. Leads the hardware architecture and FPCB design sub-team.</div>
-        <div class="member-skills">
-          <span class="skill-chip">pH Sensing</span>
-          <span class="skill-chip">Circuit Design</span>
-          <span class="skill-chip">KiCad</span>
-          <span class="skill-chip">AD5940</span>
-          <span class="skill-chip">Bioelectronics</span>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="member-avatar" style="background: rgba(59,130,246,0.12); color: var(--blue)">S</div>
-        <h3>Tharushi Gimhani</h3>
-        <div class="role">Member</div>
-        <div class="id">E/21/153</div>
-        <div class="desc">Responsible for BLE firmware development on the nRF52840 MCU, GATT profile design, duty-cycle power management, and smartphone data pipeline integration.</div>
-        <div class="member-skills">
-          <span class="skill-chip">Temperature sensor</span>
-          <span class="skill-chip">Embedded C</span>
-          <span class="skill-chip">Power Optimisation</span>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="member-avatar" style="background: rgba(245,158,11,0.12); color: var(--amber)">D</div>
-        <h3>Vishwa Jayaweera</h3>
-        <div class="role">Member</div>
-        <div class="id">E/21/203</div>
-        <div class="desc">Leads the flexible PCB layout, electrode geometry design, biocompatible substrate selection, and coordinates with fabrication partners for prototype manufacturing.</div>
-        <div class="member-skills">
-          <span class="skill-chip">Flex PCB</span>
-          <span class="skill-chip">Altium Designer</span>
-          <span class="skill-chip">Screen Printing</span>
-          <span class="skill-chip">ISO 10993</span>
-        </div>
-      </div>
-
-    
-
-    <!-- SUPERVISORS -->
-    <div class="section-header" style="margin-top: 1rem">
-      <div class="section-tag">Supervisors</div>
-      <h2>Academic Supervisors (Department) </h2>
-      <p>Faculty advisors providing technical guidance, clinical insights, and research mentorship throughout the FYP.</p>
-    </div>
-
-    <div class="supervisor-grid">
-
-      <div class="supervisor-card">
-        <div class="supervisor-avatar" style="background: rgba(0,212,170,0.12); color: var(--teal)">AW</div>
-        <div>
-          <h3>Dr. Ruwan Ranaweera</h3>
-          <div class="title">Senior Lecturer in Electrical and Electronic Engineering</div>
-          <div class="dept">Department of Electrical &amp; Electronic Engineering, Faculty of Engineering</div>
-          <div class="bio">Dr. Ruwan specialises in biomedical electronics, wearable sensor systems, and medical device design. With over 12 years of research experience in physiological monitoring, he brings deep expertise in analog front-end design, electrochemical sensors, and medical device regulatory frameworks (ISO 10993, IEC 60601). He has supervised over 20 final-year biomedical engineering projects and holds active research collaborations with the Sri Lanka National Hospital.</div>
-          <div class="supervisor-expertise">
-            <span class="tag teal">Biomedical Electronics</span>
-            <span class="tag teal">Wearable Sensors</span>
-            <span class="tag">Medical Device Design</span>
-            <span class="tag">Electrochemical Sensing</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="supervisor-card">
-        <div class="supervisor-avatar" style="background: rgba(59,130,246,0.12); color: var(--blue)">RP</div>
-        <div>
-          <h3>Dr.Manjula Peiris</h3>
-          <div class="title">Specialist About wound care</div>
-          <div class="dept">Department of Surgery | Affiliated — Faculty of Medicine</div>
-          <div class="bio">Dr. Manjula is a dual-faculty researcher bridging engineering and clinical medicine. His research focuses on point-of-care diagnostics, flexible electronics for healthcare, and diabetic complication monitoring systems. He holds a PhD in Biosensors from the University of Manchester (UK) and has published extensively on miniaturised electrochemical platforms. He is the principal co-supervisor overseeing clinical relevance, sensor validation methodology, and liaison with the Endocrinology Department at the Teaching Hospital Colombo.</div>
-          <div class="supervisor-expertise">
-            <span class="tag teal">Biosensors</span>
-            <span class="tag teal">Wound Medications</span>
-            <span class="tag">Diabetic Care</span>
-            <span class="tag">Point-of-Care Dx</span>
-            <span class="tag">Clinical Validation</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- PROJECT INFO -->
-    <div class="card" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; padding: 2rem">
+<!-- ═══════════════════════════════════════════════════════════
+     PROPOSED SOLUTION
+     ═══════════════════════════════════════════════════════════ -->
+<section id="solution" class="section-odd">
+  <div class="container">
+    <span class="section-label">Proposed Solution</span>
+    <h2 class="section-title">The <span>Proposed System</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-2" style="align-items:start;gap:3rem">
       <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Project Code</div>
-        <div style="font-family: var(--display); font-weight: 700; color: var(--teal)">FSV4</div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Academic Year</div>
-        <div style="font-family: var(--display); font-weight: 700">2025 / 2026</div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Department</div>
-        <div style="font-family: var(--display); font-weight: 700">EEE</div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Duration</div>
-        <div style="font-family: var(--display); font-weight: 700">14 Weeks</div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Team Size</div>
-        <div style="font-family: var(--display); font-weight: 700">6 Members</div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem">Focus Area</div>
-        <div style="font-family: var(--display); font-weight: 700">Biomedical</div>
-      </div>
-    </div>
-
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>Smart Diabetic Wound Monitoring Sensor Patch (FSV4) · Final Year Project 2025/26</p>
-    </div>
-  </footer>
-</div>
-
-<!-- Scripts -->
-<script src="assets/images.js"></script>
-<script src="script.js"></script>
-<script>
-// Generate upcoming weeks 5–14
-const upcomingWeeks = [
-  { w: 5, title: "Temperature Sensor Circuit Design & MCU Selection", tasks: ["Design PT1000/NTC Wheatstone bridge amplifier", "Compare nRF52840 vs ESP32 vs STM32WB for BLE MCU", "Power budget modelling — target <5 mW average", "ADC resolution requirements verification"] },
-  { w: 6, title: "Moisture & Impedance Sensor Integration", tasks: ["Integrate SHT40 capacitive humidity sensor (I²C interface)", "Configure AD5940 for 4-electrode EIS measurement", "Define impedance sweep parameters (100 Hz–100 kHz)", "Design pogo-pin interface between disposable FPCB and reusable module"] },
-  { w: 7, title: "Full Schematic Capture & PCB Layout — Rev 1", tasks: ["Complete KiCad schematic for all sub-circuits", "PCB layout — 2-layer flex PCB (polyimide substrate)", "Design electrode geometry for wound contact layer", "DRC check and prepare Gerber files for JLCPCB quote"] },
-  { w: 8, title: "FPCB Fabrication & Component Procurement", tasks: ["Submit FPCB Gerbers to JLCPCB for fabrication", "Order SMD components: AD5940, AD8603, TMP117, SHT40", "Order BLE module (nRF52840 DK or Seeed XIAO BLE)", "Prepare biocompatible substrate samples for electrode printing"] },
-  { w: 9, title: "PCB Bring-Up & Initial Sensor Testing", tasks: ["Solder and assemble PCB Rev 1", "Bring-up power rails, verify voltages with multimeter", "Test pH sensor in calibration buffer solutions (pH 4.0, 7.0, 10.0)", "Record raw ADC readings vs known pH — calculate sensitivity (mV/pH)"] },
-  { w: 10, title: "Firmware Development — BLE Data Pipeline", tasks: ["Flash nRF52840 with Zephyr RTOS BLE peripheral firmware", "Implement GATT service for wound data characteristics (pH, Temp, RH, EIS)", "Duty-cycle ADC sampling (1×/hour default, interrupt on threshold)", "Verify BLE connection and data streaming to smartphone"] },
-  { w: 11, title: "Mobile Application Development", tasks: ["Build Flutter app with BLE GATT client", "Design wound status dashboard — pH trend chart, temperature heatmap", "Implement infection alert logic (pH > 7.2 threshold alert)", "Test end-to-end: sensor → BLE → app display"] },
-  { w: 12, title: "Wound Phantom Testing & Calibration", tasks: ["Prepare agar-based wound phantom with known pH/ionic composition", "Run 7-day continuous sensor stability test in simulated exudate", "Characterise sensor drift vs time — verify 7-day calibration requirement", "Test temperature compensation algorithm for pH readings"] },
-  { w: 13, title: "System Integration, ISO 10993 Assessment & Optimisation", tasks: ["Full system integration test — all sensors + BLE + app", "Biocompatibility risk assessment per ISO 10993-1", "Leakage current measurement — verify <10 µA patient safety", "Power optimisation — measure actual µA sleep current and duty-cycle average"] },
-  { w: 14, title: "Final Report, Demonstration & Project Submission", tasks: ["Complete final FYP report (Introduction, Methodology, Results, Conclusion)", "Prepare oral presentation and demonstration setup", "Video demonstration of patch on wound phantom with live app", "Submit all design files, code, and report"] },
-];
-
-const container = document.getElementById('upcoming-weeks');
-upcomingWeeks.forEach(wk => {
-  container.innerHTML += `
-  <div class="week-item" style="animation-delay:${(wk.w - 4) * 0.05}s">
-    <div class="week-dot"><div class="week-circle upcoming">W${wk.w}</div></div>
-    <div class="week-content" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <div class="week-title">${wk.title}</div>
-        <span class="week-status status-upcoming">Upcoming</span>
-        <svg class="week-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="week-body">
-        <ul class="week-tasks">
-          ${wk.tasks.map(t => `<li>${t}</li>`).join('')}
+        <p class="section-desc" style="margin-bottom:1.5rem">A coin-sized, hand-fabricated FPCB wound sensor patch combined with a 20 mm diameter electronics module — fully wireless, battery-powered, and reproducible in a Sri Lankan university laboratory.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem">
+          <!-- Features rendered from SOLUTION.features via a loop -->
+          <li class="reveal" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🧪</span><span style="color:var(--gray-light);font-size:0.92rem">PANI potentiometric pH electrode synthesised in-house (~54–60 mV/pH sensitivity target)</span></li>
+          <li class="reveal reveal-delay-1" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">⚡</span><span style="color:var(--gray-light);font-size:0.92rem">Ag/AgCl solid-state reference electrode screen-printed on PET/PI substrate</span></li>
+          <li class="reveal reveal-delay-2" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🌡️</span><span style="color:var(--gray-light);font-size:0.92rem">NTC 10kΩ bead thermistor for wound surface temperature (±0.5°C, range 20–45°C)</span></li>
+          <li class="reveal reveal-delay-3" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">💧</span><span style="color:var(--gray-light);font-size:0.92rem">Capacitive/impedance-based exudate moisture sensing (100 Hz – 100 kHz AC excitation)</span></li>
+          <li class="reveal reveal-delay-4" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🔌</span><span style="color:var(--gray-light);font-size:0.92rem">INA333 instrumentation amplifier — 100 dB CMRR, 25 µV offset, 3.3V single supply</span></li>
+          <li class="reveal" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">📊</span><span style="color:var(--gray-light);font-size:0.92rem">ADS1115 16-bit I²C ADC — 7.8 µV resolution at ±256 mV PGA range</span></li>
+          <li class="reveal reveal-delay-1" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">📡</span><span style="color:var(--gray-light);font-size:0.92rem">ESP32-S3 with BLE 5.0 + Wi-Fi — deep sleep 10 µA, 240 MHz dual-core</span></li>
+          <li class="reveal reveal-delay-2" style="display:flex;gap:0.75rem;align-items:start"><span style="font-size:1.3rem">🔋</span><span style="color:var(--gray-light);font-size:0.92rem">CR2032 coin cell + XC6206 LDO (1 µA quiescent) — target ≥6 months battery life</span></li>
         </ul>
-        <div class="tags">
-          <span class="tag">Week ${wk.w}</span>
-          <span class="tag">Planned</span>
+      </div>
+      <div class="reveal" style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--amber))"></div>
+        <div class="section-label" style="margin-bottom:1rem">System Specification</div>
+        <table style="width:100%;font-size:0.85rem">
+          <tbody>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Range</td><td style="color:var(--white);text-align:right">pH 4.0 – 9.0</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Sensitivity</td><td style="color:var(--teal);text-align:right">≥ 50 mV/pH</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">pH Resolution</td><td style="color:var(--teal);text-align:right">≤ 0.02 pH</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">ADC Resolution</td><td style="color:var(--white);text-align:right">16-bit (ADS1115)</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">CMRR</td><td style="color:var(--white);text-align:right">100 dB (INA333)</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Wireless</td><td style="color:var(--white);text-align:right">BLE 5.0 + Wi-Fi</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Sleep Current</td><td style="color:var(--white);text-align:right">&lt; 10 µA</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Battery Life</td><td style="color:var(--teal);text-align:right">≥ 6 months</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">PCB Diameter</td><td style="color:var(--white);text-align:right">20 mm (coin-size)</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Sensor Size</td><td style="color:var(--white);text-align:right">30 × 50 mm FPCB</td></tr>
+            <tr><td style="color:var(--gray-mid);padding:0.5rem 0;border-top:1px solid rgba(30,58,95,0.5);font-family:var(--font-mono);font-size:0.78rem">Budget</td><td style="color:var(--amber);text-align:right">≤ LKR 20,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROJECT OBJECTIVES
+     ═══════════════════════════════════════════════════════════ -->
+<section id="objectives" class="section-even">
+  <div class="container">
+    <span class="section-label">Project Objectives</span>
+    <h2 class="section-title">What This Project <span>Aims to Achieve</span></h2>
+    <div class="section-divider"></div>
+    <ul class="objectives-list" id="objectives-list">
+      <!-- Rendered by script.js → renderObjectives() -->
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WEEKLY PROGRESS TIMELINE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="progress" class="section-odd">
+  <div class="container">
+    <span class="section-label">Documentation Journey</span>
+    <h2 class="section-title">Weekly <span>Progress</span> Timeline</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Every week of the project is documented with goals, key findings, design decisions, rejected approaches, and evidence. Click "Read More" on each card to expand the full details.</p>
+    <div class="phase-filter" id="phase-filters">
+      <!-- Rendered by script.js → renderWeeklyProgress() -->
+    </div>
+    <div class="timeline" id="timeline">
+      <!-- Rendered by script.js → renderWeeklyProgress() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SYSTEM ARCHITECTURE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="architecture" class="section-even">
+  <div class="container">
+    <span class="section-label">Technical Design</span>
+    <h2 class="section-title">System <span>Architecture</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">The complete six-layer signal chain from wound contact to wireless data output. Each layer was selected through systematic comparison documented in the architecture workbook.</p>
+    <div class="arch-diagram" id="arch-diagram">
+      <!-- Rendered by script.js → renderArchitecture() -->
+    </div>
+    <div class="grid-3" style="margin-top:2.5rem">
+      <div class="card reveal">
+        <div class="section-label">Signal Chain</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">Analog Front-End</h4>
+        <p style="font-size:0.88rem">INA333 (CMRR 100 dB) → Low-pass filter (100 Hz cutoff) → ADS1115 16-bit ADC (7.8 µV/LSB at ±256 mV range)</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="section-label">Firmware Logic</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">ESP32-S3 Processing</h4>
+        <p style="font-size:0.88rem">Read ADS1115 via I²C → Apply 3-point pH calibration → Nernst temperature correction → Pack BLE GATT notification → Deep sleep</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="section-label">Power Strategy</div>
+        <h4 style="color:var(--white);margin-bottom:0.5rem">Ultra-Low Power</h4>
+        <p style="font-size:0.88rem">CR2032 + XC6206 (1 µA Iq). ESP32-S3 deep sleep 10 µA between readings. BLE advertisement only at measurement interval (default: 1 min)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SENSOR TECHNOLOGY
+     ═══════════════════════════════════════════════════════════ -->
+<section id="sensor-tech" class="section-odd">
+  <div class="container">
+    <span class="section-label">Transducer Design</span>
+    <h2 class="section-title">Sensor <span>Technology</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">The FPCB wound patch integrates four sensing modalities on a single 30×50 mm PET substrate, sharing the same electrode pair for pH and impedance moisture sensing.</p>
+    <div class="sensor-grid" id="sensor-grid">
+      <!-- Rendered by script.js → renderSensorTech() -->
+    </div>
+    <div style="margin-top:2.5rem;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--card-radius);padding:2rem;border-left:3px solid var(--amber)">
+      <div class="section-label">PANI Chemistry</div>
+      <h4 style="color:var(--white);margin-bottom:0.75rem">Why Polyaniline (PANI)?</h4>
+      <p style="font-size:0.92rem;color:var(--gray-light);line-height:1.8">
+        PANI is the <strong style="color:var(--white)">only intrinsically pH-responsive conductive polymer</strong>. Its Emeraldine Salt form undergoes reversible acid-base doping: <code>PANI-ES + H⁺ ⇌ PANI-ES·H⁺</code>, producing a Nernstian potential change of ~59 mV per pH unit. Unlike PEDOT:PSS or PPy, PANI requires no additional functionalisation for pH sensing. Aniline monomer costs only LKR 250–400 locally (Glorchem LK, Colombo), making it uniquely suited for this low-cost FYP context.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     RESOURCE LIBRARY
+     ═══════════════════════════════════════════════════════════ -->
+<section id="resources" class="section-even">
+  <div class="container-wide">
+    <span class="section-label">Evidence Library</span>
+    <h2 class="section-title">Resource <span>Library</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">All project files, research papers, and reference documents catalogued and filterable. Every file is linked to its contributing week and project section.</p>
+    <div class="resource-filters" id="resource-filters">
+      <!-- Rendered by script.js → renderResources() -->
+    </div>
+    <div class="resource-grid" id="resource-grid">
+      <!-- Rendered by script.js → renderResources() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FILE ANALYSIS TABLE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="file-analysis" class="section-odd">
+  <div class="container-wide">
+    <span class="section-label">Complete File Index</span>
+    <h2 class="section-title">File <span>Analysis</span> Table</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Every uploaded project file is classified below with its type, contributing week, content summary, importance to the project, and the website section where it is used.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Week</th>
+            <th>File Type</th>
+            <th>Main Content</th>
+            <th>Importance to Project</th>
+            <th>Website Section</th>
+          </tr>
+        </thead>
+        <tbody id="file-table-body">
+          <!-- Rendered by script.js → renderFileAnalysis() -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FILE CATEGORY CLASSIFICATION
+     ═══════════════════════════════════════════════════════════ -->
+<section id="file-categories-sec" class="section-even">
+  <div class="container">
+    <span class="section-label">Resource Classification</span>
+    <h2 class="section-title">File <span>Categories</span> &amp; Their Role</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Every uploaded resource is classified into one of eight categories. Each category explains how that class of file supports the project's technical and academic objectives.</p>
+    <div class="grid-4" id="file-categories" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+      <!-- Rendered by script.js → renderFileCategories() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DATASHEETS
+     ═══════════════════════════════════════════════════════════ -->
+<section id="datasheets" class="section-odd">
+  <div class="container-wide">
+    <span class="section-label">Component References</span>
+    <h2 class="section-title">Component <span>Datasheets</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Datasheets for every component selected through the architecture comparison. Each links to the manufacturer datasheet — place the PDFs in <code>documents/datasheets/</code> to enable direct viewing.</p>
+    <div class="resource-grid" id="datasheets-grid">
+      <!-- Rendered by script.js → renderDatasheets() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DOCUMENT LIBRARY (PDFs / Word)
+     ═══════════════════════════════════════════════════════════ -->
+<section id="documents" class="section-even">
+  <div class="container-wide">
+    <span class="section-label">Word / PDF Documents</span>
+    <h2 class="section-title">Document <span>Library</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Full technical reference documents, literature reviews, methodology documents, and requirement specifications produced during the project.</p>
+    <div class="resource-grid" id="documents-grid">
+      <!-- Rendered by script.js → renderDocuments() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     VIDEO & PUBLICATION REFERENCES
+     ═══════════════════════════════════════════════════════════ -->
+<section id="videos" class="section-odd">
+  <div class="container-wide">
+    <span class="section-label">Reference Videos &amp; Publications</span>
+    <h2 class="section-title">Video &amp; <span>External References</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Key videos, award pages, and publications that informed the project — including SmartHEAL, the closest real-world product concept (2022 James Dyson Award winner).</p>
+    <div class="resource-grid" id="videos-grid">
+      <!-- Rendered by script.js → renderVideos() -->
+    </div>
+    <h3 style="color:var(--white);margin:2.5rem 0 1.5rem">Foundational Publications</h3>
+    <div class="resource-grid" id="publications-grid">
+      <!-- Rendered by script.js → renderVideos() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COMPETITIVE / SIMILAR PRODUCT ANALYSIS
+     ═══════════════════════════════════════════════════════════ -->
+<section id="competitive" class="section-even">
+  <div class="container">
+    <span class="section-label">Market Positioning</span>
+    <h2 class="section-title">Similar <span>Products</span> &amp; Differentiation</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">How this FYP positions itself against existing research prototypes and commercial products — establishing both the precedent for the concept and this project's unique contribution.</p>
+    <div class="grid-3" id="similar-products">
+      <!-- Rendered by script.js → renderSimilarProducts() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUPERVISOR MEETING NOTES
+     ═══════════════════════════════════════════════════════════ -->
+<section id="supervisor" class="section-odd">
+  <div class="container">
+    <span class="section-label">Supervision Record</span>
+    <h2 class="section-title">Supervisor <span>Meeting Notes</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">A record of supervisor feedback and how it shaped the project. <em style="color:var(--amber)">Edit the SUPERVISOR_NOTES array in data.js to add real meeting dates and notes.</em></p>
+    <div class="grid-3" id="supervisor-notes" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))">
+      <!-- Rendered by script.js → renderSupervisorNotes() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTING & VALIDATION PLAN
+     ═══════════════════════════════════════════════════════════ -->
+<section id="testing" class="section-even">
+  <div class="container">
+    <span class="section-label">Validation Strategy</span>
+    <h2 class="section-title">Testing &amp; Validation <span>Plan</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Six validation phases are defined, progressing from material-level synthesis quality control through to full system simulated wound environment testing.</p>
+    <div class="testing-grid" id="testing-grid">
+      <!-- Rendered by script.js → renderTesting() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BUDGET OVERVIEW
+     ═══════════════════════════════════════════════════════════ -->
+<section id="budget" class="section-odd">
+  <div class="container">
+    <span class="section-label">Economic Feasibility</span>
+    <h2 class="section-title">Project <span>Budget</span></h2>
+    <div class="section-divider"></div>
+    <div class="budget-header" id="budget-header">
+      <!-- Rendered by script.js → renderBudget() -->
+    </div>
+    <div class="budget-rows" id="budget-rows">
+      <!-- Rendered by script.js → renderBudget() -->
+    </div>
+    <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--teal-glow);border:1px solid rgba(0,212,200,0.25);border-radius:8px">
+      <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--teal)">
+        💡 Key insight: Sri Lanka local sourcing for synthesis chemicals is 5–12× cheaper than international suppliers (Sigma-Aldrich). 
+        Electronics components (LCSC/AliExpress) are 2–3× cheaper than local electronics shops for imported ICs. 
+        Full budget comparison documented in Budget_Estimation_FPCB_Wound_Sensor_FYP.xlsx.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FUTURE WORK
+     ═══════════════════════════════════════════════════════════ -->
+<section id="future" class="section-even">
+  <div class="container">
+    <span class="section-label">Research Directions</span>
+    <h2 class="section-title">Future <span>Work</span></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Eight directions for post-FYP development, demonstrating the depth of research understanding and readiness for graduate-level study.</p>
+    <div class="future-list" id="future-list">
+      <!-- Rendered by script.js → renderFutureWork() -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUPERVISOR REVIEW GUIDE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="review" class="section-odd" style="background:var(--navy-deepest)">
+  <div class="container">
+    <span class="section-label" style="color:var(--amber)">For Supervisors &amp; Examiners</span>
+    <h2 class="section-title">How to <span>Review</span> This Portfolio</h2>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--amber),transparent)"></div>
+    <p class="section-desc">This guide is written specifically for project supervisors, examiners, and higher-studies reviewers to navigate the portfolio efficiently and locate evidence of project quality.</p>
+    <div class="review-steps" id="review-steps">
+      <!-- Rendered by script.js → renderReviewGuide() -->
+    </div>
+    <div style="margin-top:2.5rem;background:var(--navy-card);border:2px solid var(--amber);border-radius:var(--card-radius);padding:2rem">
+      <div class="section-label" style="color:var(--amber)">Evaluation Criteria Evidence</div>
+      <div class="grid-2" style="gap:1.5rem;margin-top:0">
+        <div>
+          <h4 style="color:var(--white);margin-bottom:0.5rem">Technical Quality</h4>
+          <p style="font-size:0.88rem;color:var(--gray-light)">Every component selection is backed by a multi-parameter comparison matrix. Architecture decisions cite specific data (e.g., ADS1115 resolution = 7.8 µV vs ESP32 internal = 1.2 mV — 150× better).</p>
+        </div>
+        <div>
+          <h4 style="color:var(--white);margin-bottom:0.5rem">Research Foundation</h4>
+          <p style="font-size:0.88rem;color:var(--gray-light)">Three papers compared systematically. Research gap clearly identified with academic language. Performance benchmarks set against published results (Shirzaei Sani: 59.7 mV/pH).</p>
+        </div>
+        <div>
+          <h4 style="color:var(--white);margin-bottom:0.5rem">Documentation Depth</h4>
+          <p style="font-size:0.88rem;color:var(--gray-light)">12 Excel workbooks, 7 documented weeks, complete fabrication protocol, QC checklists, safety guide, and FX-linked budget — all fully traceable.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--white);margin-bottom:0.5rem">Economic Feasibility</h4>
+          <p style="font-size:0.88rem;color:var(--gray-light)">SL vs international market analysis confirms entire project is executable for &lt; LKR 20,000. Local synthesis chemicals 5–12× cheaper. Electronics BOM ~USD 12.</p>
         </div>
       </div>
     </div>
-  </div>`;
-});
-</script>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     RESEARCHER PROFILE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="profile" class="section-even">
+  <div class="container">
+    <span class="section-label">About the Researcher</span>
+    <h2 class="section-title">Research <span>Profile</span></h2>
+    <div class="section-divider"></div>
+    <div class="profile-grid">
+      <div>
+        <p class="section-desc" style="margin-bottom:1.5rem">This Final Year Project positions the researcher at the intersection of three engineering fields that are increasingly critical to global healthcare technology development.</p>
+        <div class="profile-qualities" id="profile-qualities">
+          <!-- Rendered by script.js → renderProfile() -->
+        </div>
+      </div>
+      <div class="profile-summary" id="profile-summary">
+        <!-- Rendered by script.js → renderProfile() -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════════════════════ -->
+<section id="contact" class="section-odd" style="background:var(--navy-deepest);padding:5rem 2rem">
+  <div class="container" id="contact-inner">
+    <!-- Rendered by script.js → renderContact() -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-text">
+    <p>Smart Diabetic Wound pH Sensor · Final Year Project Portfolio</p>
+    <p>EEE Undergraduate · Sri Lanka · 2025–2026</p>
+    <p style="margin-top:0.5rem">
+      Built with HTML / CSS / JS · 
+      <a href="https://pages.github.com" target="_blank">Hosted on GitHub Pages</a> · 
+      Designed for supervisor, examiner &amp; higher-studies review
+    </p>
+  </div>
+</footer>
+
+<!-- ── BACK TO TOP ── -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ── SCRIPTS — load data.js first, then script.js ── -->
+<script src="data.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

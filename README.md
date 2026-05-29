@@ -14,3 +14,9 @@ Final updated version based on the requested changes.
 
 ## Files to open
 Open `index.html` in a browser. Keep `index.html`, `style.css`, `script.js`, and `data.js` in the same folder.
+
+Latest update:
+- Contact email updated to e21430@eng.pdn.ac.lk.
+- Supervisors shown as Dr. Ruwan Ranaweera and Dr. Manjula Peiris, Faculty of Medicine, University of Peradeniya.
+- Papers and datasheets Drive folder added: https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link
+- Limitation cards and final contact page colors improved for readability.

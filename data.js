@@ -79,45 +79,49 @@ const OBJECTIVES = [
   "Demonstrate the complete prototype within a budget of roughly LKR 15,000–20,000 using locally-sourced materials where possible."
 ];
 
-// ── WEEKLY PROGRESS: WEEKS 01–05 + WEEKS 06–14 COMING SOON ──
+// ── WEEKLY PROGRESS: DETAILED WEEK-BY-WEEK PROJECT DEVELOPMENT ──
 const WEEKS = [
   {
     "id": 1,
     "label": "Week 01",
     "dates": "May 2026",
     "phase": "Problem Definition",
-    "title": "Problem Definition and pH Background",
+    "title": "Week 01 — Problem Definition, Wound pH Background and Initial Direction",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link",
     "images": [
-      { "src": "week1.png", "caption": "Week 01 uploaded folder evidence" }
+      { "src": "week1.png", "caption": "Week 01 uploaded Google Drive folder evidence showing pH variation, sensor comparison and smart wound dressing resources." }
     ],
     "folders": [
       "PH VARIATIONS",
       "SENSOR COMPARISON",
       "SMART WOUND DRESSING"
     ],
-    "summary": "Focused on the clinical need for diabetic wound monitoring, wound pH variation, sensor comparison, and the smart wound dressing concept. This week defined pH as the main biomarker and set the project direction.",
-    "goals": "Study clinical background, compare pH sensing options, and understand the smart dressing concept.",
+    "summary": "Week 01 established the foundation of the Final Year Project by identifying diabetic wound monitoring as a clinically important and engineering-relevant problem. The main focus was to understand why chronic diabetic wounds require continuous monitoring and why wound pH can be used as an early biomarker for healing status, infection risk and chronic wound progression. During this week, pH variation in normal skin, healing wounds, chronic wounds and infected wounds was studied. Different possible sensing methods were compared, including optical pH sensing, electrochemical pH sensing, ISFET-based sensors and wearable smart dressing approaches. This week helped convert the broad idea of wound monitoring into a focused project direction based on flexible pH sensing integrated into a smart wound dressing.",
+    "goals": "The main goal of Week 01 was to define the clinical problem, understand the importance of wound pH, compare possible sensing technologies and select a realistic project direction suitable for a final-year engineering project. The week also aimed to identify the gap between ordinary wound inspection and continuous electronic wound monitoring.",
     "keyFindings": [
-      "Focused on the clinical need for diabetic wound monitoring, wound pH variation, sensor comparison, and the smart wound dressing concept. This week defined pH as the main biomarker and set the project direction.",
-      "Defined wound pH as the main sensing parameter and selected a dressing-integrated monitoring approach."
+      "Wound pH is a valuable biomarker because healthy and healing wounds are usually slightly acidic, while chronic or infected wounds often shift toward alkaline pH.",
+      "Diabetic wounds require regular monitoring because infection or delayed healing may occur before clear visual symptoms appear.",
+      "Conventional wound assessment depends heavily on manual observation during dressing changes, which does not provide continuous information.",
+      "Commercial wound monitoring systems and advanced medical sensors are often expensive and not easily accessible in low-resource clinical environments.",
+      "Flexible smart dressing technology is more suitable than rigid sensing probes because it can follow skin curvature and remain close to the wound region.",
+      "pH sensing was selected as the primary measurable parameter because it has strong clinical relevance and can be implemented using low-cost electrochemical methods."
     ],
-    "decisions": "Defined wound pH as the main sensing parameter and selected a dressing-integrated monitoring approach.",
-    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
-    "nextWeek": "Move into pathology, flexible electronics, and similar-product research.",
-    "evidence": "Google Drive resources for Week 01: https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link"
+    "decisions": "The project direction was narrowed to a smart diabetic wound monitoring patch with wound pH as the primary sensing parameter. A dressing-integrated wearable approach was selected instead of a handheld or laboratory-only measurement system. The project also began focusing on low-cost, locally feasible fabrication methods rather than expensive cleanroom-based devices.",
+    "rejected": "A purely visual wound assessment method was rejected because it cannot detect hidden biochemical changes. A laboratory-only pH meter approach was also rejected because it is not suitable for continuous or wearable monitoring. High-cost commercial pH sensing modules were not selected as the main direction because they do not match the low-cost FYP target.",
+    "nextWeek": "The next week moved toward clinical background research, wound healing pathology, wearable sensor examples and similar product analysis to strengthen the biomedical and engineering justification of the project.",
+    "evidence": "Week 01 evidence includes Google Drive folders on pH variations, sensor comparison and smart wound dressing concepts. These files support the initial problem definition and selection of wound pH as the central biomarker."
   },
   {
     "id": 2,
     "label": "Week 02",
     "dates": "May 2026",
     "phase": "Clinical & Concept Research",
-    "title": "Clinical Pathology and Wearable Sensor Research",
+    "title": "Week 02 — Clinical Pathology, Wearable Sensor Study and Similar Product Analysis",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link",
     "images": [
-      { "src": "week2.png", "caption": "Week 02 uploaded folder evidence" }
+      { "src": "week2.png", "caption": "Week 02 uploaded Google Drive folder evidence showing pathology, flexible circuit, wearable sensor and similar product resources." }
     ],
     "folders": [
       "Flexible Circuit Print",
@@ -125,31 +129,35 @@ const WEEKS = [
       "Similar Product Details",
       "Wearable Sensor"
     ],
-    "summary": "Reviewed wound healing biology using pathology references, explored flexible circuit printing, and studied wearable sensor designs. SmartHEAL and similar products were used as practical benchmarks.",
-    "goals": "Connect the biomedical problem with a realistic wearable sensor design.",
+    "summary": "Week 02 connected the engineering idea with real biomedical background. The work focused on understanding wound healing stages, inflammation, infection, tissue repair and chronic wound behavior using pathology references. This helped clarify why diabetic wounds are difficult to heal and why continuous monitoring can support early intervention. In parallel, wearable sensor technologies and flexible circuit printing methods were studied to understand how electronic sensors can be integrated into a wound dressing. Similar products such as SmartHEAL and other wearable wound-monitoring concepts were reviewed as practical benchmarks. This week was important because it confirmed that the project should not be only an electronics device, but a biomedical wearable system designed around clinical needs.",
+    "goals": "The goals were to study wound healing biology, identify clinical requirements, review flexible electronics approaches, investigate existing smart wound dressing products and decide how the proposed system should differ from commercial or research-level solutions.",
     "keyFindings": [
-      "Reviewed wound healing biology using pathology references, explored flexible circuit printing, and studied wearable sensor designs. SmartHEAL and similar products were used as practical benchmarks.",
-      "Confirmed that flexible printed electronics are more suitable than rigid sensor assemblies for wound dressing integration."
+      "Wound healing involves inflammation, tissue formation and remodeling stages, and diabetic wounds can become delayed or chronic due to poor circulation, infection and impaired cellular response.",
+      "pH variation is linked to bacterial growth, protease activity, tissue degradation and healing progress.",
+      "Flexible printed electronics are suitable for wound monitoring because they can be lightweight, thin and compatible with soft dressing materials.",
+      "SmartHEAL and similar smart dressing projects validate the concept of pH monitoring inside a wound dressing.",
+      "Many existing solutions focus on RFID, optical sensing or single-parameter monitoring, leaving space for a low-cost multi-parameter active electronic patch.",
+      "A wearable patch should minimize disturbance to the wound and avoid frequent dressing removal."
     ],
-    "decisions": "Confirmed that flexible printed electronics are more suitable than rigid sensor assemblies for wound dressing integration.",
-    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
-    "nextWeek": "Collect datasheets, fabrication company details, and similar device papers.",
-    "evidence": "Google Drive resources for Week 02: https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link"
+    "decisions": "The project continued with a flexible wearable patch concept rather than a rigid external device. A biomedical design direction was selected: the sensor layer should be disposable or wound-contact-safe, while the electronics module should be reusable where possible. Similar-product research was used to position the project as a low-cost, active monitoring alternative.",
+    "rejected": "Rigid sensor assemblies were rejected because they may be uncomfortable and unsuitable for wound dressing integration. A purely RFID-based passive system was not selected as the main direction because the project requires active multi-parameter sensing, signal processing and potential BLE/Wi-Fi communication.",
+    "nextWeek": "The next week focused on collecting datasheets, comparing commercial pH sensor technologies, reviewing academic papers and selecting the most feasible sensor architecture for the prototype.",
+    "evidence": "Week 02 evidence includes flexible circuit printing resources, pathology references, wearable sensor materials and similar product details. These resources justify the biomedical need and wearable system direction."
   },
   {
     "id": 3,
     "label": "Week 03",
     "dates": "May 2026",
     "phase": "Resources & Components",
-    "title": "Datasheets, pH Sensor Matrix and Similar Device Papers",
+    "title": "Week 03 — Datasheets, pH Sensor Matrix and Similar Device Paper Review",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link",
     "images": [
-      { "src": "week3.png", "caption": "Week 03 uploaded folder evidence" },
-      { "src": "assets/research/sani_keyimage.jpg", "caption": "Sani et al. benchmark wound bioelectronic system" },
-      { "src": "assets/research/sani_fig1.jpg", "caption": "Sani et al. Figure 1 — system design" },
-      { "src": "assets/research/sani_fig2.jpg", "caption": "Sani et al. Figure 2 — sensor and electronics architecture" },
-      { "src": "assets/research/sani_fig3.jpg", "caption": "Sani et al. Figure 3 — validation results" }
+      { "src": "week3.png", "caption": "Week 03 uploaded Google Drive folder evidence showing datasheets, links, pH sensor matrix and similar paper resources." },
+      { "src": "assets/research/sani_keyimage.jpg", "caption": "Benchmark paper image showing the stretchable wound bioelectronic system concept." },
+      { "src": "assets/research/sani_fig1.jpg", "caption": "Research figure used to study system-level wearable wound patch architecture." },
+      { "src": "assets/research/sani_fig2.jpg", "caption": "Research figure used to compare sensor and electronics arrangement for wound monitoring." },
+      { "src": "assets/research/sani_fig3.jpg", "caption": "Research figure used to study experimental validation and sensor performance." }
     ],
     "folders": [
       "Datasheets",
@@ -158,61 +166,69 @@ const WEEKS = [
       "pH Sensor Matrix",
       "Similar Device Papers"
     ],
-    "summary": "Collected component datasheets, technical links, medical fabrication company details, commercial pH sensor comparisons, and academic papers. This week created the evidence base for component selection.",
-    "goals": "Gather engineering resources and compare suitable pH sensing technologies.",
+    "summary": "Week 03 transformed the project from clinical concept into technical selection. The work focused on collecting datasheets, academic papers, commercial sensor details, fabrication company information and comparison matrices. Different pH sensing approaches were compared, including optical sensors, ISFET sensors, antimony electrodes, commercial pH probes and polymer-based electrochemical sensors. Similar device papers were reviewed to understand high-performance wound monitoring systems and low-cost printed sensor alternatives. This week was important because it provided the evidence base for choosing a potentiometric PANI pH sensor approach with an Ag/AgCl reference electrode and an electronic readout chain suitable for embedded implementation.",
+    "goals": "The goals were to compare available pH sensing technologies, collect reliable component datasheets, identify fabrication suppliers or facilities, review similar research devices and select the most feasible sensing method for the FYP prototype.",
     "keyFindings": [
-      "Collected component datasheets, technical links, medical fabrication company details, commercial pH sensor comparisons, and academic papers. This week created the evidence base for component selection.",
-      "Shortlisted a potentiometric PANI pH sensor approach and rejected costly/complex alternatives such as bare-die ISFET and optical readers."
+      "PANI-based potentiometric pH sensing is suitable for wound monitoring because it can provide a near-Nernstian voltage response to pH variation.",
+      "Ag/AgCl is a widely used reference electrode material and is compatible with electrochemical pH measurement.",
+      "Cleanroom-fabricated research devices show excellent performance but require expensive facilities that may not be accessible for undergraduate prototype development.",
+      "Screen printing and hand-fabrication methods are more feasible for local university implementation.",
+      "Commercial pH sensors are useful for reference and calibration, but many are too bulky or expensive for direct dressing integration.",
+      "Component datasheets helped identify suitable electronic blocks such as instrumentation amplifiers, ADCs, low-power MCUs and temperature sensors."
     ],
-    "decisions": "Shortlisted a potentiometric PANI pH sensor approach and rejected costly/complex alternatives such as bare-die ISFET and optical readers.",
-    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
-    "nextWeek": "Design the compact electronics module and select the fabrication route.",
-    "evidence": "Google Drive resources for Week 03: https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link"
+    "decisions": "The project selected a potentiometric PANI working electrode with an Ag/AgCl reference electrode as the main pH sensing architecture. The design direction moved toward low-cost printed or hand-fabricated electrodes rather than expensive commercial sensor modules. The electronic system began to focus on high-impedance signal buffering, precision ADC conversion and wireless embedded processing.",
+    "rejected": "Bare-die ISFET technology was rejected because of packaging complexity, cost and integration difficulty. Optical pH sensing was not selected as the primary method because it may require a camera or optical reader. Large commercial glass pH electrodes were rejected because they are unsuitable for wearable wound dressing integration.",
+    "nextWeek": "The next week focused on designing the compact electronics brain, selecting the MCU, ADC, amplifier, temperature sensor and power system, and preparing the system architecture.",
+    "evidence": "Week 03 evidence includes datasheets, pH sensor matrices, similar device papers, technical links and fabrication company research. These resources support the selection of PANI potentiometric sensing and the embedded electronics direction."
   },
   {
     "id": 4,
     "label": "Week 04",
     "dates": "May 2026",
     "phase": "Electronics Architecture",
-    "title": "Fabrication Route and Coin-Size Electronics Brain",
+    "title": "Week 04 — Fabrication Route and Coin-Size Electronics Brain Design",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link",
     "images": [
-      { "src": "week4.png", "caption": "Week 04 uploaded folder evidence" },
-      { "src": "assets/research/sani_fig4.jpg", "caption": "Sani et al. Figure 4 — wound monitoring performance" },
-      { "src": "assets/research/sani_fig5.jpg", "caption": "Sani et al. Figure 5 — stimulation / treatment results" },
-      { "src": "assets/research/sani_fig6.jpg", "caption": "Sani et al. Figure 6 — healing outcome validation" }
+      { "src": "week4.png", "caption": "Week 04 uploaded Google Drive folder evidence showing fabrication facility and coin-size electronics design resources." },
+      { "src": "assets/research/sani_fig4.jpg", "caption": "Research figure used to study wound monitoring performance and sensor output interpretation." },
+      { "src": "assets/research/sani_fig5.jpg", "caption": "Research figure used to study treatment, stimulation or wound healing response comparison." },
+      { "src": "assets/research/sani_fig6.jpg", "caption": "Research figure used to study biological validation and healing outcome results." }
     ],
     "folders": [
       "Fabrication Facility",
       "FYP Brain (Coin Size)"
     ],
-    "summary": "Worked on the fabrication facility decision and the compact electronics module. The main system architecture was formed using ESP32-S3, ADS1115, INA333, TMP117, CR2032 and a low-power regulator.",
-    "goals": "Decide the fabrication path and design the electronics brain for the wound patch.",
+    "summary": "Week 04 focused on the electronics architecture and the practical implementation route. The main objective was to define the reusable coin-size electronics module that would interface with the flexible wound patch. The system architecture was developed around signal acquisition, analog conditioning, ADC conversion, microcontroller processing, wireless communication and low-power operation. Components such as ESP32-S3, ADS1115, INA333, TMP117, CR2032 and a low-power regulator were considered for the electronics brain. This week also studied fabrication facility options and helped separate the system into two parts: the wound-contact flexible sensor patch and the reusable electronic module. This separation improves safety, cost-effectiveness and practical usability.",
+    "goals": "The goals were to design the core electronics architecture, define the signal path from sensor to microcontroller, select suitable ICs, study power management and decide how the flexible patch should connect to the reusable electronics module.",
     "keyFindings": [
-      "Worked on the fabrication facility decision and the compact electronics module. The main system architecture was formed using ESP32-S3, ADS1115, INA333, TMP117, CR2032 and a low-power regulator.",
-      "Defined the coin-size electronics architecture and selected the main readout, processing, power and wireless blocks."
+      "The wound pH electrode produces a low-level electrochemical voltage that requires careful buffering and high-input-impedance signal conditioning.",
+      "A precision ADC such as ADS1115 can improve measurement resolution compared with direct low-resolution MCU ADC reading.",
+      "ESP32-S3 provides sufficient processing power and wireless communication options for BLE and Wi-Fi based monitoring.",
+      "TMP117 or a similar temperature sensor is useful because pH response can be affected by temperature.",
+      "A coin-size reusable module can reduce recurring cost because only the wound-contact patch may need replacement.",
+      "A connector such as FFC/ZIF can support modular connection between the disposable patch and electronics brain."
     ],
-    "decisions": "Defined the coin-size electronics architecture and selected the main readout, processing, power and wireless blocks.",
-    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
-    "nextWeek": "Compare flexible PCB materials and prepare the fabrication/cost plan.",
-    "evidence": "Google Drive resources for Week 04: https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link"
+    "decisions": "The electronics system was divided into sensor layer, signal conditioning, ADC, microcontroller, wireless communication and power management blocks. A reusable coin-size electronics module was selected as the preferred design direction. The system moved toward ESP32-S3 based wireless processing with precision ADC readout and low-power battery operation.",
+    "rejected": "A fully disposable electronics system was rejected because it would increase cost. Direct connection of the pH electrode to the MCU ADC was not selected because the signal requires better buffering and resolution. A large development-board-only solution was not selected as the final target because the final device should be compact and wearable.",
+    "nextWeek": "The next week focused on flexible PCB materials, PANI methodology, fabrication cost estimation and practical material selection for the sensor patch.",
+    "evidence": "Week 04 evidence includes fabrication facility research and coin-size electronics brain resources. These files support the embedded hardware architecture and reusable electronics concept."
   },
   {
     "id": 5,
     "label": "Week 05",
     "dates": "May 2026",
     "phase": "Materials & Fabrication",
-    "title": "Flexible PCB Materials, PANI Methodology and Budget",
+    "title": "Week 05 — Flexible PCB Materials, PANI Methodology and Budget Planning",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link",
     "images": [
-      { "src": "week5.png", "caption": "Week 05 uploaded folder evidence" },
-      { "src": "assets/research/rsc_d1ra08375a_fig1.jpg", "caption": "RSC Figure 1 — sensor/material concept" },
-      { "src": "assets/research/rsc_d1ra08375a_fig2.jpg", "caption": "RSC Figure 2 — fabrication or characterization result" },
-      { "src": "assets/research/rsc_d1ra08375a_fig3.jpg", "caption": "RSC Figure 3 — response curve / test result" },
-      { "src": "assets/research/rsc_d1ra08375a_fig4.jpg", "caption": "RSC Figure 4 — material or device comparison" },
-      { "src": "assets/research/rsc_d1ra08375a_fig5.jpg", "caption": "RSC Figure 5 — extended validation figure" }
+      { "src": "week5.png", "caption": "Week 05 uploaded Google Drive folder evidence showing FPCB comparison, PANI review, methodology and budget resources." },
+      { "src": "assets/research/rsc_d1ra08375a_fig1.jpg", "caption": "RSC reference figure used for sensor and material concept comparison." },
+      { "src": "assets/research/rsc_d1ra08375a_fig2.jpg", "caption": "RSC reference figure used for fabrication or characterization comparison." },
+      { "src": "assets/research/rsc_d1ra08375a_fig3.jpg", "caption": "RSC reference figure used for response curve or test result analysis." },
+      { "src": "assets/research/rsc_d1ra08375a_fig4.jpg", "caption": "RSC reference figure used for material or device comparison." },
+      { "src": "assets/research/rsc_d1ra08375a_fig5.jpg", "caption": "RSC reference figure used for extended validation comparison." }
     ],
     "folders": [
       "Comparison of FPCs",
@@ -222,32 +238,36 @@ const WEEKS = [
       "PANI Literature Review",
       "pH Methodology"
     ],
-    "summary": "Compared flexible PCB material options, estimated fabrication cost, collected medical fabrication circuit papers, and prepared PANI pH sensor literature and methodology documents.",
-    "goals": "Prepare the practical fabrication plan, budget and pH sensing methodology.",
+    "summary": "Week 05 focused on materials, fabrication feasibility and budget. The main work was to compare flexible PCB and flexible sensor substrate options, study PANI pH sensing methodology, review medical fabrication papers and estimate the practical cost of the prototype. PET, silver conductive traces, carbon-based electrodes and PANI active sensing material were considered as a low-cost material stack. This week also developed the methodology for PANI-based pH measurement, including electrode fabrication, calibration buffers and expected pH response. Budget planning was important because the project target is to create a prototype that can be developed within a realistic undergraduate FYP cost range in Sri Lanka.",
+    "goals": "The goals were to compare flexible substrate materials, prepare the PANI pH sensing methodology, study medical fabrication papers, estimate hand-fabrication cost and identify a realistic low-cost material stack for the wound patch.",
     "keyFindings": [
-      "Compared flexible PCB material options, estimated fabrication cost, collected medical fabrication circuit papers, and prepared PANI pH sensor literature and methodology documents.",
-      "Finalised the PET/silver/PANI material direction and documented the low-cost hand fabrication methodology."
+      "PET is a practical low-cost flexible substrate for early-stage prototype development.",
+      "Silver, carbon and PANI materials can be combined to create a low-cost electrochemical sensing structure.",
+      "PANI is attractive because its protonation state changes with pH, producing a measurable electrochemical response.",
+      "Screen printing or stencil-based hand fabrication is more accessible than cleanroom microfabrication.",
+      "Calibration using known pH buffer solutions is essential to convert sensor voltage into wound pH values.",
+      "Budget estimation showed that a prototype can potentially be developed within a manageable FYP cost range if expensive fabrication routes are avoided."
     ],
-    "decisions": "Finalised the PET/silver/PANI material direction and documented the low-cost hand fabrication methodology.",
-    "rejected": "Images/screenshots are not displayed on the website; the original folders are linked as external evidence only.",
-    "nextWeek": "Begin prototype fabrication, testing and calibration work.",
-    "evidence": "Google Drive resources for Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link"
+    "decisions": "The project finalized the PET/silver/carbon/PANI direction for the flexible sensing patch. A low-cost hand-fabrication and screen-printing-based method was selected as the practical route. The budget and methodology documents were prepared to support future fabrication and testing.",
+    "rejected": "Expensive cleanroom-only material stacks were not selected as the primary route. Fully commercial flexible medical PCB fabrication was considered but not selected as the first prototype method due to cost and accessibility. Complex multi-analyte sensing was postponed until the pH sensing system is validated.",
+    "nextWeek": "The next week moved toward a stronger hardware blueprint, funding preparation, equipment requirement identification and dataset preparation through research papers.",
+    "evidence": "Week 05 evidence includes FPCB comparison files, second-option FPCB resources, hand fabrication cost planning, PANI literature review and pH methodology documents."
   },
   {
     "id": 6,
     "label": "Week 06",
     "dates": "June 2026",
     "phase": "Hardware Blueprint, Funding and Dataset Preparation",
-    "title": "Week 06 — Hardware Blueprint, Tool Requirements and Funding Preparation",
+    "title": "Week 06 — Hardware Blueprint, Tool Requirements, Funding and Dataset Preparation",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE",
     "images": [
-      { "src": "assets/research/petal_fig1.jpg", "caption": "PETAL Figure 1 — multiplexed wound sensor patch concept" },
-      { "src": "assets/research/petal_fig2.jpg", "caption": "PETAL Figure 2 — sensor fabrication and sensing layout" },
-      { "src": "assets/research/petal_fig3.jpg", "caption": "PETAL Figure 3 — colorimetric sensor response" },
-      { "src": "assets/research/petal_fig4.jpg", "caption": "PETAL Figure 4 — data acquisition and analysis flow" },
-      { "src": "assets/research/petal_fig5.jpg", "caption": "PETAL Figure 5 — wound assessment results" },
-      { "src": "assets/research/petal_fig6.jpg", "caption": "PETAL Figure 6 — extended experimental validation" }
+      { "src": "assets/research/petal_fig1.jpg", "caption": "PETAL Figure 1 — multiplexed wound sensor patch concept used for dataset and design comparison." },
+      { "src": "assets/research/petal_fig2.jpg", "caption": "PETAL Figure 2 — sensor fabrication and sensing layout used for flexible patch comparison." },
+      { "src": "assets/research/petal_fig3.jpg", "caption": "PETAL Figure 3 — colorimetric sensor response used for comparison with electronic pH sensing." },
+      { "src": "assets/research/petal_fig4.jpg", "caption": "PETAL Figure 4 — data acquisition and analysis flow used for system-level planning." },
+      { "src": "assets/research/petal_fig5.jpg", "caption": "PETAL Figure 5 — wound assessment results used for dataset preparation." },
+      { "src": "assets/research/petal_fig6.jpg", "caption": "PETAL Figure 6 — extended experimental validation used for benchmark comparison." }
     ],
     "folders": [
       "All two model collaboration",
@@ -256,188 +276,196 @@ const WEEKS = [
       "NSF requirement of tools",
       "Screen-Printed Carbon-PANI method vs Cleanroom Microfabrication"
     ],
-    "summary": "Week 06 converted the project from concept-level planning into a practical implementation roadmap. The work focused on preparing an integrated wound patch hardware/firmware blueprint, creating a structured workbook for transducer channels and electronics planning, comparing low-cost Carbon-PANI screen-printing against expensive cleanroom microfabrication, identifying fabrication and characterization equipment requirements, collecting wound-monitoring literature for dataset building, and completing a funding request form for prototype development.",
-    "goals": "Prepare the implementation plan for a disposable flexible sensing patch and reusable coin-size electronics module; define the fabrication method, required tools, component/resource plan, budget justification, and literature/dataset evidence needed for the next prototype stage.",
+    "summary": "Week 06 expanded the project from material and component selection into a complete implementation roadmap. The work focused on preparing a hardware and firmware blueprint for the smart wound monitoring patch, defining the disposable sensor patch and reusable electronics module, planning the sensor pin map, identifying required fabrication and testing tools, comparing fabrication strategies and preparing funding documents. A major part of this week was comparing low-cost screen-printed Carbon-PANI fabrication against cleanroom microfabrication methods. Research papers were also collected and analyzed to support dataset preparation, wound image interpretation and benchmark comparison. This week strengthened the project’s implementation readiness and provided documentation that can be used for supervisor review, funding requests and future prototype development.",
+    "goals": "The goals were to produce a clear implementation blueprint, define the complete hardware architecture, identify equipment and facility requirements, compare fabrication methods, prepare funding justification and organize research-paper figures and datasets for future validation.",
     "keyFindings": [
-      "Prepared a two-part system architecture: Stage A disposable flexible sensing patch and Stage B reusable coin-size electronics brain for signal conditioning, processing, telemetry and power.",
-      "Developed a hardware and firmware blueprint covering transducer channels, a 12-contact ZIF/FFC pin map, AFE/MCU interfaces, PCB stack-up, calibration logic and multiplexed sampling sequence.",
-      "Created a wound patch workbook containing transducer constants, BOM, pin map, PCB stack-up, live calibration sheet and sequencer timing parameters.",
-      "Compared fabrication routes and identified the low-cost screen-printed Carbon-PANI method as more practical for the FYP than cleanroom-based elastomeric microfabrication.",
-      "Prepared a tool and facility requirement list covering screen printing, potentiostat/galvanostat use, laser cutting, ultrasonic agitation, precision dispensing, spin coating/doctor blade processing and sterilization options.",
-      "Completed a funding request document for the low-cost medical-grade smart wound monitoring patch prototype, including electronics, flexible PCB fabrication, biomedical consumables and nanomaterials.",
-      "Collected wound-monitoring papers and figures to support dataset preparation, including multiplexed sensor patch, pH/temperature dressing and PANI-based wound monitoring references."
+      "A two-part system architecture is more practical: a disposable flexible sensing patch and a reusable coin-size electronics module.",
+      "The flexible patch should include pH sensing electrodes and supporting contact lines, while the electronics module should handle signal conditioning, ADC conversion, processing, wireless transmission and power management.",
+      "A 12-contact FFC/ZIF-style connection is suitable for separating the flexible patch from the electronics board.",
+      "Low-cost Carbon-PANI screen printing is more feasible than cleanroom-based microfabrication for local undergraduate development.",
+      "Important tools include screen printing materials, potentiostat/galvanostat access, laser cutting, precision dispensing, ultrasonic cleaning, spin coating or doctor blade processing and sterilization support.",
+      "Funding is required for sensor materials, flexible fabrication, biomedical consumables, electronics components and testing resources.",
+      "Research-paper image extraction and dataset preparation can support the explanation of wound sensing principles and benchmark the proposed system against published work."
     ],
-    "decisions": "Proceed with a locally feasible, low-cost screen-printed Carbon-PANI flexible patch strategy and keep the electronics as a separate reusable coin-size module. Use the Week 06 hardware blueprint and workbook as the main implementation planning documents for the next prototype stage.",
-    "rejected": "Direct cleanroom-based gold/SEBS microfabrication was not selected as the main route because it is expensive and less accessible for undergraduate/local fabrication. Optical/colorimetric-only sensing was also not selected as the main route because it requires camera/image-processing support and does not provide direct electronic telemetry.",
-    "nextWeek": "Move from planning to practical prototype work: finalize material purchasing, prepare the first screen-printed Carbon-PANI electrode samples, set up pH buffer calibration, begin analog front-end validation, and document real fabrication/testing evidence for Week 07.",
-    "evidence": "Week 06 evidence includes the hardware blueprint markdown file, wound patch workbook, completed funding request form, fabrication comparison workbook, NSF tool/equipment requirement sheets, and wound-monitoring paper dataset folder."
+    "decisions": "The project decided to continue with a locally feasible Carbon-PANI screen-printed flexible patch strategy and maintain the electronics as a reusable module. Week 06 documentation will be used as the central implementation reference for the next stage of fabrication and testing. The project also decided to include research figures in the portfolio to visually support the technical reasoning.",
+    "rejected": "Cleanroom-based gold/SEBS fabrication was not selected as the main prototype route because it is expensive and less accessible. A camera-only or colorimetric-only approach was not selected as the main route because the project focuses on direct electronic sensing and telemetry. Overly complex multi-sensor implementation was postponed until the pH sensing path is physically validated.",
+    "nextWeek": "The next week should focus on practical work: preparing the first Carbon-PANI electrode samples, finalizing required materials, setting up pH buffer calibration, validating the analog front-end and documenting real fabrication/test evidence.",
+    "evidence": "Week 06 evidence includes hardware blueprint files, wound patch workbook, funding request documents, tool and equipment requirement sheets, fabrication method comparison files and research paper datasets."
   },
   {
     "id": 7,
     "label": "Week 07",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 07 — Coming Soon",
+    "phase": "Prototype Fabrication",
+    "title": "Week 07 — Initial Sensor Patch Fabrication and Material Preparation",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 07 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 07 is planned as the first practical fabrication stage of the project. The expected work is to prepare the flexible substrate, test printing or coating methods, prepare Carbon-PANI sensing material, form initial electrode patterns and document the first physical sensor patch samples. This week should convert the design and methodology from previous weeks into real prototype evidence.",
+    "goals": "Prepare the first physical flexible sensor samples, test material adhesion, verify electrode continuity and document the fabrication process step by step.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after fabrication work is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "After initial fabrication, the project should move into calibration and electrical testing.",
     "evidence": "Coming soon."
   },
   {
     "id": 8,
     "label": "Week 08",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 08 — Coming Soon",
+    "phase": "Calibration and Testing",
+    "title": "Week 08 — pH Buffer Calibration and Electrode Response Testing",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 08 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 08 is planned for pH calibration and basic electrochemical response testing. The fabricated sensor should be tested using standard pH buffer solutions such as pH 4, pH 7 and pH 9. The voltage response should be recorded, plotted and compared with the expected pH sensitivity range. This week will be important for proving whether the fabricated PANI electrode responds meaningfully to pH changes.",
+    "goals": "Measure sensor response in known pH solutions, estimate sensitivity in mV/pH, evaluate repeatability and identify problems such as drift, noise or poor electrode stability.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after calibration tests are completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be analog front-end integration and ADC-based digital measurement.",
     "evidence": "Coming soon."
   },
   {
     "id": 9,
     "label": "Week 09",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 09 — Coming Soon",
+    "phase": "Electronics Integration",
+    "title": "Week 09 — Analog Front-End and ADC Integration",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 09 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 09 is planned for integrating the pH sensor with the electronic readout chain. The focus will be on connecting the sensor to the instrumentation amplifier or buffer stage, reading the output using the precision ADC and verifying that the circuit can capture stable pH-related voltage changes. This week will bridge the sensor fabrication stage with the embedded system stage.",
+    "goals": "Build and test the analog front-end, connect the ADC, validate signal range, check noise performance and confirm that sensor data can be read digitally.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after electronics testing is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be firmware development and BLE data transmission.",
     "evidence": "Coming soon."
   },
   {
     "id": 10,
     "label": "Week 10",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 10 — Coming Soon",
+    "phase": "Firmware and Wireless Communication",
+    "title": "Week 10 — ESP32 Firmware, BLE Communication and Data Logging",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 10 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 10 is planned for firmware development. The ESP32-S3 should be programmed to acquire ADC readings, apply calibration equations, calculate pH, read temperature and prepare data for wireless transmission. BLE communication can be implemented to send sensor data to a phone or computer. This week will make the system operate as a real smart monitoring device rather than only a sensor and circuit.",
+    "goals": "Develop firmware for ADC reading, pH conversion, temperature reading, BLE data transfer and basic serial or mobile data logging.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after firmware development is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be full system integration with the flexible patch and electronics module.",
     "evidence": "Coming soon."
   },
   {
     "id": 11,
     "label": "Week 11",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 11 — Coming Soon",
+    "phase": "System Integration",
+    "title": "Week 11 — Full Patch and Electronics Module Integration",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 11 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 11 is planned for combining the flexible patch, analog front-end, ADC, microcontroller, battery system and wireless communication into one integrated prototype. Mechanical connection, wiring, packaging and reliability will be important during this stage. The system should be tested as a complete device and not only as separate subsystems.",
+    "goals": "Integrate the sensor patch with the electronics brain, verify electrical connections, test complete system operation and document the assembled prototype.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after integration work is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be simulated wound environment testing.",
     "evidence": "Coming soon."
   },
   {
     "id": 12,
     "label": "Week 12",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 12 — Coming Soon",
+    "phase": "Simulated Wound Testing",
+    "title": "Week 12 — Simulated Wound Fluid Testing and Performance Evaluation",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 12 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 12 is planned for testing the integrated system in wound-representative conditions. Simulated wound fluid or controlled test solutions can be used to evaluate sensor behavior closer to the intended application environment. Temperature, pH variation, moisture or ionic effects may be tested depending on available facilities.",
+    "goals": "Evaluate the system under simulated wound conditions, compare readings with reference instruments, observe drift and validate practical measurement performance.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after simulated wound testing is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be data analysis and improvement of the prototype.",
     "evidence": "Coming soon."
   },
   {
     "id": 13,
     "label": "Week 13",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 13 — Coming Soon",
+    "phase": "Data Analysis and Optimization",
+    "title": "Week 13 — Data Analysis, Calibration Refinement and Design Optimization",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 13 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 13 is planned for analyzing the collected calibration and testing data. Sensor sensitivity, repeatability, noise, drift, temperature effect and system limitations should be reviewed. Based on the results, the sensor fabrication process, circuit design or firmware calibration equation can be improved.",
+    "goals": "Analyze experimental data, improve calibration accuracy, identify design limitations and prepare final graphs, tables and technical discussion for the report.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after data analysis is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "The next step should be final demonstration preparation, documentation and presentation material development.",
     "evidence": "Coming soon."
   },
   {
     "id": 14,
     "label": "Week 14",
     "dates": "Coming soon",
-    "phase": "Coming Soon",
-    "title": "Week 14 — Coming Soon",
+    "phase": "Final Documentation",
+    "title": "Week 14 — Final Prototype Demonstration, Report Preparation and Portfolio Completion",
     "status": "Coming soon",
     "resourceLink": "#",
+    "images": [],
     "folders": [
       "Coming soon"
     ],
-    "summary": "Week 14 is reserved for upcoming project work. Details, resources, test results and design updates will be added after the work is completed.",
-    "goals": "Upcoming work will be updated after completion.",
+    "summary": "Week 14 is planned as the final documentation and demonstration preparation stage. The complete project journey, design decisions, prototype results, limitations and future improvements should be organized clearly. The GitHub portfolio, final report, presentation slides and demonstration materials should be updated so supervisors and external reviewers can understand the full engineering process.",
+    "goals": "Prepare final report content, update the portfolio website, organize all evidence, create presentation material and document the complete system demonstration.",
     "keyFindings": [
-      "Coming soon."
+      "Coming soon after final documentation is completed."
     ],
     "decisions": "Coming soon.",
     "rejected": "Coming soon.",
-    "nextWeek": "Coming soon.",
+    "nextWeek": "Final project submission and presentation.",
     "evidence": "Coming soon."
   }
 ];

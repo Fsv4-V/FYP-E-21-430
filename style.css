@@ -848,3 +848,435 @@ td { color: #334155; }
   .research-img { height: 190px; }
   .contact-card { padding: 28px; }
 }
+
+/* ============================================================
+   LIGHT + CLEAR VISIBILITY FINAL THEME OVERRIDES
+   This section fixes dark/black backgrounds and invisible text.
+   Keep this at the very bottom of style.css.
+============================================================ */
+:root {
+  --bg: #f6fbff;
+  --bg-2: #eaf7fb;
+  --surface: #ffffff;
+  --surface-2: #f2f8fc;
+  --text: #102033;
+  --muted: #526274;
+  --light: #f8fdff;
+  --navy: #123047;
+  --navy-2: #1e4f6c;
+  --teal: #0ea5a2;
+  --cyan: #0ea5e9;
+  --blue: #2563eb;
+  --border: rgba(99, 135, 160, 0.24);
+  --shadow: 0 22px 55px rgba(31, 80, 110, 0.16);
+  --shadow-soft: 0 10px 28px rgba(31, 80, 110, 0.10);
+}
+
+html,
+body {
+  background: #f6fbff !important;
+  color: var(--text) !important;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(14, 165, 162, 0.13), transparent 32rem),
+    radial-gradient(circle at 95% 8%, rgba(14, 165, 233, 0.14), transparent 34rem),
+    linear-gradient(180deg, #f7fcff 0%, #eef8fc 42%, #ffffff 100%) !important;
+}
+
+/* ---------- LIGHT NAVBAR ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid #dbeafe !important;
+  box-shadow: 0 10px 30px rgba(31, 80, 110, 0.08) !important;
+}
+
+.brand,
+.nav-links a,
+.nav-links .nav-contact {
+  color: #123047 !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #0ea5a2, #0ea5e9) !important;
+}
+
+.nav-links .nav-contact {
+  border: 1px solid #b6d5e5 !important;
+  background: #ffffff !important;
+}
+
+.hamburger {
+  color: #123047 !important;
+  background: #ffffff !important;
+  border: 1px solid #b6d5e5 !important;
+}
+
+/* ---------- LIGHT HERO ---------- */
+.hero {
+  color: #102033 !important;
+  min-height: 620px !important;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(14, 165, 233, 0.20), transparent 24rem),
+    radial-gradient(circle at 20% 14%, rgba(14, 165, 162, 0.20), transparent 22rem),
+    linear-gradient(135deg, #ffffff 0%, #eef9fc 54%, #e8f5ff 100%) !important;
+}
+
+.hero-bg::after {
+  background-image:
+    linear-gradient(rgba(14, 165, 162, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px) !important;
+  mask-image: none !important;
+}
+
+.hero h1,
+.hero-panel h3,
+.hero-panel h4 {
+  color: #102033 !important;
+}
+
+.lead,
+.hero .muted {
+  color: #425466 !important;
+}
+
+.btn.ghost {
+  color: #123047 !important;
+  background: #ffffff !important;
+  border: 1px solid #b6d5e5 !important;
+}
+
+.hero-panel {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid #d7e8f2 !important;
+  box-shadow: 0 24px 60px rgba(31, 80, 110, 0.15) !important;
+}
+
+.stat-grid div {
+  background: #f7fbff !important;
+  border: 1px solid #dbeafe !important;
+}
+
+.stat-grid span,
+.hero-panel .chip-row span {
+  color: #425466 !important;
+}
+
+.hero-panel .chip-row span {
+  background: #e8fbf8 !important;
+  border-color: #b7eee7 !important;
+}
+
+/* ---------- ALL MAIN SECTIONS: NO BLACK BACKGROUND ---------- */
+.section,
+.section.soft,
+#solution,
+#timeline-section,
+#problem,
+#research-gap,
+#resources,
+#datasheets,
+#references,
+#architecture,
+#sensor,
+#objectives,
+#abstract {
+  background: linear-gradient(180deg, #f8fdff 0%, #eef8fc 100%) !important;
+  color: #102033 !important;
+}
+
+.section:nth-of-type(even),
+.section.soft:nth-of-type(even) {
+  background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section h2,
+.section h3,
+.section h4,
+#solution h2,
+#solution h3,
+#timeline-section h2,
+#timeline-section h3,
+#timeline-section h4 {
+  color: #102033 !important;
+}
+
+p, li, td,
+.large-copy,
+.feature-list li,
+.objectives-list li,
+.tl-item p,
+.tl-details p,
+.tl-details li {
+  color: #334155 !important;
+}
+
+.muted,
+.section .muted {
+  color: #64748b !important;
+}
+
+.section-kicker,
+.eyebrow {
+  color: #0f766e !important;
+}
+
+/* ---------- PROPOSED SOLUTION: VERY CLEAR ---------- */
+#solution {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(14, 165, 162, 0.10), transparent 22rem),
+    linear-gradient(135deg, #ffffff 0%, #eefbf9 50%, #edf8ff 100%) !important;
+}
+
+#solution .two-col,
+#objectives .two-col {
+  padding: 34px !important;
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid #d6e9f2 !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.feature-list {
+  background: #ffffff !important;
+  border: 1px solid #d6e9f2 !important;
+  border-radius: 24px !important;
+  padding: 10px 22px !important;
+  box-shadow: 0 12px 30px rgba(31, 80, 110, 0.08) !important;
+}
+
+.feature-list li {
+  color: #1e293b !important;
+  border-bottom: 1px solid #dbeafe !important;
+  font-weight: 800 !important;
+}
+
+.feature-list li:last-child { border-bottom: 0 !important; }
+.feature-list li span { filter: saturate(1.2) !important; }
+
+/* ---------- CARDS / TABLES: CLEAR WHITE ---------- */
+.card,
+.problem-card,
+.paper-card,
+.sensor-card,
+.res-card,
+.cat-card,
+.test-card,
+.table-card,
+.gap-box,
+.contact-card,
+.budget-header,
+.quality-item,
+.future-item,
+.arch-layer,
+.tl-item,
+.week-media-panel {
+  background: #ffffff !important;
+  border: 1px solid #dbe7f0 !important;
+  box-shadow: 0 12px 32px rgba(31, 80, 110, 0.09) !important;
+}
+
+.gap-box,
+.table-title,
+.tl-details {
+  background: #f8fcff !important;
+  color: #102033 !important;
+}
+
+.tl-details {
+  border: 1px solid #dbe7f0 !important;
+}
+
+/* ---------- WEEKLY PROGRESS: LIGHT TEMPLATE ---------- */
+#timeline-section {
+  background: linear-gradient(180deg, #f8fdff 0%, #eaf7fb 100%) !important;
+}
+
+.timeline::before {
+  background: linear-gradient(#0ea5a2, rgba(14,165,233,0.35)) !important;
+}
+
+.tl-item {
+  background: #ffffff !important;
+  border-radius: 30px !important;
+}
+
+.week-label {
+  background: #e8fbf8 !important;
+  color: #0f766e !important;
+  border: 1px solid #b7eee7 !important;
+}
+
+.phase-pill {
+  background: #e8f4ff !important;
+  color: #0369a1 !important;
+  border: 1px solid #c7e4ff !important;
+}
+
+.status-pill {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+.week-media-panel {
+  margin: 22px 0 !important;
+  padding: 20px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%) !important;
+  border: 1px solid #d6e9f2 !important;
+}
+
+.week-media-top h4,
+.media-eyebrow,
+.media-count {
+  color: #102033 !important;
+}
+
+.media-eyebrow {
+  color: #0f766e !important;
+}
+
+.media-count {
+  background: #e8f4ff !important;
+  border: 1px solid #c7e4ff !important;
+  color: #0369a1 !important;
+}
+
+.week-image-gallery,
+.week-image-gallery.compact-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px)) !important;
+  gap: 18px !important;
+  align-items: start !important;
+  justify-content: start !important;
+}
+
+.week-image-card {
+  width: 100% !important;
+  max-width: 320px !important;
+  flex: unset !important;
+  background: #ffffff !important;
+  border: 1px solid #d8e7f0 !important;
+  box-shadow: 0 14px 28px rgba(31, 80, 110, 0.10) !important;
+}
+
+.week-image-card img {
+  height: 210px !important;
+  max-height: 210px !important;
+  object-fit: contain !important;
+  background: #ffffff !important;
+  padding: 10px !important;
+}
+
+.week-image-card figcaption {
+  background: #f8fbff !important;
+  color: #475569 !important;
+  border-top: 1px solid #e5edf5 !important;
+}
+
+.folder-chip,
+.chip-row span,
+.tag-row span {
+  background: #e8fbf8 !important;
+  color: #0f766e !important;
+  border: 1px solid #b7eee7 !important;
+}
+
+/* ---------- RESEARCH FIGURES: LIGHT TITLE CARD ---------- */
+.research-paper-title {
+  background: linear-gradient(135deg, #ffffff, #eaf9ff) !important;
+  color: #102033 !important;
+  border: 1px solid #dbe7f0 !important;
+}
+
+.research-paper-title h3,
+.research-paper-title .muted {
+  color: #102033 !important;
+}
+
+.research-paper-title .pill {
+  background: #e8fbf8 !important;
+  color: #0f766e !important;
+  border: 1px solid #b7eee7 !important;
+}
+
+.research-image-card,
+.research-img,
+.research-image-card h4,
+.research-image-card p.muted {
+  background: #ffffff !important;
+  color: #334155 !important;
+}
+
+.research-img {
+  height: 220px !important;
+  object-fit: contain !important;
+}
+
+.research-image-card h4,
+.research-image-card p.muted {
+  background: #f8fbff !important;
+}
+
+/* ---------- BUTTONS ---------- */
+.phase-btn:hover,
+.filter-btn:hover,
+.phase-btn.active,
+.filter-btn.active {
+  background: linear-gradient(135deg, #0ea5a2, #0ea5e9) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.tl-expand {
+  color: #123047 !important;
+  background: #ffffff !important;
+}
+
+/* ---------- BUDGET / CONTACT / FOOTER: NO BLACK ---------- */
+.budget-header,
+.contact-section,
+.footer {
+  background: linear-gradient(135deg, #eaf9ff, #ffffff) !important;
+  color: #102033 !important;
+}
+
+.budget-header h2,
+.contact-card h2,
+.contact-card,
+.contact-card .muted,
+.footer,
+.footer p {
+  color: #102033 !important;
+}
+
+.contact-card {
+  background: #ffffff !important;
+  border: 1px solid #dbe7f0 !important;
+}
+
+.future-item span {
+  background: linear-gradient(135deg, #0ea5a2, #0ea5e9) !important;
+  color: #ffffff !important;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 820px) {
+  .nav-links {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1px solid #dbeafe !important;
+  }
+  .nav-links a { color: #123047 !important; }
+  .week-image-gallery,
+  .week-image-gallery.compact-gallery {
+    grid-template-columns: 1fr !important;
+  }
+  .week-image-card { max-width: 100% !important; }
+}

@@ -1,34 +1,35 @@
-FYP Portfolio Final Weekly Image Card Fix
+FYP Portfolio Professional Final Package
+=======================================
 
-This ZIP contains the final files for your GitHub portfolio.
-It keeps your previous Week 01–06 content and adds properly sized weekly image cards.
+This package is prepared as a cleaner, professional, card-based website template.
+It fixes the weekly images so they do NOT stretch full-width. Images are displayed as neat compact cards.
 
-FILES INCLUDED:
-1. data.js
-   - Replace your existing data.js with this file.
+Upload steps:
 
-2. script.js
-   - Replace your existing script.js with this file.
+1. Open your GitHub repository:
+   https://github.com/Fsv4-V/FYP-E-21-430
 
-3. style_FINAL_PASTE_BOTTOM.css
-   - DO NOT replace your full style.css with this file.
-   - Open your current style.css in GitHub.
-   - Go to the very bottom.
-   - Paste all code from style_FINAL_PASTE_BOTTOM.css at the bottom.
-   - Commit changes.
+2. Replace these root files with the files in this ZIP:
+   - index.html
+   - style.css
+   - script.js
+   - data.js
 
-4. assets/research/*.jpg
-   - Upload these images into your GitHub repo at this exact path:
-     assets/research/
+3. Upload / replace this folder:
+   - assets/research/
 
-IMPORTANT:
-- Keep week1.png, week2.png, week3.png, week4.png, week5.png in your repo root.
-- Do not delete old files unless you are replacing data.js and script.js.
+4. Keep your existing files:
+   - week1.png
+   - week2.png
+   - week3.png
+   - week4.png
+   - week5.png
 
-COMMIT MESSAGE:
-Fix weekly image card layout
+5. Commit message:
+   Professional redesign with weekly image cards
 
-After committing:
-1. Wait 1–3 minutes.
-2. Open your website.
-3. Press Ctrl + F5 to hard refresh.
+6. Wait 1–3 minutes and refresh your website with Ctrl + F5:
+   https://fsv4-v.github.io/FYP-E-21-430/
+
+Important:
+Do not paste CSS at the bottom this time. This ZIP includes a full replacement style.css.

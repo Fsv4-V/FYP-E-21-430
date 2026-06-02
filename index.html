@@ -1,357 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ============================================================
-       index.html — Smart Wound pH Sensor FYP Portfolio
-       Theme: Refined Academic (professional & interactive)
-       ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FYP Portfolio: Smart Diabetic Wound Monitoring Patch — hand-fabricated flexible PANI pH sensor. EEE Final Year Project, Sri Lanka." />
-  <meta name="author" content="EEE Undergraduate FYP" />
   <title>Smart Wound pH Sensor · FYP Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="description" content="Final Year Project portfolio for a smart diabetic wound monitoring patch using a flexible PANI pH sensor, temperature sensing, moisture sensing, BLE and low-cost embedded electronics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="progress-bar" aria-hidden="true"></div>
 
-<!-- Scroll progress bar -->
-<div id="progress-bar"></div>
-
-<!-- ═══════════════ NAVIGATION ═══════════════ -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-brand"><span class="brand-dot"></span>Wound pH Sensor · FYP</a>
-    <ul class="nav-links">
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#problem">Problem</a></li>
-      <li><a href="#progress">Weekly Progress</a></li>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#sensor-tech">Sensor</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#datasheets">Datasheets</a></li>
-      <li><a href="#references">References</a></li>
-      <li class="nav-cta"><a href="#contact" class="btn btn-outline" style="padding:.4rem 1rem;font-size:.8rem">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div id="hero-text"><!-- renderHero() --></div>
-    <div class="hero-panel" id="hero-panel"><!-- renderHero() --></div>
-  </div>
-  <div class="scroll-indicator"><span class="t">SCROLL</span><div class="scroll-arrow"></div></div>
-</section>
-
-<!-- ═══════════════ OVERVIEW ═══════════════ -->
-<section id="overview">
-  <div class="container">
-    <span class="section-label">Project Abstract</span>
-    <h2 class="section-title">Project <span class="hl">Overview</span></h2>
-    <div class="divider"></div>
-    <div class="abstract-box" id="abstract-content"></div>
-    <div class="grid-3 overview-cards">
-      <div class="ov-card reveal">
-        <span class="section-label">Sensing Principle</span>
-        <h4>Potentiometric pH</h4>
-        <p>PANI working electrode + Ag/AgCl reference measured as V<sub>cell</sub> = K − 59 mV·pH. Direct Nernstian response, no enzyme required.</p>
-      </div>
-      <div class="ov-card b reveal reveal-d1">
-        <span class="section-label">Fabrication</span>
-        <h4>Hand-Fabricated FPCB</h4>
-        <p>Screen-printing on PET film. PANI synthesised via oxidative chemical polymerisation in a university lab.</p>
-      </div>
-      <div class="ov-card c reveal reveal-d2">
-        <span class="section-label">Application</span>
-        <h4>Diabetic Wound Monitoring</h4>
-        <p>Continuous pH, temperature & moisture monitoring with BLE wireless data and target ≥ 6-month battery life.</p>
-      </div>
+  <nav id="navbar" class="navbar">
+    <a class="brand" href="#overview" aria-label="Go to overview">
+      <span class="brand-dot"></span>
+      <span>Wound pH Sensor · FYP</span>
+    </a>
+    <button id="hamburger" class="hamburger" aria-label="Open navigation">☰</button>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#problem">Problem</a>
+      <a href="#timeline-section">Weekly Progress</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#sensor">Sensor</a>
+      <a href="#resources">Resources</a>
+      <a href="#datasheets">Datasheets</a>
+      <a href="#references">References</a>
+      <a href="#contact" class="nav-contact">Contact</a>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ═══════════════ PROBLEM ═══════════════ -->
-<section id="problem" class="section-alt">
-  <div class="container">
-    <span class="section-label">Clinical Motivation</span>
-    <h2 class="section-title">The <span class="hl">Problem</span> We Are Solving</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Chronic diabetic wounds are a global healthcare burden that disproportionately affects patients where affordable continuous monitoring is unavailable.</p>
-    <div class="problem-grid" id="problem-cards"></div>
-    <div style="margin-top:3rem">
-      <h3 style="margin-bottom:.8rem">Clinical Wound pH Reference</h3>
-      <p style="color:var(--ink-soft);font-size:.93rem;margin-bottom:1.5rem;max-width:760px">The sensor must reliably distinguish pH 5.5 (healthy) from pH 8.5 (infected) — a 3-unit range. With PANI's 54–69 mV/pH response, this is a 162–207 mV signal swing, easily resolved by the ADS1115.</p>
-      <div class="table-wrapper">
-        <table>
-          <thead><tr><th>Wound State</th><th>pH Range</th><th>Clinical Interpretation</th></tr></thead>
-          <tbody id="ph-table-body"></tbody>
-        </table>
+  <header class="hero" id="overview">
+    <div class="hero-bg"></div>
+    <div class="container hero-grid">
+      <div id="hero-text" class="hero-text"></div>
+      <aside id="hero-panel" class="hero-panel reveal"></aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section soft" id="abstract">
+      <div class="container two-col">
+        <div>
+          <span class="section-kicker">Project Abstract</span>
+          <h2>Project Overview</h2>
+        </div>
+        <div id="abstract-content" class="large-copy"></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════ RESEARCH GAP ═══════════════ -->
-<section id="research">
-  <div class="container">
-    <span class="section-label">Literature Review</span>
-    <h2 class="section-title">Research <span class="hl">Gap</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Three key papers (gathered in Week 03) were compared to identify state-of-the-art limitations and locate this project's contribution.</p>
-    <div class="paper-cards" id="paper-cards"></div>
-    <div class="gap-box" id="gap-box"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ SOLUTION ═══════════════ -->
-<section id="solution" class="section-alt">
-  <div class="container">
-    <span class="section-label">Proposed Solution</span>
-    <h2 class="section-title">The <span class="hl">Proposed System</span></h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="gap:3rem;align-items:start">
-      <div>
-        <p class="section-desc" style="margin-bottom:1.5rem">A coin-sized, hand-fabricated FPCB wound patch with a 20 mm electronics module — fully wireless, battery-powered, and reproducible in a Sri Lankan university lab.</p>
-        <ul class="sol-list" id="sol-list"></ul>
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Clinical Motivation</span>
+          <h2>The Problem We Are Solving</h2>
+          <p>Chronic diabetic wounds need affordable continuous monitoring, especially where frequent clinical assessment is difficult.</p>
+        </div>
+        <div id="problem-cards" class="grid cards-4"></div>
+        <div class="table-card mt">
+          <div class="table-title">
+            <span class="section-kicker">Clinical Wound pH Reference</span>
+            <h3>pH ranges used for decision making</h3>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Wound State</th><th>pH Range</th><th>Clinical Interpretation</th></tr></thead>
+              <tbody id="ph-table-body"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="spec-card reveal">
-        <span class="section-label">System Specification</span>
-        <table>
-          <tbody>
-            <tr><td class="k">pH Range</td><td class="v">pH 4.0 – 9.0</td></tr>
-            <tr><td class="k">pH Sensitivity</td><td class="v hi">≥ 50 mV/pH</td></tr>
-            <tr><td class="k">pH Resolution</td><td class="v hi">≤ 0.02 pH</td></tr>
-            <tr><td class="k">ADC</td><td class="v">16-bit (ADS1115)</td></tr>
-            <tr><td class="k">CMRR</td><td class="v">100 dB (INA333)</td></tr>
-            <tr><td class="k">Wireless</td><td class="v">BLE 5.0 + Wi-Fi</td></tr>
-            <tr><td class="k">Sleep Current</td><td class="v">&lt; 10 µA</td></tr>
-            <tr><td class="k">Battery Life</td><td class="v hi">≥ 6 months</td></tr>
-            <tr><td class="k">Module Size</td><td class="v">20 mm coin PCB</td></tr>
-            <tr><td class="k">Sensor Size</td><td class="v">30 × 50 mm FPCB</td></tr>
-            <tr><td class="k">Budget</td><td class="v hi">≤ LKR 20,000</td></tr>
-          </tbody>
-        </table>
+    </section>
+
+    <section class="section soft" id="research-gap">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Literature Review</span>
+          <h2>Research Gap</h2>
+          <p>Key papers were compared to identify state-of-the-art limitations and define this project's contribution.</p>
+        </div>
+        <div id="paper-cards" class="grid cards-3"></div>
+        <div id="gap-box" class="gap-box reveal"></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════ OBJECTIVES ═══════════════ -->
-<section id="objectives">
-  <div class="container">
-    <span class="section-label">Project Objectives</span>
-    <h2 class="section-title">What This Project <span class="hl">Aims to Achieve</span></h2>
-    <div class="divider"></div>
-    <ul class="objectives-list" id="objectives-list"></ul>
-  </div>
-</section>
-
-<!-- ═══════════════ WEEKLY PROGRESS ═══════════════ -->
-<section id="progress" class="section-alt">
-  <div class="container">
-    <span class="section-label">Documentation Journey · Weeks 01–05</span>
-    <h2 class="section-title">Weekly <span class="hl">Progress</span> Timeline</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Week 01–05 are documented using short descriptions and Google Drive resource links. Week 06–14 are included as Coming soon placeholders, ready for future updates. Images are intentionally removed from the weekly cards.</p>
-    <div class="phase-filter" id="phase-filters"></div>
-    <div class="timeline" id="timeline"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ ARCHITECTURE ═══════════════ -->
-<section id="architecture">
-  <div class="container">
-    <span class="section-label">Technical Design</span>
-    <h2 class="section-title">System <span class="hl">Architecture</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">The six-layer signal chain from wound contact to wireless output — selected via the Week 04 coin-module comparison.</p>
-    <div class="arch-diagram" id="arch-diagram"></div>
-    <div class="grid-3" style="margin-top:2.5rem">
-      <div class="card reveal"><span class="section-label">Signal Chain</span><h4>Analog Front-End</h4><p style="font-size:.88rem">INA333 (100 dB CMRR) → 100 Hz low-pass filter → ADS1115 16-bit ADC (7.8 µV/LSB).</p></div>
-      <div class="card reveal reveal-d1"><span class="section-label">Firmware</span><h4>ESP32-S3 Logic</h4><p style="font-size:.88rem">Read ADS1115 (I²C) → 3-point pH calibration → Nernst temperature correction → BLE notify → deep sleep.</p></div>
-      <div class="card reveal reveal-d2"><span class="section-label">Power</span><h4>Ultra-Low Power</h4><p style="font-size:.88rem">CR2032 + XC6206 (1 µA Iq). Deep sleep 10 µA; BLE advertises only at the measurement interval.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SENSOR TECH ═══════════════ -->
-<section id="sensor-tech" class="section-alt">
-  <div class="container">
-    <span class="section-label">Transducer Design</span>
-    <h2 class="section-title">Sensor <span class="hl">Technology</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Four sensing modalities on one 30 × 50 mm PET patch, sharing the same electrode pair for pH and impedance moisture sensing.</p>
-    <div class="sensor-grid" id="sensor-grid"></div>
-    <div class="pani-box reveal">
-      <span class="section-label">PANI Chemistry</span>
-      <h4 style="margin-bottom:.7rem">Why Polyaniline (PANI)?</h4>
-      <p style="font-size:.93rem;color:var(--ink-soft);line-height:1.8">PANI is the <strong>only intrinsically pH-responsive conductive polymer</strong>. Its Emeraldine Salt form undergoes reversible acid-base doping (<code>PANI-ES + H⁺ ⇌ PANI-ES·H⁺</code>), producing a Nernstian potential of ~59 mV per pH unit — no extra functionalisation needed. Aniline monomer costs only LKR 250–400 locally (Glorchem LK, Colombo), making it ideal for this low-cost FYP.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ RESOURCES ═══════════════ -->
-<section id="resources">
-  <div class="container-wide">
-    <span class="section-label">Evidence Library</span>
-    <h2 class="section-title">Resource <span class="hl">Library</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">All project files catalogued and filterable. Each is linked to its contributing week.</p>
-    <div class="res-filters" id="res-filters"></div>
-    <div class="res-grid" id="res-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ FILE CATEGORIES ═══════════════ -->
-<section id="file-categories-sec" class="section-alt">
-  <div class="container">
-    <span class="section-label">Resource Classification</span>
-    <h2 class="section-title">File <span class="hl">Categories</span> &amp; Their Role</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Every uploaded resource, classified into eight categories with its role in the project.</p>
-    <div class="cat-grid" id="cat-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ FILE ANALYSIS TABLE ═══════════════ -->
-<section id="file-analysis">
-  <div class="container-wide">
-    <span class="section-label">Complete File Index</span>
-    <h2 class="section-title">File <span class="hl">Analysis</span> Table</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Every uploaded file with its type, week, content, importance, and the section where it is used.</p>
-    <div class="table-wrapper">
-      <table>
-        <thead><tr><th>File Name</th><th>Week</th><th>Type</th><th>Main Content</th><th>Importance</th><th>Section</th></tr></thead>
-        <tbody id="file-table-body"></tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ DATASHEETS ═══════════════ -->
-<section id="datasheets" class="section-alt">
-  <div class="container-wide">
-    <span class="section-label">Component References</span>
-    <h2 class="section-title">Component <span class="hl">Datasheets</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Datasheets for every selected component are listed below. The shared Google Drive folder also includes the project papers and datasheets used for reference.</p>
-    <div class="res-grid" id="datasheets-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ DOCUMENTS ═══════════════ -->
-<section id="documents">
-  <div class="container-wide">
-    <span class="section-label">Word / PDF Documents</span>
-    <h2 class="section-title">Document <span class="hl">Library</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Technical references, literature reviews, methodology and requirement documents produced during the project.</p>
-    <div class="res-grid" id="documents-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ VIDEO & REFERENCES ═══════════════ -->
-<section id="references" class="section-alt">
-  <div class="container-wide">
-    <span class="section-label">Video &amp; External References</span>
-    <h2 class="section-title">Reference <span class="hl">Videos</span> &amp; Publications</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Key references gathered in Weeks 02–03 — including SmartHEAL and the shared papers/datasheets Drive folder used for project reference.</p>
-    <div class="res-grid" id="videos-grid"></div>
-    <h3 style="margin:2.5rem 0 1.5rem">Foundational Publications</h3>
-    <div class="res-grid" id="publications-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ COMPETITIVE ═══════════════ -->
-<section id="competitive">
-  <div class="container">
-    <span class="section-label">Market Positioning</span>
-    <h2 class="section-title">Similar <span class="hl">Products</span> &amp; Differentiation</h2>
-    <div class="divider"></div>
-    <p class="section-desc">How this FYP positions against existing prototypes and commercial products.</p>
-    <div class="grid-3" id="similar-products"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ TESTING ═══════════════ -->
-<section id="testing" class="section-alt">
-  <div class="container">
-    <span class="section-label">Validation Strategy</span>
-    <h2 class="section-title">Testing &amp; Validation <span class="hl">Plan</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Six validation phases, from PANI synthesis QC to full simulated wound-environment testing.</p>
-    <div class="test-grid" id="testing-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ BUDGET ═══════════════ -->
-<section id="budget">
-  <div class="container">
-    <span class="section-label">Economic Feasibility</span>
-    <h2 class="section-title">Project <span class="hl">Budget</span></h2>
-    <div class="divider"></div>
-    <div class="budget-header" id="budget-header"></div>
-    <div class="budget-rows" id="budget-rows"></div>
-    <div class="budget-note-box">💡 Sri Lanka local sourcing for synthesis chemicals is 5–12× cheaper than international suppliers. Full comparison in the Week 05 budget workbook.</div>
-  </div>
-</section>
-
-<!-- ═══════════════ FUTURE ═══════════════ -->
-<section id="future" class="section-alt">
-  <div class="container">
-    <span class="section-label">Research Directions</span>
-    <h2 class="section-title">Future <span class="hl">Work</span></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Directions for the remaining weeks and beyond, demonstrating readiness for graduate-level study.</p>
-    <div class="future-list" id="future-list"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ PROFILE ═══════════════ -->
-<section id="profile">
-  <div class="container">
-    <span class="section-label">About the Researcher</span>
-    <h2 class="section-title">Research <span class="hl">Profile</span></h2>
-    <div class="divider"></div>
-    <div class="profile-grid">
-      <div>
-        <p class="section-desc" style="margin-bottom:1.5rem">This FYP sits at the intersection of electrochemical sensing, analog instrumentation, and embedded wireless systems — a multi-disciplinary profile valued in biomedical engineering research.</p>
-        <div class="profile-qualities" id="profile-qualities"></div>
+    <section class="section" id="solution">
+      <div class="container two-col align-start">
+        <div>
+          <span class="section-kicker">Proposed Solution</span>
+          <h2>The Proposed System</h2>
+          <p class="large-copy">A coin-sized, hand-fabricated flexible wound patch with wireless sensing and low-cost electronics.</p>
+        </div>
+        <ul id="sol-list" class="feature-list"></ul>
       </div>
-      <div class="profile-summary" id="profile-summary"></div>
+    </section>
+
+    <section class="section soft" id="objectives">
+      <div class="container two-col align-start">
+        <div>
+          <span class="section-kicker">Project Objectives</span>
+          <h2>What This Project Aims to Achieve</h2>
+        </div>
+        <ol id="objectives-list" class="objectives-list"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="timeline-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Documentation Journey · Weeks 01–06</span>
+          <h2>Weekly Progress Timeline</h2>
+          <p>Each week contains project decisions, evidence folders, research figures, and implementation progress.</p>
+        </div>
+        <div id="phase-filters" class="phase-filters"></div>
+        <div id="timeline" class="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="architecture">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Technical Design</span>
+          <h2>System Architecture</h2>
+          <p>The six-layer signal chain from wound contact to wireless output.</p>
+        </div>
+        <div id="arch-diagram" class="arch-diagram"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sensor">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Transducer Design</span>
+          <h2>Sensor Technology</h2>
+          <p>Four sensing modalities on one flexible patch: pH, temperature, moisture and embedded readout.</p>
+        </div>
+        <div id="sensor-grid" class="grid cards-4"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Evidence Library</span>
+          <h2>Resource Library</h2>
+          <p>All project files catalogued and filterable by type.</p>
+        </div>
+        <div id="res-filters" class="res-filters"></div>
+        <div id="res-grid" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section" id="file-categories">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Resource Classification</span>
+          <h2>File Categories & Their Role</h2>
+        </div>
+        <div id="cat-grid" class="grid cards-4"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="file-index">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Complete File Index</span>
+          <h2>File Analysis Table</h2>
+          <p>Every uploaded file with its type, week, content, importance, and section use.</p>
+        </div>
+        <div class="table-card">
+          <div class="table-wrap wide-table">
+            <table>
+              <thead><tr><th>File Name</th><th>Week</th><th>Type</th><th>Main Content</th><th>Importance</th><th>Section</th></tr></thead>
+              <tbody id="file-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="datasheets">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Component References</span>
+          <h2>Component Datasheets</h2>
+          <p>Datasheets for every selected component are listed below.</p>
+        </div>
+        <div id="datasheets-grid" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="documents">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Word / PDF Documents</span>
+          <h2>Document Library</h2>
+          <p>Technical references, literature reviews, methodology and requirement documents produced during the project.</p>
+        </div>
+        <div id="documents-grid" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Video & External References</span>
+          <h2>Reference Videos & Publications</h2>
+          <p>Key references, benchmark papers and visual research figures.</p>
+        </div>
+        <h3 class="subhead">Reference Videos</h3>
+        <div id="videos-grid" class="grid cards-2"></div>
+        <h3 class="subhead">Foundational Publications & Figures</h3>
+        <div id="publications-grid" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="similar">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Market Positioning</span>
+          <h2>Similar Products & Differentiation</h2>
+        </div>
+        <div id="similar-products" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section" id="testing">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Validation Strategy</span>
+          <h2>Testing & Validation Plan</h2>
+        </div>
+        <div id="testing-grid" class="grid cards-3"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="budget">
+      <div class="container two-col align-start">
+        <div id="budget-header" class="budget-header"></div>
+        <div id="budget-rows" class="budget-rows"></div>
+      </div>
+    </section>
+
+    <section class="section" id="future">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Research Directions</span>
+          <h2>Future Work</h2>
+        </div>
+        <div id="future-list" class="future-list"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="profile">
+      <div class="container two-col align-start">
+        <div>
+          <span class="section-kicker">About the Researcher</span>
+          <h2>Research Profile</h2>
+          <div id="profile-summary" class="large-copy"></div>
+        </div>
+        <div id="profile-qualities" class="quality-grid"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div id="contact-inner" class="contact-card"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Smart Diabetic Wound pH Sensor · Final Year Project Portfolio</p>
+      <p>Built with HTML / CSS / JS · Hosted on GitHub Pages</p>
     </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lb-close" aria-label="Close image preview">✕</button>
+    <img id="lightbox-img" alt="Expanded preview" />
   </div>
-</section>
 
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section id="contact" class="section-deep">
-  <div class="container contact-inner" id="contact-inner"></div>
-</section>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-  <div class="footer-text">
-    <p>Smart Diabetic Wound pH Sensor · Final Year Project Portfolio</p>
-    <p>EEE Undergraduate · Sri Lanka · 2025–2026</p>
-    <p style="margin-top:.5rem">Built with HTML / CSS / JS · <a href="https://pages.github.com" target="_blank">Hosted on GitHub Pages</a></p>
-  </div>
-</footer>
-
-<!-- Lightbox for week images -->
-<div id="lightbox"><span class="lb-close">✕</span><img id="lightbox-img" src="" alt="" /></div>
-
-<button id="back-to-top" aria-label="Back to top">↑</button>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

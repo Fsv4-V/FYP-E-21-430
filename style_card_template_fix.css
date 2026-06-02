@@ -1,0 +1,228 @@
+/* ============================================================
+   CARD IMAGE TEMPLATE FIX — weekly + research image cards
+   Paste this at the VERY BOTTOM of your existing style.css.
+   This makes images look like clean cards, not zoomed/cropped.
+============================================================ */
+
+/* ---------- Weekly visual evidence card section ---------- */
+.week-media-panel {
+  margin: 22px 0 24px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.week-media-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  margin: 0 0 14px !important;
+}
+
+.week-media-top h4 {
+  margin: 0 !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  color: #0f172a !important;
+}
+
+.media-eyebrow {
+  display: inline-block !important;
+  margin-bottom: 6px !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #0f766e !important;
+}
+
+.media-count {
+  flex: 0 0 auto !important;
+  padding: 7px 11px !important;
+  border-radius: 999px !important;
+  background: rgba(14, 139, 139, 0.10) !important;
+  border: 1px solid rgba(14, 139, 139, 0.24) !important;
+  color: #0f766e !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+}
+
+.week-image-gallery.compact-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  align-items: stretch !important;
+}
+
+.week-image-card {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  border: 1px solid #dbe4ef !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06) !important;
+  transition: transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+.week-image-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.10) !important;
+}
+
+.image-frame,
+.research-image-frame {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: #ffffff !important;
+  cursor: zoom-in !important;
+}
+
+.week-image-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 260px !important;
+  max-height: 260px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.week-image-card figcaption {
+  margin: 0 !important;
+  padding: 13px 16px 15px !important;
+  min-height: 70px !important;
+  border-top: 1px solid #e5edf5 !important;
+  background: #f8fafc !important;
+  color: #64748b !important;
+  font-size: 0.94rem !important;
+  line-height: 1.42 !important;
+  font-weight: 500 !important;
+}
+
+.image-number {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 25px !important;
+  height: 22px !important;
+  margin-right: 7px !important;
+  border-radius: 999px !important;
+  background: rgba(14, 139, 139, 0.12) !important;
+  color: #0f766e !important;
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
+}
+
+/* ---------- Research publication image cards ---------- */
+.research-paper-title {
+  grid-column: 1 / -1 !important;
+  padding: 18px 20px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(14, 139, 139, 0.25) !important;
+  background: linear-gradient(135deg, rgba(14, 139, 139, 0.09), rgba(37, 99, 235, 0.05)) !important;
+}
+
+.research-image-card {
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  border: 1px solid #dbe4ef !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+.research-img {
+  display: block !important;
+  width: 100% !important;
+  height: 260px !important;
+  max-height: 260px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  cursor: zoom-in !important;
+}
+
+.research-image-card h4 {
+  margin: 0 !important;
+  padding: 13px 16px 6px !important;
+  border-top: 1px solid #e5edf5 !important;
+  background: #f8fafc !important;
+  color: #475569 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+}
+
+.research-image-card p.muted {
+  margin: 0 !important;
+  padding: 0 16px 15px !important;
+  background: #f8fafc !important;
+  color: #64748b !important;
+}
+
+.folder-chip {
+  display: inline-block !important;
+  margin: 4px 6px 4px 0 !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(14, 139, 139, 0.10) !important;
+  border: 1px solid rgba(14, 139, 139, 0.22) !important;
+  font-size: 0.82rem !important;
+}
+
+.muted-btn {
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+}
+
+/* ---------- Mobile sizes ---------- */
+@media (max-width: 900px) {
+  .week-image-gallery.compact-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  }
+
+  .week-image-card img,
+  .research-img {
+    height: 220px !important;
+    max-height: 220px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .week-media-top {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .week-image-gallery.compact-gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  .week-image-card img,
+  .research-img {
+    height: 210px !important;
+    max-height: 210px !important;
+  }
+
+  .week-image-card figcaption {
+    min-height: auto !important;
+  }
+}

@@ -1,15 +1,18 @@
-FYP Portfolio Better Image Template Upload Steps
+FYP Portfolio — Better Card Image Template
 
-1. Replace your GitHub data.js with this data.js file.
-2. Replace your GitHub script.js with this script.js file.
-3. Open your existing style.css. Do NOT delete your old CSS.
-4. Paste everything from style_image_template_fix.css at the VERY BOTTOM of style.css.
-   This fixes the zoomed image issue and gives a compact professional template.
-5. Commit all files with this message:
-   Improve weekly image layout and sizing
-6. Wait 1–3 minutes and refresh your GitHub Pages website.
+Upload/replace these files in your GitHub repository:
 
-Important: Your image files must still remain in:
+1) Replace data.js with the data.js in this package.
+2) Replace script.js with the script.js in this package.
+3) Open your existing style.css and paste ALL code from style_card_template_fix.css at the VERY BOTTOM.
+
+Do not delete your old style.css code. Pasting at the bottom safely overrides the image layout.
+
+Commit message:
+Improve weekly image cards
+
+Your images must already exist in:
 assets/research/
 
-Do not rename the image files again.
+And week screenshots should remain at root:
+week1.png, week2.png, week3.png, week4.png, week5.png

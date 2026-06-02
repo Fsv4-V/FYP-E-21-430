@@ -518,3 +518,29 @@ footer { background: var(--primary-deep); color: rgba(255,255,255,0.7); padding:
   color: #FACC15 !important;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75), 0 0 8px rgba(250, 204, 21, 0.35) !important;
 }
+.research-paper-title {
+  border: 1px solid rgba(14, 139, 139, 0.35);
+  background: rgba(14, 139, 139, 0.08);
+}
+
+.research-image-card {
+  overflow: hidden;
+}
+
+.research-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 8px;
+  cursor: zoom-in;
+  margin-bottom: 12px;
+}
+
+.research-image-card h4 {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0.4rem 0;
+}

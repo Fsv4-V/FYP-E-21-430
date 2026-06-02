@@ -206,37 +206,37 @@ const WEEKS = [
     "nextWeek": "Begin prototype fabrication, testing and calibration work.",
     "evidence": "Google Drive resources for Week 05: https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link"
   },
- {
-  "id": 6,
-  "label": "Week 06",
-  "dates": "June 2026",
-  "phase": "Hardware Blueprint, Funding and Dataset Preparation",
-  "title": "Week 06 — Hardware Blueprint, Tool Requirements and Funding Preparation",
-  "status": "Completed",
-  "resourceLink": "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE",
-  "folders": [
-    "All two model collaboration",
-    "Funding for FYP",
-    "Dataset making through papers",
-    "NSF requirement of tools",
-    "Screen-Printed Carbon-PANI method vs Cleanroom Microfabrication"
-  ],
-"summary": `Week 06 converted the project from concept-level planning into a practical implementation roadmap.
-The work focused on preparing an integrated wound patch hardware/firmware blueprint, creating a structured workbook for transducer channels and electronics planning, comparing low-cost Carbon-PANI screen-printing against expensive cleanroom microfabrication, identifying fabrication and characterization equipment requirements, collecting wound-monitoring literature for dataset building, and completing a funding request form for prototype development.`,  "goals": "Prepare the implementation plan for a disposable flexible sensing patch and reusable coin-size electronics module; define the fabrication method, required tools, component/resource plan, budget justification, and literature/dataset evidence needed for the next prototype stage.",
-  "keyFindings": [
-    "Prepared a two-part system architecture: Stage A disposable flexible sensing patch and Stage B reusable coin-size electronics brain for signal conditioning, processing, telemetry and power.",
-    "Developed a hardware and firmware blueprint covering transducer channels, a 12-contact ZIF/FFC pin map, AFE/MCU interfaces, PCB stack-up, calibration logic and multiplexed sampling sequence.",
-    "Created a wound patch workbook containing transducer constants, BOM, pin map, PCB stack-up, live calibration sheet and sequencer timing parameters.",
-    "Compared fabrication routes and identified the low-cost screen-printed Carbon-PANI method as more practical for the FYP than cleanroom-based elastomeric microfabrication.",
-    "Prepared a tool and facility requirement list covering screen printing, potentiostat/galvanostat use, laser cutting, ultrasonic agitation, precision dispensing, spin coating/doctor blade processing and sterilization options.",
-    "Completed a funding request document for the low-cost medical-grade smart wound monitoring patch prototype, including electronics, flexible PCB fabrication, biomedical consumables and nanomaterials.",
-    "Collected wound-monitoring papers and figures to support dataset preparation, including multiplexed sensor patch, pH/temperature dressing and PANI-based wound monitoring references."
-  ],
-  "decisions": "Proceed with a locally feasible, low-cost screen-printed Carbon-PANI flexible patch strategy and keep the electronics as a separate reusable coin-size module. Use the Week 06 hardware blueprint and workbook as the main implementation planning documents for the next prototype stage.",
-  "rejected": "Direct cleanroom-based gold/SEBS microfabrication was not selected as the main route because it is expensive and less accessible for undergraduate/local fabrication. Optical/colorimetric-only sensing was also not selected as the main route because it requires camera/image-processing support and does not provide direct electronic telemetry.",
-  "nextWeek": "Move from planning to practical prototype work: finalize material purchasing, prepare the first screen-printed Carbon-PANI electrode samples, set up pH buffer calibration, begin analog front-end validation, and document real fabrication/testing evidence for Week 07.",
-  "evidence": "Week 06 evidence includes the hardware blueprint markdown file, wound patch workbook, completed funding request form, fabrication comparison workbook, NSF tool/equipment requirement sheets, and wound-monitoring paper dataset folder. Replace the resource link with the public Week 06 Google Drive folder link after uploading the Week 06 folder."
-},
+  {
+    "id": 6,
+    "label": "Week 06",
+    "dates": "June 2026",
+    "phase": "Hardware Blueprint, Funding and Dataset Preparation",
+    "title": "Week 06 — Hardware Blueprint, Tool Requirements and Funding Preparation",
+    "status": "Completed",
+    "resourceLink": "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE",
+    "folders": [
+      "All two model collaboration",
+      "Funding for FYP",
+      "Dataset making through papers",
+      "NSF requirement of tools",
+      "Screen-Printed Carbon-PANI method vs Cleanroom Microfabrication"
+    ],
+    "summary": "Week 06 converted the project from concept-level planning into a practical implementation roadmap. The work focused on preparing an integrated wound patch hardware/firmware blueprint, creating a structured workbook for transducer channels and electronics planning, comparing low-cost Carbon-PANI screen-printing against expensive cleanroom microfabrication, identifying fabrication and characterization equipment requirements, collecting wound-monitoring literature for dataset building, and completing a funding request form for prototype development.",
+    "goals": "Prepare the implementation plan for a disposable flexible sensing patch and reusable coin-size electronics module; define the fabrication method, required tools, component/resource plan, budget justification, and literature/dataset evidence needed for the next prototype stage.",
+    "keyFindings": [
+      "Prepared a two-part system architecture: Stage A disposable flexible sensing patch and Stage B reusable coin-size electronics brain for signal conditioning, processing, telemetry and power.",
+      "Developed a hardware and firmware blueprint covering transducer channels, a 12-contact ZIF/FFC pin map, AFE/MCU interfaces, PCB stack-up, calibration logic and multiplexed sampling sequence.",
+      "Created a wound patch workbook containing transducer constants, BOM, pin map, PCB stack-up, live calibration sheet and sequencer timing parameters.",
+      "Compared fabrication routes and identified the low-cost screen-printed Carbon-PANI method as more practical for the FYP than cleanroom-based elastomeric microfabrication.",
+      "Prepared a tool and facility requirement list covering screen printing, potentiostat/galvanostat use, laser cutting, ultrasonic agitation, precision dispensing, spin coating/doctor blade processing and sterilization options.",
+      "Completed a funding request document for the low-cost medical-grade smart wound monitoring patch prototype, including electronics, flexible PCB fabrication, biomedical consumables and nanomaterials.",
+      "Collected wound-monitoring papers and figures to support dataset preparation, including multiplexed sensor patch, pH/temperature dressing and PANI-based wound monitoring references."
+    ],
+    "decisions": "Proceed with a locally feasible, low-cost screen-printed Carbon-PANI flexible patch strategy and keep the electronics as a separate reusable coin-size module. Use the Week 06 hardware blueprint and workbook as the main implementation planning documents for the next prototype stage.",
+    "rejected": "Direct cleanroom-based gold/SEBS microfabrication was not selected as the main route because it is expensive and less accessible for undergraduate/local fabrication. Optical/colorimetric-only sensing was also not selected as the main route because it requires camera/image-processing support and does not provide direct electronic telemetry.",
+    "nextWeek": "Move from planning to practical prototype work: finalize material purchasing, prepare the first screen-printed Carbon-PANI electrode samples, set up pH buffer calibration, begin analog front-end validation, and document real fabrication/testing evidence for Week 07.",
+    "evidence": "Week 06 evidence includes the hardware blueprint markdown file, wound patch workbook, completed funding request form, fabrication comparison workbook, NSF tool/equipment requirement sheets, and wound-monitoring paper dataset folder."
+  },
   {
     "id": 7,
     "label": "Week 07",
@@ -427,14 +427,14 @@ const RESOURCES = [
   { id:"w4drive", type:"document", title:"Week 04 Google Drive Resources", description:"Fabrication facility resources and coin-size electronics brain design files.", week:4, tags:["drive","week 04"], link:"https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link" },
   { id:"w5drive", type:"document", title:"Week 05 Google Drive Resources", description:"Flexible PCB comparison, PANI literature, pH methodology and cost estimation resources.", week:5, tags:["drive","week 05"], link:"https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link" },
   {
-  id: "w6drive",
-  type: "document",
-  title: "Week 06 Google Drive Resources",
-  description: "Hardware and firmware blueprint, wound patch workbook, funding request, tool/equipment requirement sheets, fabrication route comparison and wound-monitoring literature dataset resources.",
-  week: 6,
-  tags: ["drive", "week 06", "hardware blueprint", "funding", "fabrication", "dataset"],
-  link: "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE"
-}
+    id: "w6drive",
+    type: "document",
+    title: "Week 06 Google Drive Resources",
+    description: "Hardware and firmware blueprint, wound patch workbook, funding request, tool/equipment requirement sheets, fabrication route comparison and wound-monitoring literature dataset resources.",
+    week: 6,
+    tags: ["drive", "week 06", "hardware blueprint", "funding", "fabrication", "dataset"],
+    link: "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE"
+  },
   { id:"datasheetdrive", type:"datasheet", title:"Papers and Datasheets Drive Folder", description:"Shared Google Drive folder containing project papers and component datasheets.", week:"", tags:["datasheets","papers","drive"], link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { id:"papersdatasheetsdrive", type:"paper", title:"Project Papers Drive Folder", journal:"Google Drive", year:2026, relevance:"Drive folder containing the papers used for literature review and project justification.", tags:["papers","drive","references"], week:"", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { id:"r1", type:"paper", title:"Shirzaei Sani et al. (2023)", journal:"Science Advances", year:2023, relevance:"Gold-standard PANI/Au potentiometric wound sensor at 59.7 mV/pH. Performance benchmark for this FYP.", tags:["PANI","potentiometric","benchmark"], week:3, link:"#" },
@@ -475,7 +475,8 @@ const FILE_ANALYSIS = [
   { name:"PH_SEnsor_Matrix.pdf", type:"PDF — Matrix Export", week:"Week 01/03", content:"PDF export of pH sensor comparison matrix", importance:"Supervisor-friendly matrix view", section:"Documents" },
   { name:"Wound_Monitoring_System_Requirements_md.pdf", type:"PDF — Requirements", week:"Cross-week", content:"System requirements specification", importance:"Formal requirement definition", section:"Documents" },
   { name:"Engineering_Analysis_of_Wound_Healing_Dynamics_1.pdf", type:"PDF — Analysis", week:"Cross-week", content:"Engineering analysis of wound healing dynamics", importance:"Links pH to healing stages quantitatively", section:"Documents" },
-  { name:"FYP_Fabrication__Authority_Guide.pdf", type:"PDF — Guide", week:"Week 05", content:"Fabrication routes and authority/regulatory guidance", importance:"Fabrication & compliance guidance", section:"Documents" },];
+  { name:"FYP_Fabrication__Authority_Guide.pdf", type:"PDF — Guide", week:"Week 05", content:"Fabrication routes and authority/regulatory guidance", importance:"Fabrication & compliance guidance", section:"Documents" }
+];
 
 // ── TESTING PLAN ──────────────────────────────────────────────
 const TESTING = [

@@ -295,26 +295,62 @@ function renderDocuments() {
 /* ---------- VIDEOS + PUBLICATIONS ---------- */
 function renderReferences() {
   const vg = $("#videos-grid");
+
   VIDEOS.forEach(v => {
     const c = el("div", "res-card");
-    c.innerHTML = `<span class="res-badge b-video">${v.type}</span>
-      <div class="res-title">${v.title}</div>
-      <div class="res-sub">${v.source}</div>
-      <p class="res-desc">${v.note}</p>
-      <a class="res-link" href="${v.link}" target="_blank" rel="noopener">Open link →</a>`;
+    c.innerHTML = `
+      <span class="pill">${v.type}</span>
+      <h3>${v.title}</h3>
+      <p class="muted">${v.source}</p>
+      <p>${v.note}</p>
+      <a href="${v.link}" target="_blank" rel="noopener">Open link →</a>
+    `;
     vg.appendChild(c);
   });
+
   const pg = $("#publications-grid");
+
   KEY_PUBLICATIONS.forEach(p => {
     const c = el("div", "res-card");
-    c.innerHTML = `<span class="res-badge b-paper">${p.repo}</span>
-      <div class="res-title">${p.title}</div>
-      <p class="res-desc">${p.note}</p>
-      <a class="res-link" href="${p.link}" target="_blank" rel="noopener">Read publication →</a>`;
+    c.innerHTML = `
+      <span class="pill">${p.repo}</span>
+      <h3>${p.title}</h3>
+      <p>${p.note}</p>
+      <a href="${p.link}" target="_blank" rel="noopener">Read publication →</a>
+    `;
     pg.appendChild(c);
   });
-}
 
+  if (typeof RESEARCH_IMAGES !== "undefined") {
+    RESEARCH_IMAGES.forEach(paper => {
+      const titleCard = el("div", "res-card research-paper-title");
+      titleCard.innerHTML = `
+        <span class="pill">Research Figures</span>
+        <h3>${paper.title}</h3>
+        <p class="muted">${paper.source}</p>
+        <p>${paper.note}</p>
+        ${paper.link && paper.link !== "#" ? `<a href="${paper.link}" target="_blank" rel="noopener">Open paper →</a>` : ""}
+      `;
+      pg.appendChild(titleCard);
+
+      paper.images.forEach(img => {
+        const c = el("div", "res-card research-image-card");
+        c.innerHTML = `
+          <img 
+            src="${img.src}" 
+            alt="${img.caption}" 
+            loading="lazy" 
+            data-lb="${img.src}"
+            class="research-img"
+          >
+          <h4>${img.caption}</h4>
+          <p class="muted">${paper.source}</p>
+        `;
+        pg.appendChild(c);
+      });
+    });
+  }
+}
 /* ---------- SIMILAR PRODUCTS ---------- */
 function renderSimilarProducts() {
   const wrap = $("#similar-products");

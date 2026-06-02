@@ -213,7 +213,7 @@ const WEEKS = [
   "phase": "Hardware Blueprint, Funding and Dataset Preparation",
   "title": "Week 06 — Hardware Blueprint, Tool Requirements and Funding Preparation",
   "status": "Completed",
-  "resourceLink": "PASTE_WEEK_06_GOOGLE_DRIVE_FOLDER_LINK_HERE",
+  "resourceLink": "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE",
   "folders": [
     "All two model collaboration",
     "Funding for FYP",
@@ -221,8 +221,8 @@ const WEEKS = [
     "NSF requirement of tools",
     "Screen-Printed Carbon-PANI method vs Cleanroom Microfabrication"
   ],
-  "summary": "Week 06 converted the project from concept-level planning into a practical implementation roadmap. The work focused on preparing an integrated wound patch hardware/firmware blueprint, creating a structured workbook for transducer channels and electronics planning, comparing low-cost Carbon-PANI screen-printing against expensive cleanroom microfabrication, identifying fabrication and characterization equipment requirements, collecting wound-monitoring literature for dataset building, and completing a funding request form for prototype development.",
-  "goals": "Prepare the implementation plan for a disposable flexible sensing patch and reusable coin-size electronics module; define the fabrication method, required tools, component/resource plan, budget justification, and literature/dataset evidence needed for the next prototype stage.",
+"summary": `Week 06 converted the project from concept-level planning into a practical implementation roadmap.
+The work focused on preparing an integrated wound patch hardware/firmware blueprint, creating a structured workbook for transducer channels and electronics planning, comparing low-cost Carbon-PANI screen-printing against expensive cleanroom microfabrication, identifying fabrication and characterization equipment requirements, collecting wound-monitoring literature for dataset building, and completing a funding request form for prototype development.`,  "goals": "Prepare the implementation plan for a disposable flexible sensing patch and reusable coin-size electronics module; define the fabrication method, required tools, component/resource plan, budget justification, and literature/dataset evidence needed for the next prototype stage.",
   "keyFindings": [
     "Prepared a two-part system architecture: Stage A disposable flexible sensing patch and Stage B reusable coin-size electronics brain for signal conditioning, processing, telemetry and power.",
     "Developed a hardware and firmware blueprint covering transducer channels, a 12-contact ZIF/FFC pin map, AFE/MCU interfaces, PCB stack-up, calibration logic and multiplexed sampling sequence.",

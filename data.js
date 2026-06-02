@@ -534,6 +534,51 @@ const KEY_PUBLICATIONS = [
   { title:"Flexible Wearable Fully-Printed Smart Patch for pH and Hydration Sensing", repo:"PMC8852199", note:"Printed electronics, flexible fabrication, low-cost printable sensors, wearable patch integration (corresponds to Iversen analysis).", link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC8852199/" }
 ];
 
+const RESEARCH_IMAGES = [
+  {
+    title: "Sani et al. — Stretchable Wireless Wound Bioelectronic System",
+    source: "Science Advances, 2023",
+    note: "Extracted figure set from the wound monitoring and treatment paper used as the high-performance benchmark for this FYP.",
+    link: "https://www.science.org/doi/10.1126/sciadv.adf7388",
+    images: [
+      { src: "assets/research/sani_keyimage.jpg", caption: "Key graphical image — wearable wound bioelectronic system" },
+      { src: "assets/research/sani_fig1.jpg", caption: "Figure 1 — system design and wound patch concept" },
+      { src: "assets/research/sani_fig2.jpg", caption: "Figure 2 — sensor and electronics architecture" },
+      { src: "assets/research/sani_fig3.jpg", caption: "Figure 3 — experimental validation results" },
+      { src: "assets/research/sani_fig4.jpg", caption: "Figure 4 — wound monitoring performance" },
+      { src: "assets/research/sani_fig5.jpg", caption: "Figure 5 — wound treatment / stimulation results" },
+      { src: "assets/research/sani_fig6.jpg", caption: "Figure 6 — biological validation and healing outcome" }
+    ]
+  },
+  {
+    title: "Battery-Free AI-Enabled Multiplexed Sensor Patch",
+    source: "Science Advances, 2023",
+    note: "Research figures used for dataset preparation and comparison with multiplexed wound-sensing approaches.",
+    link: "#",
+    images: [
+      { src: "assets/research/petal_fig1.jpg", caption: "PETAL Figure 1 — multiplexed wound sensor patch concept" },
+      { src: "assets/research/petal_fig2.jpg", caption: "PETAL Figure 2 — sensor fabrication and sensing layout" },
+      { src: "assets/research/petal_fig3.jpg", caption: "PETAL Figure 3 — colorimetric sensor response" },
+      { src: "assets/research/petal_fig4.jpg", caption: "PETAL Figure 4 — data acquisition and analysis flow" },
+      { src: "assets/research/petal_fig5.jpg", caption: "PETAL Figure 5 — wound assessment results" },
+      { src: "assets/research/petal_fig6.jpg", caption: "PETAL Figure 6 — extended experimental validation" }
+    ]
+  },
+  {
+    title: "RSC Paper — pH / Wound Sensor Reference Figures",
+    source: "RSC Advances Reference Paper",
+    note: "Extracted figures used as supporting visual evidence for wound pH sensing, materials, and sensor response comparison.",
+    link: "#",
+    images: [
+      { src: "assets/research/rsc_d1ra08375a_fig1.jpg", caption: "RSC Figure 1 — sensor/material concept" },
+      { src: "assets/research/rsc_d1ra08375a_fig2.jpg", caption: "RSC Figure 2 — fabrication or characterization result" },
+      { src: "assets/research/rsc_d1ra08375a_fig3.jpg", caption: "RSC Figure 3 — response curve / test result" },
+      { src: "assets/research/rsc_d1ra08375a_fig4.jpg", caption: "RSC Figure 4 — material or device comparison" },
+      { src: "assets/research/rsc_d1ra08375a_fig5.jpg", caption: "RSC Figure 5 — extended validation figure" }
+    ]
+  }
+];
+
 const DATASHEETS = [
   { component:"Papers and Datasheets Drive Folder", role:"Google Drive folder for all selected component datasheets and papers used in the project.", category:"Drive Folder", link:"https://drive.google.com/drive/folders/1-xBttuHcKbzLprP1NRHI01qpF6mVDaKS?usp=drive_link" },
   { component:"ESP32-S3-WROOM-1", role:"MCU / Brain — BLE 5.0 + Wi-Fi, 240 MHz dual-core, deep-sleep 10 µA", category:"Microcontroller", link:"documents/datasheets/ESP32-S3_datasheet.pdf" },

@@ -89,6 +89,9 @@ const WEEKS = [
     "title": "Problem Definition and pH Background",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1tkGkRAXig2UpzIEpuL-YDCpxefRbUTq2?usp=drive_link",
+    "images": [
+      { "src": "week1.png", "caption": "Week 01 uploaded folder evidence" }
+    ],
     "folders": [
       "PH VARIATIONS",
       "SENSOR COMPARISON",
@@ -113,6 +116,9 @@ const WEEKS = [
     "title": "Clinical Pathology and Wearable Sensor Research",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/15nu7y297LGzbr29fADAJ7siThBSDOKnj?usp=drive_link",
+    "images": [
+      { "src": "week2.png", "caption": "Week 02 uploaded folder evidence" }
+    ],
     "folders": [
       "Flexible Circuit Print",
       "Robbins Basic Pathology",
@@ -138,6 +144,13 @@ const WEEKS = [
     "title": "Datasheets, pH Sensor Matrix and Similar Device Papers",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1AvgZ7KhovJv3lWEOTtS5212f1o_M0Pgu?usp=drive_link",
+    "images": [
+      { "src": "week3.png", "caption": "Week 03 uploaded folder evidence" },
+      { "src": "assets/research/sani_keyimage.jpg", "caption": "Sani et al. benchmark wound bioelectronic system" },
+      { "src": "assets/research/sani_fig1.jpg", "caption": "Sani et al. Figure 1 — system design" },
+      { "src": "assets/research/sani_fig2.jpg", "caption": "Sani et al. Figure 2 — sensor and electronics architecture" },
+      { "src": "assets/research/sani_fig3.jpg", "caption": "Sani et al. Figure 3 — validation results" }
+    ],
     "folders": [
       "Datasheets",
       "Links",
@@ -164,6 +177,12 @@ const WEEKS = [
     "title": "Fabrication Route and Coin-Size Electronics Brain",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1TXObdQxO2R-fMgzQKd96bVRRzY6lFjVY?usp=drive_link",
+    "images": [
+      { "src": "week4.png", "caption": "Week 04 uploaded folder evidence" },
+      { "src": "assets/research/sani_fig4.jpg", "caption": "Sani et al. Figure 4 — wound monitoring performance" },
+      { "src": "assets/research/sani_fig5.jpg", "caption": "Sani et al. Figure 5 — stimulation / treatment results" },
+      { "src": "assets/research/sani_fig6.jpg", "caption": "Sani et al. Figure 6 — healing outcome validation" }
+    ],
     "folders": [
       "Fabrication Facility",
       "FYP Brain (Coin Size)"
@@ -187,6 +206,14 @@ const WEEKS = [
     "title": "Flexible PCB Materials, PANI Methodology and Budget",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1OfeqPIWTkQ7VQoAH5lcxQbUaQs0dqHPc?usp=drive_link",
+    "images": [
+      { "src": "week5.png", "caption": "Week 05 uploaded folder evidence" },
+      { "src": "assets/research/rsc_d1ra08375a_fig1.jpg", "caption": "RSC Figure 1 — sensor/material concept" },
+      { "src": "assets/research/rsc_d1ra08375a_fig2.jpg", "caption": "RSC Figure 2 — fabrication or characterization result" },
+      { "src": "assets/research/rsc_d1ra08375a_fig3.jpg", "caption": "RSC Figure 3 — response curve / test result" },
+      { "src": "assets/research/rsc_d1ra08375a_fig4.jpg", "caption": "RSC Figure 4 — material or device comparison" },
+      { "src": "assets/research/rsc_d1ra08375a_fig5.jpg", "caption": "RSC Figure 5 — extended validation figure" }
+    ],
     "folders": [
       "Comparison of FPCs",
       "Second Option FPCB",
@@ -214,6 +241,14 @@ const WEEKS = [
     "title": "Week 06 — Hardware Blueprint, Tool Requirements and Funding Preparation",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1VHAVonh6CWdAb2n48IBA_CDyLyqctYkE",
+    "images": [
+      { "src": "assets/research/petal_fig1.jpg", "caption": "PETAL Figure 1 — multiplexed wound sensor patch concept" },
+      { "src": "assets/research/petal_fig2.jpg", "caption": "PETAL Figure 2 — sensor fabrication and sensing layout" },
+      { "src": "assets/research/petal_fig3.jpg", "caption": "PETAL Figure 3 — colorimetric sensor response" },
+      { "src": "assets/research/petal_fig4.jpg", "caption": "PETAL Figure 4 — data acquisition and analysis flow" },
+      { "src": "assets/research/petal_fig5.jpg", "caption": "PETAL Figure 5 — wound assessment results" },
+      { "src": "assets/research/petal_fig6.jpg", "caption": "PETAL Figure 6 — extended experimental validation" }
+    ],
     "folders": [
       "All two model collaboration",
       "Funding for FYP",
@@ -533,6 +568,7 @@ const KEY_PUBLICATIONS = [
   { title:"Wearable Sensors and Systems for Wound Healing-Related pH Detection", repo:"PMC8070747", note:"Foundational review: why wound pH matters, infected-wound pH ranges, electrochemical sensing, flexible wearable wound sensors.", link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC8070747/" },
   { title:"Flexible Wearable Fully-Printed Smart Patch for pH and Hydration Sensing", repo:"PMC8852199", note:"Printed electronics, flexible fabrication, low-cost printable sensors, wearable patch integration (corresponds to Iversen analysis).", link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC8852199/" }
 ];
+
 
 const RESEARCH_IMAGES = [
   {

@@ -172,14 +172,29 @@ function renderTimeline() {
 
     const weekImages = Array.isArray(w.images) && w.images.length
       ? `
-        <div class="week-image-gallery">
-          ${w.images.map(img => `
-            <figure class="week-image-card">
-              <img src="${img.src}" alt="${img.caption}" loading="lazy" data-lb="${img.src}">
-              <figcaption>${img.caption}</figcaption>
-            </figure>
-          `).join("")}
-        </div>
+        <section class="week-media-panel" aria-label="${w.label} visual evidence">
+          <div class="week-media-top">
+            <div>
+              <span class="media-eyebrow">Visual evidence</span>
+              <h4>${w.label} images and research figures</h4>
+            </div>
+            <span class="media-count">${w.images.length} image${w.images.length > 1 ? "s" : ""}</span>
+          </div>
+
+          <div class="week-image-gallery compact-gallery">
+            ${w.images.map((img, index) => `
+              <figure class="week-image-card">
+                <button class="image-frame" type="button" aria-label="Open ${img.caption}">
+                  <img src="${img.src}" alt="${img.caption}" loading="lazy" data-lb="${img.src}">
+                </button>
+                <figcaption>
+                  <span class="image-number">${String(index + 1).padStart(2, "0")}</span>
+                  ${img.caption}
+                </figcaption>
+              </figure>
+            `).join("")}
+          </div>
+        </section>
       `
       : "";
 
@@ -365,7 +380,13 @@ function renderReferences() {
   if (vg) {
     VIDEOS.forEach(v => {
       const c = el("div", "res-card");
-      c.innerHTML = `<span class="pill">${v.type}</span><h3>${v.title}</h3><p class="muted">${v.source}</p><p>${v.note}</p><a href="${v.link}" target="_blank" rel="noopener">Open link →</a>`;
+      c.innerHTML = `
+        <span class="pill">${v.type}</span>
+        <h3>${v.title}</h3>
+        <p class="muted">${v.source}</p>
+        <p>${v.note}</p>
+        <a href="${v.link}" target="_blank" rel="noopener">Open link →</a>
+      `;
       vg.appendChild(c);
     });
   }
@@ -375,7 +396,12 @@ function renderReferences() {
 
   KEY_PUBLICATIONS.forEach(p => {
     const c = el("div", "res-card");
-    c.innerHTML = `<span class="pill">${p.repo}</span><h3>${p.title}</h3><p>${p.note}</p><a href="${p.link}" target="_blank" rel="noopener">Read publication →</a>`;
+    c.innerHTML = `
+      <span class="pill">${p.repo}</span>
+      <h3>${p.title}</h3>
+      <p>${p.note}</p>
+      <a href="${p.link}" target="_blank" rel="noopener">Read publication →</a>
+    `;
     pg.appendChild(c);
   });
 
@@ -391,11 +417,13 @@ function renderReferences() {
       `;
       pg.appendChild(titleCard);
 
-      paper.images.forEach(img => {
+      paper.images.forEach((img, index) => {
         const c = el("div", "res-card research-image-card");
         c.innerHTML = `
-          <img src="${img.src}" alt="${img.caption}" loading="lazy" data-lb="${img.src}" class="research-img">
-          <h4>${img.caption}</h4>
+          <button class="research-image-frame" type="button" aria-label="Open ${img.caption}">
+            <img src="${img.src}" alt="${img.caption}" loading="lazy" data-lb="${img.src}" class="research-img">
+          </button>
+          <h4><span class="image-number">${String(index + 1).padStart(2, "0")}</span> ${img.caption}</h4>
           <p class="muted">${paper.source}</p>
         `;
         pg.appendChild(c);

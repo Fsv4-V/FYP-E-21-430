@@ -1,20 +1,15 @@
-FYP portfolio weekly-image update
-=================================
+FYP Portfolio Better Image Template Upload Steps
 
-Upload these files to your GitHub repo:
+1. Replace your GitHub data.js with this data.js file.
+2. Replace your GitHub script.js with this script.js file.
+3. Open your existing style.css. Do NOT delete your old CSS.
+4. Paste everything from style_image_template_fix.css at the VERY BOTTOM of style.css.
+   This fixes the zoomed image issue and gives a compact professional template.
+5. Commit all files with this message:
+   Improve weekly image layout and sizing
+6. Wait 1–3 minutes and refresh your GitHub Pages website.
 
-1) Replace existing data.js with this new data.js
-2) Replace existing script.js with this new script.js
-3) DO NOT replace full style.css. Open your existing style.css and paste the content of style_add_to_bottom.css at the very bottom.
+Important: Your image files must still remain in:
+assets/research/
 
-Make sure these image files already exist in GitHub:
-assets/research/sani_keyimage.jpg
-assets/research/sani_fig1.jpg ... sani_fig6.jpg
-assets/research/petal_fig1.jpg ... petal_fig6.jpg
-assets/research/rsc_d1ra08375a_fig1.jpg ... rsc_d1ra08375a_fig5.jpg
-
-Your root files should also exist:
-week1.png, week2.png, week3.png, week4.png, week5.png
-
-Commit message:
-Show research images in weekly progress
+Do not rename the image files again.

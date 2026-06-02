@@ -1,18 +1,34 @@
-FYP Portfolio — Better Card Image Template
+FYP Portfolio Final Weekly Image Card Fix
 
-Upload/replace these files in your GitHub repository:
+This ZIP contains the final files for your GitHub portfolio.
+It keeps your previous Week 01–06 content and adds properly sized weekly image cards.
 
-1) Replace data.js with the data.js in this package.
-2) Replace script.js with the script.js in this package.
-3) Open your existing style.css and paste ALL code from style_card_template_fix.css at the VERY BOTTOM.
+FILES INCLUDED:
+1. data.js
+   - Replace your existing data.js with this file.
 
-Do not delete your old style.css code. Pasting at the bottom safely overrides the image layout.
+2. script.js
+   - Replace your existing script.js with this file.
 
-Commit message:
-Improve weekly image cards
+3. style_FINAL_PASTE_BOTTOM.css
+   - DO NOT replace your full style.css with this file.
+   - Open your current style.css in GitHub.
+   - Go to the very bottom.
+   - Paste all code from style_FINAL_PASTE_BOTTOM.css at the bottom.
+   - Commit changes.
 
-Your images must already exist in:
-assets/research/
+4. assets/research/*.jpg
+   - Upload these images into your GitHub repo at this exact path:
+     assets/research/
 
-And week screenshots should remain at root:
-week1.png, week2.png, week3.png, week4.png, week5.png
+IMPORTANT:
+- Keep week1.png, week2.png, week3.png, week4.png, week5.png in your repo root.
+- Do not delete old files unless you are replacing data.js and script.js.
+
+COMMIT MESSAGE:
+Fix weekly image card layout
+
+After committing:
+1. Wait 1–3 minutes.
+2. Open your website.
+3. Press Ctrl + F5 to hard refresh.

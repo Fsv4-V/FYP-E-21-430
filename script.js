@@ -198,6 +198,16 @@ function renderTimeline() {
       `
       : "";
 
+    const weekHighlight = w.highlight && w.highlight.text
+      ? `
+        <section class="week-highlight-panel" aria-label="${w.label} practical highlight">
+          <span class="media-eyebrow">${w.label} practical highlight</span>
+          <h4>${w.highlight.title || "Project Progress Highlight"}</h4>
+          <p>${w.highlight.text}</p>
+        </section>
+      `
+      : "";
+
     const driveButton = w.resourceLink && w.resourceLink !== "#"
       ? `<a class="btn small" href="${w.resourceLink}" target="_blank" rel="noopener">Open ${w.label} Drive Resources →</a>`
       : `<span class="btn small muted-btn">Resources coming soon</span>`;
@@ -213,6 +223,8 @@ function renderTimeline() {
       <p>${w.summary}</p>
 
       ${weekImages}
+
+      ${weekHighlight}
 
       <div class="folder-list">${folders}</div>
 

@@ -1280,3 +1280,26 @@ p, li, td,
   }
   .week-image-card { max-width: 100% !important; }
 }
+
+
+/* Separate weekly paragraph highlight */
+.week-highlight-panel {
+  margin: 24px 0;
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f0fdfa 0%, #f0f9ff 100%);
+  border: 1px solid rgba(21, 199, 183, 0.28);
+  border-left: 6px solid var(--teal);
+  box-shadow: 0 12px 28px rgba(2, 12, 27, 0.08);
+}
+.week-highlight-panel h4 {
+  margin: 5px 0 10px;
+  color: #0b1f31;
+  font-size: 1.18rem;
+}
+.week-highlight-panel p {
+  margin: 0;
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}

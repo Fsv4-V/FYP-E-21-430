@@ -468,8 +468,8 @@ const WEEKS = [
     "id": 10,
     "label": "Week 10",
     "dates": "July 2026",
-    "phase": "Fabrication and Laboratory Preparation",
-    "title": "Week 10 — Fabrication-Ready Design, PANI Preparation and Validation Planning",
+    "phase": "First Handmade Prototype and Laboratory Preparation",
+    "title": "Week 10 — First Handmade Flexible Trace Prototype and PANI Laboratory Preparation",
     "status": "Completed",
     "resourceLink": "https://drive.google.com/drive/folders/1LEyOpgtyqiMsvMB1fl6Q-M20ad_SNeCd?usp=drive_link",
     "images": [
@@ -491,41 +491,41 @@ const WEEKS = [
       },
       {
         "src": "assets/week10/Week10_Fabrication_and_PANI_Preparation.png",
-        "caption": "Corrected six-layer fabrication strategy, hybrid buried-copper and exposed-carbon/PANI architecture, screen-printing workflow and laboratory PANI preparation plan."
+        "caption": "Week 10 practical fabrication route and PANI preparation work, including the first handmade flexible copper-trace model, sealing concept, screen-printing study and laboratory chemical planning."
       },
       {
         "src": "assets/week10/Week10_Circuits_Results_Challenges_and_Next_Steps.png",
-        "caption": "Four-zone disposable strip and reusable DAQ concepts, preliminary USD 6.65 patch-cost target, manufacturing challenges and the Week 11 prototype actions."
+        "caption": "Four-zone disposable strip and reusable DAQ concepts, preliminary cost target, practical fabrication and chemical-sourcing challenges, and the next laboratory actions."
       }
     ],
     "folders": [
+      "First Handmade Flexible Trace Prototype",
+      "Screen-Printing and Copper-Etching Process",
+      "Chemical Requirements and Department Coordination",
+      "PANI Safety, SDS and Risk Documentation",
       "System Architecture and Four-Zone Patch Concept",
-      "PANI Laboratory Preparation Package",
-      "Chemical Safety and Risk Assessment",
-      "Hybrid Flexible-Patch Fabrication Strategy",
-      "Screen-Printing and Etching Process Study",
       "Testing, Quality Control and Supervisor Decisions"
     ],
-    "summary": "Week 10 moved the project from evidence-driven system design into a detailed fabrication-ready and laboratory-ready preparation stage. The disposable multi-zone sensing strip and reusable DAQ module were consolidated around pH, temperature and moisture/exudate monitoring. A complete PANI preparation package was developed for approximately ten pH pads, including synthesis quantities, coating-paste planning, safety controls and a pH 4–10 validation workflow. The flexible patch route was corrected to use low-resistance copper only as fully buried routing, while exposed test-liquid interfaces use carbon IDEs, PANI-coated carbon and controlled hydrogel regions. Screen-printing, etching, encapsulation, firmware flow, quality-control tests and a staged one-zone-first integration plan were defined. Week 10 therefore represents design and laboratory preparation maturity, not completed fabrication, clinical testing or validated sensor calibration.",
-    "goals": "Consolidate the two-stage smart wound monitoring architecture; convert the 122-paper evidence review into final first-line sensor choices; prepare the PANI synthesis, coating and laboratory-safety package; select a feasible hybrid flexible-fabrication route; define the four-zone strip and reusable DAQ workflows; establish quality-control and calibration procedures; and identify the supervisor decisions required before procurement and physical fabrication.",
+    "summary": "Week 10 moved the project from design planning into its first practical handmade fabrication stage. The team first sketched the intended portable, disposable smart-plaster layout and then produced a non-clinical trace-structure model using readily available materials. Surgical-glove material was used only as a temporary flexible substrate for the first model, and adhesive copper sheet was laminated onto it. A screen-printing/etch-resist process was used to define the copper routing pattern, unwanted copper was etched away, and the flexible trace structure was cleaned and sanitized. A second rubber/insulating layer was then applied over the copper routing and the structure was fully sealed. This was the first handmade prototype of the disposable plaster's flexible trace architecture; it demonstrated the proposed fabrication sequence, routing layout, flexibility and encapsulation concept, but it was not yet a calibrated sensing patch or a medical-grade device. In parallel, the team met the Department of Chemical and Process Engineering and completed the chemical-requirement list, risk-assessment forms, SDS/MSDS requirements, laboratory handbook and risk-recovery/safety handbook for PANI preparation. The required chemicals were not available in that department's stores, and commercial suppliers required unaffordable bulk purchases. The team therefore contacted the Department of Chemistry, Faculty of Science, University of Peradeniya, where the main laboratory technical staff confirmed that the required chemical facilities could be provided. The next step is to obtain or borrow small quantities through the department and begin supervised PANI preparation and sensor testing.",
+    "goals": "Design and hand-fabricate the first flexible disposable-plaster trace structure using an accessible screen-printing and copper-etching route; verify the mechanical layout, routing and sealing concept; prepare all chemical, SDS/MSDS, risk-assessment, laboratory and emergency-recovery documentation required for PANI work; identify an affordable source of the required chemicals; and establish an interdepartmental laboratory pathway for the next-stage PANI synthesis and sensor validation.",
     "keyFindings": [
-      "The project architecture was consolidated into a disposable four-zone sensing strip and a reusable DAQ and wireless communication module.",
-      "The selected first-line parameters remain pH, temperature and moisture/exudate because they combine high clinical relevance with practical prototype feasibility in the 122-paper review dataset.",
-      "A complete small-batch PANI preparation plan was produced using 1.0 mL aniline, 2.5 g APS and 100 mL of 1.0 M HCl, followed by washing, low-temperature drying and coating-paste preparation for approximately ten pH pads.",
-      "The PANI package includes a laboratory handout, chemical-risk assessment, PPE, fume-hood, spill, first-aid, SDS and segregated-waste requirements.",
-      "The preferred first-prototype fabrication route is hybrid: copper is restricted to fully encapsulated power and signal routing, while carbon IDEs and PANI-coated carbon form the exposed sensing windows.",
-      "Surgical or nitrile glove material is acceptable only for non-human flexibility and handling trials and must not be presented as a final medical-grade wound-contact substrate.",
-      "Moisture sensing requires low-amplitude AC or biphasic excitation to reduce polarization, corrosion and DC electrochemical effects.",
-      "The pH electrode requires a stable Ag/AgCl reference and a very-high-input-impedance front end before ADS1115 digitisation.",
-      "The reusable module workflow includes initialization, baseline calibration, low-power sleep, zone-by-zone acquisition, temperature compensation, local processing and BLE or Wi-Fi data transfer.",
-      "A staged validation order was established: routing and insulation coupons, carbon IDE tests, pilot PANI synthesis and coating, separate sensor calibration, one-zone integration and only then four-zone replication.",
-      "The preliminary disposable-patch cost of approximately USD 6.65 is a design target only and remains subject to supplier quotations, fabrication yield, medical materials, shipping and reusable electronics costs.",
-      "No physical patch fabrication, completed PANI synthesis, clinical testing or validated calibration curve is claimed for Week 10."
+      "A portable, disposable smart-plaster sketch and routing layout were prepared before fabrication.",
+      "The first handmade non-clinical flexible trace prototype was physically produced using surgical-glove material as a temporary substrate and adhesive copper sheet as the conductive layer.",
+      "Screen printing was used to define the copper trace pattern, followed by controlled copper etching, cleaning and sanitizing of the fabricated structure.",
+      "An additional rubber/insulating layer was applied over the copper routing and the structure was fully sealed to demonstrate the intended encapsulation sequence.",
+      "The completed item is a first trace-structure and fabrication-method prototype; it does not yet demonstrate calibrated pH, temperature or moisture sensing.",
+      "Surgical-glove material was used only because it was immediately available for the first flexibility model and must not be described as the final medical-grade wound-contact substrate.",
+      "The team met the Department of Chemical and Process Engineering and completed the chemical-requirement process, risk-assessment forms, SDS/MSDS requirements, laboratory handbook and risk-recovery/safety handbook.",
+      "The required PANI-preparation chemicals were not available in the Chemical and Process Engineering stores.",
+      "Commercial chemical suppliers required bulk purchasing quantities that were not affordable for the small FYP laboratory batch.",
+      "The Department of Chemistry, Faculty of Science, University of Peradeniya was contacted, and the main laboratory technical staff confirmed that the required chemical facilities could be supported.",
+      "The next practical milestone is to borrow or obtain small quantities of chemicals through the university department, conduct supervised PANI synthesis and coat the first pH-sensor samples.",
+      "No human testing, wound application, clinical validation or completed sensor-calibration result is claimed for Week 10."
     ],
-    "decisions": "Continue with the disposable sensing strip and reusable DAQ architecture. Use pH, temperature and moisture/exudate as the initial sensing set. Adopt the hybrid buried-copper and exposed-carbon/PANI approach for non-clinical prototype development, keep the copper-carbon overlap dry and sealed, validate one complete sensing zone before duplicating it into four zones, and restrict all immediate tests to pH buffers, saline and artificial wound fluid. Keep any warning or interpretation output trend-based and clinician-in-the-loop.",
-    "rejected": "Exposed copper at wet sensing regions, unknown industrial adhesives on the wound-contact side, surgical glove material as a final medical substrate, continuous-DC moisture excitation, immediate human or wound testing, presenting the preliminary USD 6.65 estimate as a verified unit cost, fabricating all four zones before debugging one zone, and claiming that preparation documents prove completed sensor fabrication or calibration were rejected.",
-    "nextWeek": "Obtain supervisor approval for TMP117 placement, Ag/AgCl reference location, substrate and fabrication route; confirm laboratory and screen-printing access; attach exact supplier SDS documents; fabricate routing, insulation and carbon-IDE coupons; synthesize and record one controlled PANI batch; prepare pilot PANI coatings; calibrate pH, moisture and TMP117 channels independently; integrate one complete sensing zone with the reusable DAQ; and document continuity, bending, leakage, sensitivity, response-time, repeatability and drift results before expanding to four zones.",
-    "evidence": "Week 10 evidence includes the 18-page full progress summary, eight uploaded infographics of which six are unique, the consolidated disposable-strip and reusable-DAQ architecture, the 122-paper parameter-selection matrix, PANI synthesis and coating plan, chemical-safety and risk controls, corrected hybrid layer structure, screen-printing and etching workflow, testing and quality-control plan, preliminary USD 6.65 disposable-patch target, supervisor decision list and next-stage execution schedule. Three uploaded problem/objective graphics were exact duplicates; one copy is linked in the portfolio and the duplicate uploads are retained separately as source evidence."
+    "decisions": "Retain the disposable-plaster/reusable-DAQ architecture and continue developing the screen-printed, etched and sealed flexible routing method. Treat the surgical-glove model as a bench-only fabrication proof and use a more suitable PU, TPU, PET, polyimide or approved dressing film for later sensor prototypes. Keep copper fully insulated from any wet sensing region, expose only the intended carbon/PANI sensor windows, and proceed with PANI synthesis only after departmental approval, confirmed SDS documentation and supervised access to the required chemicals. Validate one sensing zone before replicating the design into all four zones.",
+    "rejected": "Presenting the handmade trace model as a complete functional or medical-grade smart plaster, exposing copper directly to wound fluid, using surgical-glove material as the final clinical substrate, beginning human or wound testing, purchasing unaffordable bulk chemical quantities without a justified need, proceeding with PANI chemistry without approved risk controls and SDS documents, and claiming sensor accuracy before calibration were rejected.",
+    "nextWeek": "Coordinate with the Department of Chemistry and the project departments to borrow or obtain the required small quantities of aniline, APS, hydrochloric acid and supporting materials; complete the departmental authorization and safety-document review; carry out supervised PANI synthesis and record colour, temperature, polymerization time and yield; prepare pilot PANI/carbon coatings; test the handmade trace prototype for continuity, bending, insulation and sealing; fabricate and calibrate one pH sensing zone using pH buffers before adding moisture and temperature channels; and document all measured results, failures and design corrections.",
+    "evidence": "Week 10 evidence includes the first practical handmade flexible copper-trace and sealed-plaster structure, the portable disposable-plaster sketch, the screen-printing and copper-etching method study, cleaning and encapsulation sequence, the system and four-zone circuit architecture, the PANI chemical-requirement list, completed risk-assessment and SDS/MSDS planning, laboratory and risk-recovery handbooks, chemical-store availability checks, supplier-cost and bulk-order limitations, and the confirmed laboratory-support pathway through the Department of Chemistry, Faculty of Science, University of Peradeniya. The evidence demonstrates practical fabrication and laboratory preparation, but not completed sensor calibration, medical suitability or clinical validation."
   },
   {
     "id": 11,

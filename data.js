@@ -299,7 +299,7 @@ const WEEKS = [
     "phase": "Fabrication Strategy and Hardware Architecture",
     "title": "Week 07 — Fabrication Strategy, Sensor Signal Parameters and Hardware Workflow",
     "status": "Completed",
-    "resourceLink": "#",
+    "resourceLink": "https://drive.google.com/drive/folders/1Rx4jrwkL3jWmzjM2iXL7Qx6xfQdpF921?usp=drive_link",
     "images": [
       {
         "src": "assets/week07/Week07_01_Overview.png",
@@ -357,7 +357,7 @@ const WEEKS = [
     "phase": "Dataset Construction, Exploratory Analysis and Manuscript Revision",
     "title": "Week 08 — Literature-Derived Dataset, Exploratory ML Visualisation and CMJ Manuscript Revision",
     "status": "Completed",
-    "resourceLink": "#",
+    "resourceLink": "https://drive.google.com/drive/folders/1IvJfomvUFL4RxDM_y_r1V40Kp5MsEiGc?usp=drive_link",
     "images": [
       {
         "src": "assets/week08/Week08_Progress_Summary.png",
@@ -418,7 +418,7 @@ const WEEKS = [
       "phase": "Clinical Evidence Translation and System Design",
       "title": "Week 09 — Biomarker Evidence Synthesis, Spatial Sensing and Smart-Patch Architecture",
       "status": "Completed",
-      "resourceLink": "#",
+      "resourceLink": "https://drive.google.com/drive/folders/1HgNG5OFSU1wlfGuQVPbS3GTFqqrcvpGx?usp=drive_link",
       "images": [
           {
               "src": "assets/week09/Week09_Progress_Summary.png",
@@ -471,7 +471,7 @@ const WEEKS = [
     "phase": "Fabrication and Laboratory Preparation",
     "title": "Week 10 — Fabrication-Ready Design, PANI Preparation and Validation Planning",
     "status": "Completed",
-    "resourceLink": "assets/week10/Week_10_Full_Progress_Summary_and_Supervisor_Update.docx",
+    "resourceLink": "https://drive.google.com/drive/folders/1LEyOpgtyqiMsvMB1fl6Q-M20ad_SNeCd?usp=drive_link",
     "images": [
       {
         "src": "assets/week10/Week10_Overview.png",

@@ -467,65 +467,24 @@ const WEEKS = [
   {
     "id": 10,
     "label": "Week 10",
-    "dates": "July 2026",
-    "phase": "Fabrication and Laboratory Preparation",
-    "title": "Week 10 — Fabrication-Ready Design, PANI Preparation and Validation Planning",
-    "status": "Completed",
-    "resourceLink": "assets/week10/Week_10_Full_Progress_Summary_and_Supervisor_Update.docx",
-    "images": [
-      {
-        "src": "assets/week10/Week10_Overview.png",
-        "caption": "Week 10 integrated overview showing the disposable pH, temperature and moisture sensing plaster, reusable DAQ module, selected sensing strategy and consolidated engineering outcome."
-      },
-      {
-        "src": "assets/week10/Week10_Problem_Objectives_and_Literature.png",
-        "caption": "Clinical motivation, problem statement, project objectives, 122-paper evidence base and planned project deliverables for the smart wound monitoring system."
-      },
-      {
-        "src": "assets/week10/Week10_Review_Dataset_and_Design_Decisions.png",
-        "caption": "Review-dataset and sensor-priority analysis showing why pH, temperature and moisture/exudate were selected as the practical first-line parameter set."
-      },
-      {
-        "src": "assets/week10/Week10_Methodology_and_Sensor_Principles.png",
-        "caption": "End-to-end methodology and sensor working principles covering the disposable plaster, reusable electronics, signal conditioning, data acquisition and clinician-in-the-loop interpretation."
-      },
-      {
-        "src": "assets/week10/Week10_Fabrication_and_PANI_Preparation.png",
-        "caption": "Corrected six-layer fabrication strategy, hybrid buried-copper and exposed-carbon/PANI architecture, screen-printing workflow and laboratory PANI preparation plan."
-      },
-      {
-        "src": "assets/week10/Week10_Circuits_Results_Challenges_and_Next_Steps.png",
-        "caption": "Four-zone disposable strip and reusable DAQ concepts, preliminary USD 6.65 patch-cost target, manufacturing challenges and the Week 11 prototype actions."
-      }
-    ],
+    "dates": "Coming soon",
+    "phase": "Firmware and Wireless Communication",
+    "title": "Week 10 — ESP32 Firmware, BLE Communication and Data Logging",
+    "status": "Coming soon",
+    "resourceLink": "#",
+    "images": [],
     "folders": [
-      "System Architecture and Four-Zone Patch Concept",
-      "PANI Laboratory Preparation Package",
-      "Chemical Safety and Risk Assessment",
-      "Hybrid Flexible-Patch Fabrication Strategy",
-      "Screen-Printing and Etching Process Study",
-      "Testing, Quality Control and Supervisor Decisions"
+      "Coming soon"
     ],
-    "summary": "Week 10 moved the project from evidence-driven system design into a detailed fabrication-ready and laboratory-ready preparation stage. The disposable multi-zone sensing strip and reusable DAQ module were consolidated around pH, temperature and moisture/exudate monitoring. A complete PANI preparation package was developed for approximately ten pH pads, including synthesis quantities, coating-paste planning, safety controls and a pH 4–10 validation workflow. The flexible patch route was corrected to use low-resistance copper only as fully buried routing, while exposed test-liquid interfaces use carbon IDEs, PANI-coated carbon and controlled hydrogel regions. Screen-printing, etching, encapsulation, firmware flow, quality-control tests and a staged one-zone-first integration plan were defined. Week 10 therefore represents design and laboratory preparation maturity, not completed fabrication, clinical testing or validated sensor calibration.",
-    "goals": "Consolidate the two-stage smart wound monitoring architecture; convert the 122-paper evidence review into final first-line sensor choices; prepare the PANI synthesis, coating and laboratory-safety package; select a feasible hybrid flexible-fabrication route; define the four-zone strip and reusable DAQ workflows; establish quality-control and calibration procedures; and identify the supervisor decisions required before procurement and physical fabrication.",
+    "summary": "Week 10 is planned for firmware development. The ESP32-S3 should be programmed to acquire ADC readings, apply calibration equations, calculate pH, read temperature and prepare data for wireless transmission. BLE communication can be implemented to send sensor data to a phone or computer. This week will make the system operate as a real smart monitoring device rather than only a sensor and circuit.",
+    "goals": "Develop firmware for ADC reading, pH conversion, temperature reading, BLE data transfer and basic serial or mobile data logging.",
     "keyFindings": [
-      "The project architecture was consolidated into a disposable four-zone sensing strip and a reusable DAQ and wireless communication module.",
-      "The selected first-line parameters remain pH, temperature and moisture/exudate because they combine high clinical relevance with practical prototype feasibility in the 122-paper review dataset.",
-      "A complete small-batch PANI preparation plan was produced using 1.0 mL aniline, 2.5 g APS and 100 mL of 1.0 M HCl, followed by washing, low-temperature drying and coating-paste preparation for approximately ten pH pads.",
-      "The PANI package includes a laboratory handout, chemical-risk assessment, PPE, fume-hood, spill, first-aid, SDS and segregated-waste requirements.",
-      "The preferred first-prototype fabrication route is hybrid: copper is restricted to fully encapsulated power and signal routing, while carbon IDEs and PANI-coated carbon form the exposed sensing windows.",
-      "Surgical or nitrile glove material is acceptable only for non-human flexibility and handling trials and must not be presented as a final medical-grade wound-contact substrate.",
-      "Moisture sensing requires low-amplitude AC or biphasic excitation to reduce polarization, corrosion and DC electrochemical effects.",
-      "The pH electrode requires a stable Ag/AgCl reference and a very-high-input-impedance front end before ADS1115 digitisation.",
-      "The reusable module workflow includes initialization, baseline calibration, low-power sleep, zone-by-zone acquisition, temperature compensation, local processing and BLE or Wi-Fi data transfer.",
-      "A staged validation order was established: routing and insulation coupons, carbon IDE tests, pilot PANI synthesis and coating, separate sensor calibration, one-zone integration and only then four-zone replication.",
-      "The preliminary disposable-patch cost of approximately USD 6.65 is a design target only and remains subject to supplier quotations, fabrication yield, medical materials, shipping and reusable electronics costs.",
-      "No physical patch fabrication, completed PANI synthesis, clinical testing or validated calibration curve is claimed for Week 10."
+      "Coming soon after firmware development is completed."
     ],
-    "decisions": "Continue with the disposable sensing strip and reusable DAQ architecture. Use pH, temperature and moisture/exudate as the initial sensing set. Adopt the hybrid buried-copper and exposed-carbon/PANI approach for non-clinical prototype development, keep the copper-carbon overlap dry and sealed, validate one complete sensing zone before duplicating it into four zones, and restrict all immediate tests to pH buffers, saline and artificial wound fluid. Keep any warning or interpretation output trend-based and clinician-in-the-loop.",
-    "rejected": "Exposed copper at wet sensing regions, unknown industrial adhesives on the wound-contact side, surgical glove material as a final medical substrate, continuous-DC moisture excitation, immediate human or wound testing, presenting the preliminary USD 6.65 estimate as a verified unit cost, fabricating all four zones before debugging one zone, and claiming that preparation documents prove completed sensor fabrication or calibration were rejected.",
-    "nextWeek": "Obtain supervisor approval for TMP117 placement, Ag/AgCl reference location, substrate and fabrication route; confirm laboratory and screen-printing access; attach exact supplier SDS documents; fabricate routing, insulation and carbon-IDE coupons; synthesize and record one controlled PANI batch; prepare pilot PANI coatings; calibrate pH, moisture and TMP117 channels independently; integrate one complete sensing zone with the reusable DAQ; and document continuity, bending, leakage, sensitivity, response-time, repeatability and drift results before expanding to four zones.",
-    "evidence": "Week 10 evidence includes the 18-page full progress summary, eight uploaded infographics of which six are unique, the consolidated disposable-strip and reusable-DAQ architecture, the 122-paper parameter-selection matrix, PANI synthesis and coating plan, chemical-safety and risk controls, corrected hybrid layer structure, screen-printing and etching workflow, testing and quality-control plan, preliminary USD 6.65 disposable-patch target, supervisor decision list and next-stage execution schedule. Three uploaded problem/objective graphics were exact duplicates; one copy is linked in the portfolio and the duplicate uploads are retained separately as source evidence."
+    "decisions": "Coming soon.",
+    "rejected": "Coming soon.",
+    "nextWeek": "The next step should be full system integration with the flexible patch and electronics module.",
+    "evidence": "Coming soon."
   },
   {
     "id": 11,
@@ -843,7 +802,7 @@ const FILE_CATEGORIES = [
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".section-kicker").forEach((node) => {
     if (node.textContent.trim() === "Documentation Journey · Weeks 01–06") {
-      node.textContent = "Documentation Journey · Weeks 01–10";
+      node.textContent = "Documentation Journey · Weeks 01–09";
     }
   });
 });

@@ -1,0 +1,36 @@
+FYP PORTFOLIO — COMPLETE WEEKS 07–10 UPDATE
+================================================
+
+This package combines the final Week 07, Week 08, Week 09 and Week 10 updates.
+It is intended to update the existing GitHub Pages portfolio without replacing
+or editing the current HTML, CSS, script.js, Week 01–06 content, or Week 11–14 placeholders.
+
+UPLOAD STEPS
+1. Open the GitHub repository: Fsv4-V/FYP-E-21-430
+2. Replace the repository-root data.js with the data.js in this package.
+3. Upload these four complete folders inside the existing assets folder:
+      assets/week07
+      assets/week08
+      assets/week09
+      assets/week10
+4. Keep the folder names and filenames exactly unchanged.
+5. Commit the changes and wait for GitHub Pages to redeploy.
+6. Refresh the website using Ctrl+F5.
+
+FILES REQUIRED BY THE WEBSITE
+- data.js
+- assets/week07/*
+- assets/week08/*
+- assets/week09/*
+- assets/week10/*
+
+The reports folder is included for convenient supervisor access and record keeping.
+It is not necessary to upload reports/ unless you want that separate archive online.
+The Week 10 report already exists inside assets/week10 because data.js links to it.
+
+FINAL JOURNEY HEADING
+Documentation Journey · Weeks 01–10
+
+IMPORTANT REPORTING BOUNDARY
+Week 10 records engineering design, fabrication preparation and laboratory planning.
+It does not claim completed fabrication, sensor calibration, human testing or clinical validation.

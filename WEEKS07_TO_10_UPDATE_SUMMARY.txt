@@ -1,0 +1,31 @@
+COMPLETE PORTFOLIO UPDATE: WEEKS 07–10
+======================================
+
+Week 07
+- Fabrication strategy and six-layer patch stack
+- pH, temperature and moisture acquisition architecture
+- ESP32-C3 DAC correction
+- 12-pin patch interface, safety and validation planning
+
+Week 08
+- Literature-derived dataset construction
+- Figure screening, cleaning and feature engineering
+- PCA, t-SNE and MDS exploratory visualisation
+- Ceylon Medical Journal manuscript revision
+
+Week 09
+- 75 readable PDFs and 70 unique documents reviewed
+- Biomarker evidence synthesis
+- Four-location spatial sensing concept
+- Disposable patch/reusable electronics architecture
+- Trend-based multimodal clinical interpretation logic
+
+Week 10
+- 122-paper parameter-selection evidence
+- Four-zone disposable strip and reusable DAQ design
+- PANI laboratory-preparation and safety package
+- Hybrid buried-copper/exposed-carbon-PANI fabrication route
+- Screen-printing, etching, quality-control and validation plan
+- Preliminary USD 6.65 disposable-patch design target
+
+The cumulative data.js contains the final Week 01–10 portfolio data.
